@@ -23,7 +23,7 @@
 						<phase>install</phase>
 						<configuration>
 							<quiet>true</quiet>
-							<tasks>
+							<target>
 								<!-- called AFTER generating update site + zip to add in extra content -->
 								<ant antfile="build.xml" target="basic.build" dir="../">
 									<property name="output.dir" value="${basedir}" />
@@ -33,7 +33,7 @@
 									<property name="JBT_VERSION" value="${JBT_VERSION}" />
 									<property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
 								</ant>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>
