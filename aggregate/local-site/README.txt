@@ -1,20 +1,25 @@
-This folder can be used to install locally-built JBoss Tools components combined with the latest available upstream components.
+This folder can be used to install locally-built JBoss Tools components into your local Eclipse for testing purposes.
 
 ---
 
-For example, if you built locally tests, common, jmx, archives, and as, you could, in order to test installation, point Eclipse at those 5 local URLs:
+If you need to fetch sources from Git before building, see the script in this folder, fetch_all_projects.sh:
 
-	file://path/to/trunk/tests/site/target/site/
-	file://path/to/trunk/common/site/target/site/
-	file://path/to/trunk/jmx/site/target/site/
-	file://path/to/trunk/archives/site/target/site/
-	file://path/to/trunk/as/site/target/site/
+	https://github.com/jbosstools/jbosstools-build-sites/tree/master/aggregate/local-site/fetch_all_projects.sh
 
+Then, to build everything, in this folder run:
+
+	mvn clean install -DskipTests
 ---
 
-Or, you can use this local folder to pull from relative paths (and fall back to remote paths for any component not built locally). For locally-built features to be installed instead of remote ones, they must have been built more recently (newer timestamps).
+Next, point Eclipse at this folder to install anything from this composite site:
 
-	file:///path/to/trunk/build/aggregate/local-site/
+	file:///path/to/jbosstools-build-sites/aggregate/local-site/
 
-See also https://issues.jboss.org/browse/JBIDE-8974
+You can also build aggregate sites by running maven in one of these folders:
+
+	../site/
+	../coretests-site/
+	../webtools-site/
+	../soa-site/
+	../soatests-site/
 
