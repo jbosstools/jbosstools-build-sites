@@ -6,6 +6,10 @@ If you need to fetch sources from Git before building, see the script in this fo
 
 	https://github.com/jbosstools/jbosstools-build-sites/tree/master/aggregate/local-site/fetch_all_projects.sh
 
+Or, if you prefer to fetch one project at a time (including its upstream dependencies), you can use this script:
+
+	https://github.com/jbosstools/jbosstools-build/tree/master/scripts/checkout.sh
+
 Then, to build everything, in this folder run:
 
 	mvn clean install -DskipTests
