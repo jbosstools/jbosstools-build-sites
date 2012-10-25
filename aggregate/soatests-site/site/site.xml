@@ -23,7 +23,7 @@
 <feature url="features/org.jboss.tools.jbpm3.test.feature_0.0.0.jar" id="org.jboss.tools.jbpm3.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.modeshape.rest.test.feature_0.0.0.jar" id="org.jboss.tools.modeshape.rest.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.modeshape.jcr.test.feature_0.0.0.jar" id="org.jboss.tools.modeshape.jcr.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
-<!-- where did this go? <feature url="features/org.jboss.tools.runtime.soa.test.feature_0.0.0.jar" id="org.jboss.tools.runtime.soa.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature> -->
+<!-- JBIDE-12828 where did this go? <feature url="features/org.jboss.tools.runtime.soa.test.feature_0.0.0.jar" id="org.jboss.tools.runtime.soa.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature> -->
 
 <!-- TODO: add source features
 <feature url="features/org.jboss.tools.bpel.test.feature.source_0.0.0.jar" id="org.jboss.tools.bpel.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
@@ -33,6 +33,6 @@
 <feature url="features/org.jboss.tools.modeshape.rest.test.feature.source_0.0.0.jar" id="org.jboss.tools.modeshape.rest.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.modeshape.jcr.test.feature.source_0.0.0.jar" id="org.jboss.tools.modeshape.jcr.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 -->
-<feature url="features/org.jboss.tools.runtime.soa.test.feature.source_0.0.0.jar" id="org.jboss.tools.runtime.soa.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
+<!-- JBIDE-12828 where did this go? <feature url="features/org.jboss.tools.runtime.soa.test.feature.source_0.0.0.jar" id="org.jboss.tools.runtime.soa.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature> -->
 
 </site>
