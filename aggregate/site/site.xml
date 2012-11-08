@@ -232,7 +232,7 @@
 	<feature url="features/org.jboss.tools.common.verification.feature_0.0.0.jar" id="org.jboss.tools.common.verification.feature" version="0.0.0">
 	</feature>
 	<feature url="features/org.jboss.tools.central.themes.feature_0.0.0.jar" id="org.jboss.tools.central.themes.feature" version="0.0.0">
-		<!-- Categorize? -->
+		<category name="OtherTools" />
 	</feature>
 
 	<feature url="features/org.jboss.tools.runtime.core.feature_0.0.0.jar" id="org.jboss.tools.runtime.core.feature" version="0.0.0">
@@ -444,6 +444,9 @@
 		<description>Tools for Cloud Development.</description>
 	</category-def>
 	<!-- Only in JBT -->
+	<category-def name="OtherTools" label="Other Tools">
+		<description>Miscellaneous other features, including incubating features. See individual feature descriptions for details.</description>
+	</category-def>
 	<category-def name="ReportTools" label="JBoss Business Intelligence, Reporting and Charting">
 		<description>Business Intelligence, Reporting and Charting. Use these if you plan to integrate Hibernate or Seam with Eclipse BIRT.</description>
 	</category-def>
