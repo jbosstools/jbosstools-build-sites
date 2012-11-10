@@ -64,7 +64,7 @@
 		<category name="SOATools" />
 	</feature>
 	
-	<!-- jBPM5 features -->
+	<!-- jBPM5, Drools, and Guvnor features; note that org.drools.eclipse.task.feature no longer exists in Droolsjbpm 5.4+ -->
 	<feature url="features/org.jbpm.eclipse.feature_0.0.0.jar" id="org.jbpm.eclipse.feature" version="0.0.0">
 		<category name="BusinessRules" />
 		<category name="SOATools" />
@@ -73,18 +73,11 @@
 		<category name="BusinessRules" />
 		<category name="SOATools" />
 	</feature>
-
-	<!-- Drools/Guvnor -->
 	<feature url="features/org.drools.eclipse.feature_0.0.0.jar" id="org.drools.eclipse.feature" version="0.0.0">
 		<category name="SOADataServices" />
 		<category name="BusinessRules" />
 		<category name="SOATools" />
 		<category name="GeneralTools" />
-	</feature>
-	<feature url="features/org.drools.eclipse.task.feature_0.0.0.jar" id="org.drools.eclipse.task.feature" version="0.0.0">
-		<category name="SOADataServices" />
-		<category name="BusinessRules" />
-		<category name="SOATools" />
 	</feature>
 	<feature url="features/org.guvnor.tools.feature_0.0.0.jar" id="org.guvnor.tools.feature" version="0.0.0">
 		<category name="SOADataServices" />
