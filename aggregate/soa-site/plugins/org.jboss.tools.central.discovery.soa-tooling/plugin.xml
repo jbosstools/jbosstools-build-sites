@@ -41,7 +41,6 @@
             <iu id="org.eclipse.bpel.apache.ode.runtime.feature"/>
 
             <iu id="org.drools.eclipse.feature"/>
-            <iu id="org.drools.eclipse.task.feature"/>
             <iu id="org.guvnor.tools.feature"/>
             <iu id="org.jboss.tools.runtime.drools.detector.feature"/>
 
@@ -82,7 +81,6 @@
             id="com.jboss.jbds.soatooling.bundle.brms">
 
             <iu id="org.drools.eclipse.feature"/>
-            <iu id="org.drools.eclipse.task.feature"/>
             <iu id="org.jboss.tools.runtime.drools.detector.feature"/>
 
             <iu id="org.jbpm.eclipse.feature"/>
@@ -132,7 +130,7 @@
             description="JBoss Drools Core, Task Management, Runtime Detection"
             id="org.drools.eclipse.feature">
             <iu id="org.drools.eclipse.feature"/>
-            <iu id="org.drools.eclipse.task.feature"/>
+            <!-- JBIDE-12828 droolsjbpm 5.4+ does not include this feature <iu id="org.drools.eclipse.task.feature"/> -->
             <iu id="org.jboss.tools.runtime.drools.detector.feature"/>
          <icon
                image32="images/jbds_drools_32.png">
