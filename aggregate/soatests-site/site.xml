@@ -18,7 +18,6 @@
 	</category-def>
 
 <feature url="features/org.jboss.tools.bpel.test.feature_0.0.0.jar" id="org.jboss.tools.bpel.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
-<feature url="features/org.jboss.tools.drools.test.feature_0.0.0.jar" id="org.jboss.tools.drools.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.esb.test.feature_0.0.0.jar" id="org.jboss.tools.esb.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.jbpm3.test.feature_0.0.0.jar" id="org.jboss.tools.jbpm3.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.modeshape.rest.test.feature_0.0.0.jar" id="org.jboss.tools.modeshape.rest.test.feature" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
@@ -27,7 +26,6 @@
 
 <!-- TODO: add source features
 <feature url="features/org.jboss.tools.bpel.test.feature.source_0.0.0.jar" id="org.jboss.tools.bpel.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
-<feature url="features/org.jboss.tools.drools.test.feature.source_0.0.0.jar" id="org.jboss.tools.drools.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.esb.test.feature.source_0.0.0.jar" id="org.jboss.tools.esb.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.jbpm3.test.feature.source_0.0.0.jar" id="org.jboss.tools.jbpm3.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
 <feature url="features/org.jboss.tools.modeshape.rest.test.feature.source_0.0.0.jar" id="org.jboss.tools.modeshape.rest.test.feature.source" version="0.0.0"><category name="JBoss Tools - SOA Tooling Tests"/></feature>
