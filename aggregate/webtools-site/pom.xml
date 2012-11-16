@@ -9,6 +9,7 @@
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site.webtools</artifactId>
+	<version>4.0.0-SNAPSHOT</version>
 	<name>JBoss Tools - Web Tools Site</name>
 	<packaging>eclipse-update-site</packaging>
 	<!-- to test output, use:
