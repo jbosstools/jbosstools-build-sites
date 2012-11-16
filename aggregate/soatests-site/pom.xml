@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.jboss.tools</groupId>
 		<artifactId>org.jboss.tools.site</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>4.0.0.CR1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site.soa-tooling.tests</artifactId>
@@ -81,40 +81,5 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>jbosstools-nightly-staging-composite-soa-tooling</id>
-			<url>${jbosstools-nightly-staging-composite-soa-tooling}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-		<!-- JBIDE-10670 - TODO: instead of upstream staging bits, use ${jbosstools-nightly} ? -->
-		<repository>
-			<id>jbosstools-nightly-staging-composite</id>
-			<url>${jbosstools-nightly-staging-composite}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-		<repository>
-			<id>jbosstools-target-site</id>
-			<url>${jbosstools-target-site}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-	</repositories>
+	<!-- Use -P jbosstools-nightly-staging-composite-soa-tooling profile -->
 </project>

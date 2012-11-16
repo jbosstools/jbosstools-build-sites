@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.jboss.tools</groupId>
 		<artifactId>org.jboss.tools.site</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>4.0.0.CR1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site.soa-tooling.root</artifactId>
@@ -13,61 +13,18 @@
 	<packaging>pom</packaging>
 	<!--	This site build depends on both the Core and SOA Tooling composite sites, plus the usual upstream dependencies and TP.
 
-		mvn clean install 
+		mvn clean install
 		or
-	        mvn clean install -Pdefault,local.site -Dlocal.site=file://home/nboldt/tmp/JBDS_REPO_Indigo/ 
+	        mvn clean install -Pdefault,local.site -Dlocal.site=file://home/nboldt/tmp/JBDS_REPO_Indigo/
 	-->
 	<modules>
 		<module>plugins</module>
 		<module>features</module>
 		<module>site</module>
 	</modules>
-	<repositories>
-		<!-- JBT nightly components -->
-		<repository>
-			<id>jbosstools-nightly-staging-composite</id>
-			<url>${jbosstools-nightly-staging-composite}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-		<repository>
-			<id>jbosstools-nightly-staging-composite-soa-tooling</id>
-			<url>${jbosstools-nightly-staging-composite-soa-tooling}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-		<!-- JBT target platform -->
-		<repository>
-			<id>jbosstools-target-site</id>
-			<url>${jbosstools-target-site}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-		<repository>
-			<id>jboss-requirements-composite-soa-tooling-mirror</id>
-			<url>${jboss-requirements-composite-soa-tooling-mirror}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-	</repositories>
+	<!-- Use -P jbosstools-nightly-staging-composite-soa-tooling profile -->
+	<!-- Use -P unified.target profile, optionally -P maximum -->
+	<!-- Use -P jboss-requirements-composite-soa-tooling-mirror -Djboss-requirements-composite-soa-tooling-mirror=...
+		for additional TP dependencies. See also JBIDE-11121 -->
+	<!-- Set TARGET_PLATFORM_VERSION to select another target-platform -->
 </project>

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.jboss.tools</groupId>
 		<artifactId>org.jboss.tools.site</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>4.0.0.CR1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site.core</artifactId>
@@ -81,28 +81,5 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>jbosstools-nightly-staging-composite</id>
-			<url>${jbosstools-nightly-staging-composite}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-		<repository>
-			<id>jbosstools-target-site</id>
-			<url>${jbosstools-target-site}</url>
-			<layout>p2</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-	</repositories>
+	<!-- Use -P jbosstools-nightly-staging-composte profile -->
 </project>
