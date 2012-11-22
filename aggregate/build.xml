@@ -66,7 +66,7 @@ $java.home = ${java.home}</echo>
 		<antcall target="get.saxon" />
 	</target>
 
-	<target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.references,add.associate.sites,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" />
+	<target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,unpack.content.jar,remove.references,add.associate.sites,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" />
 	<target name="custom.build" description="JBT aggregate update site extra processing steps" depends="basic.build,collect.zips,collect.metadata,create.summary.file,cleanup" />
 
 	<target name="get.ant-contrib" unless="ant-contrib.jar.exists">
@@ -529,42 +529,6 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 			<arg line=" -application org.eclipse.equinox.p2.director -nosplash -installIUs org.eclipse.wtp.releng.tools.feature.feature.group" />
 			<arg line=" -repository http://download.eclipse.org/webtools/releng/repository/" />
 		</exec>		
-	</target>
-
-	<!-- adds download.stats properties to specified features and 
-		 <property name='p2.statsURI' value='https://devstudio.jboss.com/usage/juno/4.0.0.Beta1/'/>
-	-->
-	<target name="add.repo.properties" depends="install.releng.tools" description="use org.eclipse.wtp.releng.tools.addRepoProperties to add p2.statsURI and download.stats properties for a list of features">
-		<var name="SOURCE_REPO" value="${update.site.source.dir}"/>
-
-		<!-- TODO: externalize these to maven vars / Jenkins vars -->
-		<var name="TARGET_PLATFORM" value="juno"/>
-		<var name="TARGET_FOLDER" value="4.0.0.Beta1"/>
-
-		<var name="install" value=""/>
-		<for param="featureJar">
-			<path>
-				<fileset dir="${SOURCE_REPO}/features" includes="*.jar" />
-			</path>
-			<sequential>
-				<var name="feature.jarfile" unset="true" />
-				<var name="feature.id" unset="true" />
-				<propertyregex property="feature.jarfile" defaultvalue="@{featureJar}" input="@{featureJar}" regexp=".+/features/([^/]+\.jar)" replace="\1" override="true" />
-				<propertyregex property="feature.id" defaultvalue="${feature.jarfile}" input="${feature.jarfile}" regexp="([^_]+)_(\d+\.\d+\.\d+\..+)\.jar" replace="\1" override="true" />
-				<propertyregex property="feature.id" defaultvalue="${feature.id}" input="${feature.id}" regexp="([^_]+)_(\d+\.\d+\.\d+)\.jar" replace="\1" override="true" />
-				<var name="install" value="${install},${feature.id}" />
-				<var name="feature.jarfile" unset="true" />
-				<var name="feature.id" unset="true" />
-			</sequential>
-		</for>
-		<!-- trim prefix "," -->
-		<propertyregex property="install" input="${install}" defaultvalue="${install}" regexp=",(.+)" replace="\1" override="true" />
-		<echo level="debug">Features to track: ${install}</echo>
-		<var name="vmargs" value=" -DartifactRepoDirectory=${SOURCE_REPO} -DmetadataRepoDirectory=${SOURCE_REPO} -Dp2StatsURI=https://devstudio.jboss.com/usage/${TARGET_PLATFORM}/${TARGET_FOLDER}/ -DstatsArtifactsSuffix= -DstatsTrackedArtifacts=${install}"/>
-		<!-- run releng tools; want more verbose output? use -consolelog -debug -console -->
-		<exec executable="${eclipseDir}/eclipse" failonerror="true" dir="${eclipseDir}" timeout="300000" taskname="add">
-			<arg line=" -application org.eclipse.wtp.releng.tools.addRepoProperties -nosplash -data ${tmpdir}/workspace -consolelog --launcher.suppressErrors -vmargs ${vmargs}" />
-		</exec>
 	</target>
 
 	<target name="add.web.content">
