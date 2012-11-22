@@ -533,14 +533,19 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 
 	<!-- adds download.stats properties to specified features and 
 		 <property name='p2.statsURI' value='https://devstudio.jboss.com/usage/juno/4.0.0.Beta1/'/>
+
+		 To tet, pass in commandline flags:
+			 mvn install \
+			-DJOB_NAME=jbosstools-4.0_trunk.webtools.aggregate \
+			-DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 -DJBT_VERSION=4.1.0 -DBUILD_ALIAS=Alpha1
 	-->
 	<target name="add.repo.properties" depends="install.releng.tools" description="use org.eclipse.wtp.releng.tools.addRepoProperties to add p2.statsURI and download.stats properties for a list of features">
+		<antcallback target="get.update.site.properties" return="update.site.name,update.site.version"/>
+		 <!-- TODO: externalize these to maven vars / Jenkins vars ? -->
 		<var name="SOURCE_REPO" value="${update.site.source.dir}"/>
-
-		<!-- TODO: externalize these to maven vars / Jenkins vars -->
-		<var name="TARGET_PLATFORM" value="juno"/>
-		<var name="TARGET_FOLDER" value="4.0.0.Beta1"/>
-
+		<!--<var name="STATS_SERVER" value="http://localhost:8080/usage"/> -->
+		<var name="STATS_SERVER" value="http://download.jboss.org/jbosstools/usage"/>
+		<var name="TARGET_FOLDER" value="${JBT_VERSION}/${BUILD_ALIAS}/${JOB_NAME}/${update.site.version}/"/>
 		<var name="install" value=""/>
 		<for param="featureJar">
 			<path>
@@ -560,27 +565,30 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		<!-- trim prefix "," -->
 		<propertyregex property="install" input="${install}" defaultvalue="${install}" regexp=",(.+)" replace="\1" override="true" />
 		<echo level="debug">Features to track: ${install}</echo>
-		<var name="vmargs" value=" -DartifactRepoDirectory=${SOURCE_REPO} -DmetadataRepoDirectory=${SOURCE_REPO} -Dp2StatsURI=https://devstudio.jboss.com/usage/${TARGET_PLATFORM}/${TARGET_FOLDER}/ -DstatsArtifactsSuffix= -DstatsTrackedArtifacts=${install}"/>
+		<var name="vmargs" value=" -DartifactRepoDirectory=${SOURCE_REPO} -DmetadataRepoDirectory=${SOURCE_REPO} -Dp2StatsURI=${STATS_SERVER}/${TARGET_FOLDER} -DstatsArtifactsSuffix= -DstatsTrackedArtifacts=${install}"/>
 		<!-- run releng tools; want more verbose output? use -consolelog -debug -console -->
 		<exec executable="${eclipseDir}/eclipse" failonerror="true" dir="${eclipseDir}" timeout="300000" taskname="add">
 			<arg line=" -application org.eclipse.wtp.releng.tools.addRepoProperties -nosplash -data ${tmpdir}/workspace -consolelog --launcher.suppressErrors -vmargs ${vmargs}" />
 		</exec>
 	</target>
 
-	<target name="add.web.content">
+	<target name="get.update.site.properties">
 		<!-- 
 		Properties calculated here
 			from ${JOB_NAME} = jbosstools-3.2.0.M1.aggregate get 3.2.0.M1  
 			from ${BUILD_ID} and ${BUILD_NUMBER}, get .${BUILD_ID}-B${BUILD_NUMBER}
 			default update.site.description=Nightly Build
-			default update.site.version=(null)
+			default update.site.versionstring=(null)
 		-->
 		<property name="update.site.name" value="JBoss Tools" />
 		<property name="update.site.description" value="Nightly Build" />
 		<if>
 			<and>
 				<not>
-					<isset property="update.site.version" />
+					<and>
+						<isset property="update.site.version" />
+						<isset property="update.site.versionstring" />
+					</and>
 				</not>
 				<isset property="JOB_NAME" />
 				<isset property="BUILD_ID" />
@@ -595,17 +603,24 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 						<isset property="BUILD_ALIAS" />
 					</and>
 					<then>
-						<propertyregex override="true" property="update.site.version" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(_.*?)\.(.*?)\.*aggregate" replace=": ${JBT_VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}.\4" />
+						<propertyregex override="true" property="update.site.version" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(_.*?)\.(.*?)\.*aggregate" replace="${JBT_VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}" />
+						<propertyregex override="true" property="update.site.versionstring" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(_.*?)\.(.*?)\.*aggregate" replace=": ${JBT_VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}.\4" />
 					</then>
 					<else>
-						<propertyregex override="true" property="update.site.version" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(.*).aggregate" replace=": \2.${BUILD_TS}-B${BUILD_NUMBER}.\3" />
+						<propertyregex override="true" property="update.site.version" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(.*).aggregate" replace="\2.${BUILD_TS}-B${BUILD_NUMBER}" />
+						<propertyregex override="true" property="update.site.versionstring" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(.*).aggregate" replace=": \2.${BUILD_TS}-B${BUILD_NUMBER}.\3" />
 					</else>
 				</if>
 			</then>
 			<else>
 				<property name="update.site.version" value="" />
+				<property name="update.site.versionstring" value="" />
 			</else>
 		</if>
+	</target>
+
+	<target name="add.web.content">
+		<antcallback target="get.update.site.properties" return="update.site.name,update.site.description,update.site.version,update.site.versionstring"/>
 
 		<!-- get site.xml as HTML, then load into ${site.contents} in order to merge into index.html -->
 		<antcallback target="transform.site.xml" return="site.contents" />
