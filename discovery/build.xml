@@ -22,7 +22,7 @@
 	<property name="project.build.directory" value="${output.dir}/target"/>
 
 	<target name="init">
-		<echo>
+		<echo level="verbose">
 This script requires Ant 1.8+ and JDK 1.6+.
 -------------------------------------------
 $ant.version = ${ant.version}
@@ -72,7 +72,7 @@ $java.home = ${java.home}</echo>
 				<mkdir dir="${project.build.directory}/discovery-site/plugins"/>
 				<propertyregex override="true" property="central.discovery.jar.renamed" defaultvalue="${central.discovery.jar}" input="${central.discovery.jar}" regexp="-[0-9.]+-SNAPSHOT" replace="_${VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}"/>
 				<copy file="${central.discovery.path}" tofile="${project.build.directory}/discovery-site/plugins/${central.discovery.jar.renamed}"/>
-				<echo level="info">Generate ${project.build.directory}/discovery-site/${PREFIX}-directory.xml pointing at discovery jar: ${project.build.directory}/discovery-site/plugins/${central.discovery.jar.renamed}</echo>
+				<echo level="verbose">Generate ${project.build.directory}/discovery-site/${PREFIX}-directory.xml pointing at discovery jar: ${project.build.directory}/discovery-site/plugins/${central.discovery.jar.renamed}</echo>
 				<echo file="${project.build.directory}/discovery-site/${PREFIX}-directory.xml">&lt;?xml version='1.0' encoding='UTF-8'?>
 &lt;directory xmlns="http://www.eclipse.org/mylyn/discovery/directory/">
 &lt;entry url="plugins/${central.discovery.jar.renamed}" permitCategories="true"/>
