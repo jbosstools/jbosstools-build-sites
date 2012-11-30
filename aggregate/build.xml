@@ -532,7 +532,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 	</target>
 
 	<!-- adds download.stats properties to specified features and 
-		 <property name='p2.statsURI' value='https://devstudio.jboss.com/usage/juno/4.0.0.Beta1/'/>
+		 <property name='p2.statsURI' value='http://download.jboss.org/jbosstools/usage/installs/..'/>
 
 		 To tet, pass in commandline flags:
 			 mvn install \
@@ -543,10 +543,11 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		<antcallback target="get.update.site.properties" return="update.site.name,update.site.version"/>
 		 <!-- TODO: externalize these to maven vars / Jenkins vars ? -->
 		<var name="SOURCE_REPO" value="${update.site.source.dir}"/>
-		<!--<var name="STATS_SERVER" value="http://localhost:8080/usage"/> -->
-		<var name="STATS_SERVER" value="http://download.jboss.org/jbosstools/usage"/>
+		<!--<var name="STATS_SERVER" value="http://localhost:8080/usage/installs"/> -->
+		<var name="STATS_SERVER" value="http://download.jboss.org/jbosstools/usage/installs"/>
 		<var name="TARGET_FOLDER" value="${JBT_VERSION}/${BUILD_ALIAS}/${JOB_NAME}/${update.site.version}/"/>
 		<var name="install" value=""/>
+		<!-- TODO: JBIDE-12432 support use of a properties file that lists specific features to track, rather than tracking all features? -->
 		<for param="featureJar">
 			<path>
 				<fileset dir="${SOURCE_REPO}/features" includes="*.jar" />
