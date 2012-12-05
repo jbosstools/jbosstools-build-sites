@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# DEPRECATED. See build.xml in this folder which can now enable p2 stats for all the aggregate sites here
+
 # to enable debugging set to "echo"; to disable set to ":"
 debug=":"
 
@@ -19,7 +21,7 @@ BUILD_HOME=${HOME}/testbuildhome
 SOURCE_REPO=/tmp/testartifactrepo/
 
 TARGET_PLATFORM=juno
-TARGET_FOLDER=4.0.0.Beta1
+TARGET_FOLDER=4.0.0.Final
 
 # get artifacts jar to work on
 unzip -oq ~/truu/product/site/target/site_assembly.zip -d ${SOURCE_REPO}
