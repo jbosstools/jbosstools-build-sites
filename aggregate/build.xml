@@ -42,7 +42,7 @@
 	</condition>
 	<property file="${associate.properties}" />
 	<echo level="verbose">Loaded associate sites from ${associate.properties}</echo>
-	<property name="web.content.files" value="index.html, web/*.css, README*, *directory.xml, site.xml, site.properties" />
+	<property name="web.content.files" value="index.html, web/*.css, README*, *directory.xml, site.xml, category.xml, site.properties" />
 	
 	<property name="target.zip" value="${project.build.directory}/site_assembly.zip"/>
 
@@ -696,6 +696,17 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 	<target name="transform.site.xml">
 		<!-- turn site.xml into site.html via site.xsl -->
 		<delete quiet="true" file="${update.site.source.dir}/site.html" />
+		<if>
+			<and>
+				<available file="${update.site.source.dir}/category.xml" />
+				<not>
+					<available file="${update.site.source.dir}/site.xml" />
+				</not>
+			</and>
+			<then>
+				<copy file="${update.site.source.dir}/category.xml" tofile="${update.site.source.dir}/site.xml"/>
+			</then>
+		</if>
 		<xslt style="site.xsl" in="${update.site.source.dir}/site.xml" out="${update.site.source.dir}/site.html" force="true">
 			<classpath location="${COMMON_TOOLS}/saxon.jar" />
 		</xslt>
