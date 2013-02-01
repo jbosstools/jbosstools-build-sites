@@ -162,19 +162,7 @@
 		<category name="AbridgedTools" />
 		<category name="MavenTools" />
 	</feature>
-	<feature url="features/org.jboss.tools.maven.jaxrs.feature_0.0.0.jar" id="org.jboss.tools.maven.jaxrs.feature" version="0.0.0">
-		<category name="AbridgedTools" />
-		<category name="MavenTools" />
-	</feature>
 	<feature url="features/org.jboss.tools.maven.jdt.feature_0.0.0.jar" id="org.jboss.tools.maven.jdt.feature" version="0.0.0">
-		<category name="AbridgedTools" />
-		<category name="MavenTools" />
-	</feature>
-	<feature url="features/org.jboss.tools.maven.jpa.feature_0.0.0.jar" id="org.jboss.tools.maven.jpa.feature" version="0.0.0">
-		<category name="AbridgedTools" />
-		<category name="MavenTools" />
-	</feature>
-	<feature url="features/org.jboss.tools.maven.jsf.feature_0.0.0.jar" id="org.jboss.tools.maven.jsf.feature" version="0.0.0">
 		<category name="AbridgedTools" />
 		<category name="MavenTools" />
 	</feature>
@@ -317,17 +305,11 @@
 	</feature>
 	<feature url="features/org.jboss.tools.maven.hibernate.feature.source_0.0.0.jar" id="org.jboss.tools.maven.hibernate.feature.source" version="0.0.0">
 	</feature>
-	<feature url="features/org.jboss.tools.maven.jsf.feature.source_0.0.0.jar" id="org.jboss.tools.maven.jsf.feature.source" version="0.0.0">
-	</feature>
 	<feature url="features/org.jboss.tools.maven.portlet.feature.source_0.0.0.jar" id="org.jboss.tools.maven.portlet.feature.source" version="0.0.0">
 	</feature>
 	<feature url="features/org.jboss.tools.maven.seam.feature.source_0.0.0.jar" id="org.jboss.tools.maven.seam.feature.source" version="0.0.0">
 	</feature>
 	<feature url="features/org.jboss.tools.maven.project.examples.feature.source_0.0.0.jar" id="org.jboss.tools.maven.project.examples.feature.source" version="0.0.0">
-	</feature>
-	<feature url="features/org.jboss.tools.maven.jaxrs.feature.source_0.0.0.jar" id="org.jboss.tools.maven.jaxrs.feature.source" version="0.0.0">
-	</feature>
-	<feature url="features/org.jboss.tools.maven.jpa.feature.source_0.0.0.jar" id="org.jboss.tools.maven.jpa.feature.source" version="0.0.0">
 	</feature>
 	<feature url="features/org.jboss.tools.maven.jdt.feature.source_0.0.0.jar" id="org.jboss.tools.maven.jdt.feature.source" version="0.0.0">
 	</feature>
