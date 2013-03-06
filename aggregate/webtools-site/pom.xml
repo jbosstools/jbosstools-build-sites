@@ -11,7 +11,7 @@
 	<artifactId>org.jboss.tools.site.webtools</artifactId>
 	<version>4.0.0-SNAPSHOT</version>
 	<name>JBoss Tools - Web Tools Site</name>
-	<packaging>eclipse-update-site</packaging>
+	<packaging>eclipse-repository</packaging>
 	<!-- to test output, use:
 		mvn install \
 		-DJOB_NAME=jbosstools-4.0_trunk.webtools.aggregate \
@@ -26,8 +26,11 @@
 				<version>1.7</version>
 				<executions>
 					<execution>
-						<id>install</id>
-						<phase>install</phase>
+						<!-- Most of it already performed by generate-facade mojo
+					    We need to remove from the Ant file what's already done.
+					    Temporarily, we can run both Mojo + Ant -->
+						<id>add-content</id>
+						<phase>package</phase>
 						<configuration>
 							<quiet>true</quiet>
 							<target>
