@@ -10,7 +10,7 @@
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.soa-tooling.site</artifactId>
 	<name>JBoss Tools - SOA Tooling Site</name>
-	<packaging>eclipse-update-site</packaging>
+	<packaging>eclipse-repository</packaging>
 	<build>
 		<plugins>
 			<plugin>
@@ -19,8 +19,11 @@
 				<version>1.7</version>
 				<executions>
 					<execution>
-						<id>install</id>
-						<phase>install</phase>
+						<!-- Most of it already performed by generate-facade mojo
+					    We need to remove from the Ant file what's already done.
+					    Temporarily, we can run both Mojo + Ant -->
+						<id>add-content</id>
+						<phase>package</phase>
 						<configuration>
 							<quiet>true</quiet>
 							<target>
