@@ -4,25 +4,28 @@
 	<parent>
 		<groupId>org.jboss.tools</groupId>
 		<artifactId>parent</artifactId>
-		<version>4.1.0.Alpha1-SNAPSHOT</version>
-		<relativePath>../parent/pom.xml</relativePath>
+		<version>4.1.0.Alpha2-SNAPSHOT</version>
+		<relativePath>../../jbosstools-build/parent/pom.xml</relativePath>
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site</artifactId>
+	<version>4.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
-	<!-- Use -P maximum profile -->
 
 	<modules>
 		<module>site</module>
 	</modules>
+		
+	
 	<!-- to build an individual site, use this:
 
-		mvn clean install -f site/pom.xml -Dcollect.zips.skip
-		mvn clean install -f soa-site/pom.xml -Dcollect.zips.skip
-		mvn clean install -f webtools-site/pom.xml
-		mvn clean install -f coretests-site/pom.xml
-		mvn clean install -f soatests-site/pom.xml
+		mvn clean install -f webtools-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
+
+		mvn clean install -f site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite,unified.target,maximum
+		mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
+		
+		mvn clean install -f soa-site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
+		mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
 		...
 
 	     to build against local sources, use these properties:
