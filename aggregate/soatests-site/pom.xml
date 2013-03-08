@@ -5,13 +5,16 @@
 	<parent>
 		<groupId>org.jboss.tools</groupId>
 		<artifactId>org.jboss.tools.site</artifactId>
-		<version>4.1.0.Alpha1-SNAPSHOT</version>
+		<version>4.1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site.soa-tooling.tests</artifactId>
 	<version>4.0.0-SNAPSHOT</version>
-	<name>JBoss Tools - SOA Tooling Tests Site</name>
-	<packaging>eclipse-update-site</packaging>
+	<name>JBoss Tools - Integration Stack Tests Site</name>
+	<packaging>eclipse-repository</packaging>
+	
+	<!-- DEPRECATED. See https://github.com/jbosstools/jbosstools-integration-stack/tree/master/aggregate-site -->
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -20,8 +23,11 @@
 				<version>1.7</version>
 				<executions>
 					<execution>
-						<id>install</id>
-						<phase>install</phase>
+						<!-- Most of it already performed by generate-facade mojo
+					    We need to remove from the Ant file what's already done.
+					    Temporarily, we can run both Mojo + Ant -->
+						<id>add-content</id>
+						<phase>package</phase>
 						<configuration>
 							<quiet>true</quiet>
 							<target>
@@ -30,8 +36,8 @@
 									<property name="output.dir" value="${basedir}" />
 									<property name="inputRepo"
 										value="${jbosstools-nightly-staging-composite-soa-tooling}" />
-									<property name="update.site.name" value="JBoss Tools - SOA Tooling Tests"/>
-									<property name="JBT_VERSION" value="${JBT_VERSION}" />
+									<property name="update.site.name" value="JBoss Tools - Integration Stack Tests"/>
+									<property name="JBT_VERSION" value="${project.version}" />
 									<property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
 								</ant>
 							</target>
@@ -82,5 +88,10 @@
 		</plugins>
 	</build>
 
-	<!-- Use -P jbosstools-nightly-staging-composite-soa-tooling profile -->
+	<!-- 
+		mvn install -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
+		-DJOB_NAME=jbosstools-build-sites.aggregate.soatests-site_master \
+		-DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 \
+		-DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
+	-->
 </project>

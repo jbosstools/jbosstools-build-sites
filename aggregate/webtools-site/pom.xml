@@ -5,19 +5,12 @@
 	<parent>
 		<groupId>org.jboss.tools</groupId>
 		<artifactId>org.jboss.tools.site</artifactId>
-		<version>4.1.0.Alpha1-SNAPSHOT</version>
+		<version>4.1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site.webtools</artifactId>
-	<version>4.0.0-SNAPSHOT</version>
 	<name>JBoss Tools - Web Tools Site</name>
-	<packaging>eclipse-update-site</packaging>
-	<!-- to test output, use:
-		mvn install \
-		-DJOB_NAME=jbosstools-4.0_trunk.webtools.aggregate \
-		-DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 -DJBT_VERSION=4.1.0 \
-		-DBUILD_ALIAS=Alpha1 -Dupdate.site.description="Stable Milestone"
-	-->
+	<packaging>eclipse-repository</packaging>
 	<build>
 		<plugins>
 			<plugin>
@@ -26,8 +19,11 @@
 				<version>1.7</version>
 				<executions>
 					<execution>
-						<id>install</id>
-						<phase>install</phase>
+						<!-- Most of it already performed by generate-facade mojo
+					    We need to remove from the Ant file what's already done.
+					    Temporarily, we can run both Mojo + Ant -->
+						<id>add-content</id>
+						<phase>package</phase>
 						<configuration>
 							<quiet>true</quiet>
 							<target>
@@ -37,7 +33,7 @@
 									<property name="inputRepo"
 										value="${jbosstools-nightly-staging-composite}" />
 									<property name="update.site.name" value="JBoss Tools - Web Tools"/>
-									<property name="JBT_VERSION" value="${JBT_VERSION}" />
+									<property name="JBT_VERSION" value="${project.version}" />
 									<property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
 								</ant>
 							</target>
@@ -56,27 +52,27 @@
 					<dependency>
 						<groupId>org.apache.ant</groupId>
 						<artifactId>ant</artifactId>
-						<version>1.7.1</version>
+						<version>1.8.2</version>
 					</dependency>
 					<dependency>
 						<groupId>org.apache.ant</groupId>
 						<artifactId>ant-nodeps</artifactId>
-						<version>1.7.1</version>
+						<version>1.8.1</version>
 					</dependency>
 					<dependency>
 						<groupId>org.apache.ant</groupId>
 						<artifactId>ant-trax</artifactId>
-						<version>1.7.1</version>
+						<version>1.8.0</version>
 					</dependency>
 					<dependency>
 						<groupId>org.apache.ant</groupId>
 						<artifactId>ant-commons-net</artifactId>
-						<version>1.7.1</version>
+						<version>1.8.2</version>
 					</dependency>
 					<dependency>
 						<groupId>org.apache.ant</groupId>
 						<artifactId>ant-apache-regexp</artifactId>
-						<version>1.7.1</version>
+						<version>1.8.2</version>
 					</dependency>
 					<dependency>
 						<groupId>ant-contrib</groupId>
@@ -88,5 +84,10 @@
 		</plugins>
 	</build>
 
-	<!-- Use -Pjbosstools-nightly-staging-composite profile -->
+	<!-- 
+		mvn install -Pjbosstools-nightly-staging-composite,unified.target,maximum \
+		-DJOB_NAME=jbosstools-build-sites.aggregate.webtools-site_master \
+		-DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 \
+		-DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
+	-->
 </project>
