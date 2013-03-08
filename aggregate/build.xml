@@ -47,7 +47,7 @@
 	<property name="target.zip" value="${project.build.directory}/site_assembly.zip"/>
 
 	<target name="init">
-		<echo>
+		<echo level="verbose">
 This script requires Ant 1.8+ and JDK 1.6+.
 -------------------------------------------
 $ant.version = ${ant.version}
@@ -484,6 +484,9 @@ To:
 
 	<target name="check.target">
 
+		<!-- clean -SNAPSHOT off JBT_VERSION, so we can just pull the value from the project instead of hardcoding it -->
+		<propertyregex property="VERSION" defaultvalue="${JBT_VERSION}" input="${JBT_VERSION}" regexp="-SNAPSHOT" replace="" override="true" />
+
 		<!-- support eclipse-repository (new) and eclipse-update-site (old): put category.xml in correct folder -->
 		<if>
 			<available file="${project.build.directory}/category.xml" type="file"/>
@@ -545,7 +548,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		<var name="SOURCE_REPO" value="${update.site.source.dir}"/>
 		<!--<var name="STATS_SERVER" value="http://localhost:8080/usage/installs"/> -->
 		<var name="STATS_SERVER" value="http://download.jboss.org/jbosstools/usage/installs"/>
-		<var name="TARGET_FOLDER" value="${JBT_VERSION}/${BUILD_ALIAS}/${JOB_NAME}/${update.site.version}/"/>
+		<var name="TARGET_FOLDER" value="${VERSION}/${BUILD_ALIAS}/${JOB_NAME}/${update.site.version}/"/>
 		<var name="install" value=""/>
 		<!-- TODO: JBIDE-12432 support use of a properties file that lists specific features to track, rather than tracking all features? -->
 		<for param="featureJar">
@@ -604,8 +607,8 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 						<isset property="BUILD_ALIAS" />
 					</and>
 					<then>
-						<propertyregex override="true" property="update.site.version" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(_.*?)\.(.*?)\.*aggregate" replace="${JBT_VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}" />
-						<propertyregex override="true" property="update.site.versionstring" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(_.*?)\.(.*?)\.*aggregate" replace=": ${JBT_VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}.\4" />
+						<propertyregex override="true" property="update.site.version" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(_.*?)\.(.*?)\.*aggregate" replace="${VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}" />
+						<propertyregex override="true" property="update.site.versionstring" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(_.*?)\.(.*?)\.*aggregate" replace=": ${VERSION}.${BUILD_ALIAS}-${BUILD_TS}-B${BUILD_NUMBER}.\4" />
 					</then>
 					<else>
 						<propertyregex override="true" property="update.site.version" defaultvalue="${JOB_NAME}" input="${JOB_NAME}" regexp="(jboss|soa)tools-([0-9x.]+)(.*).aggregate" replace="\2.${BUILD_TS}-B${BUILD_NUMBER}" />
