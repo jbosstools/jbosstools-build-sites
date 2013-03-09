@@ -117,36 +117,6 @@ $java.home = ${java.home}</echo>
 				</else>
 			</if>
 
-			<echo level="verbose">Fetch SVN_REVISION.txt if it exists (return 8 if not found)</echo>
-			<var name="svnRevTXT" value="${aggregate.zips.dir}/SVN_REVISION.txt" />
-			<if>
-				<contains string="${location.cleaned}" substring=":/" />
-				<then>
-					<!-- <exec executable="wget" dir="${aggregate.zips.dir}" failonerror="false" failifexecutionfails="false" resultproperty="wget.return" outputproperty="null">
-						<arg line="${location.cleaned}/logs/SVN_REVISION.txt -q - -no-clobber - -tries=3" />
-					</exec> -->
-					<get src="${location.cleaned}/logs/SVN_REVISION.txt" dest="${aggregate.zips.dir}/SVN_REVISION.txt" retries="3" usetimestamp="true" ignoreerrors="true" />
-				</then>
-				<else>
-					<copy todir="${aggregate.zips.dir}" failonerror="false" file="${location.cleaned}/logs/SVN_REVISION.txt" />
-				</else>
-			</if>
-
-			<echo level="verbose">Fetch SVN_REVISION.xml if it exists (return 8 if not found)</echo>
-			<var name="svnRevXML" value="${aggregate.zips.dir}/SVN_REVISION.xml" />
-			<if>
-				<contains string="${location.cleaned}" substring=":/" />
-				<then>
-					<!-- <exec executable="wget" dir="${aggregate.zips.dir}" failonerror="false" failifexecutionfails="false" resultproperty="wget.return" outputproperty="null">
-						<arg line="${location.cleaned}/logs/SVN_REVISION.xml -q - -no-clobber - -tries=3" />
-					</exec> -->
-					<get src="${location.cleaned}/logs/SVN_REVISION.xml" dest="${aggregate.zips.dir}/SVN_REVISION.xml" retries="3" usetimestamp="true" ignoreerrors="true" />
-				</then>
-				<else>
-					<copy todir="${aggregate.zips.dir}" failonerror="false" file="${location.cleaned}/logs/SVN_REVISION.xml" />
-				</else>
-			</if>
-
 			<echo level="verbose">Fetch build.properties if it exists (return 8 if not found)</echo>
 			<var name="buildProperties" value="${aggregate.zips.dir}/build.properties" />
 			<if>
@@ -188,9 +158,6 @@ $java.home = ${java.home}</echo>
 								<sequential>
 									<propertyregex override="true" property="relativePath" defaultvalue="" input="@{zipPath}" regexp="(.+)/([^/]+\.zip)" replace="\1" />
 
-									<propertyregex override="true" property="svnrevPath" defaultvalue="" input="@{zipPath}" regexp=".zip" replace=".SVN_REVISION" />
-									<propertyregex override="true" property="svnrevPath" defaultvalue="${svnrevPath}" input="${svnrevPath}" regexp="-Sources-|-Update-" replace="-" />
-
 									<propertyregex override="true" property="buildPropertiesPath" defaultvalue="" input="@{zipPath}" regexp=".zip" replace=".build.properties" />
 									<propertyregex override="true" property="buildPropertiesPath" defaultvalue="${buildPropertiesPath}" input="${buildPropertiesPath}" regexp="-Sources-|-Update-" replace="-" />
 
@@ -200,7 +167,6 @@ $java.home = ${java.home}</echo>
 									<!-- fetch zips to local dir -->
 									<echo level="verbose">repoNum = @{repoNum}
 relativePath = ${relativePath}
-svnrevPath = ${svnrevPath}
 buildPropertiesPath = ${buildPropertiesPath}
 zipPath = @{zipPath}
 DEST = ${aggregate.zips.dir}/@{zipPath}
@@ -283,19 +249,6 @@ To:
 										</then>
 									</if>
 
-									<!-- rename the svn and build properties files so they align with the zip names -->
-									<if>
-										<available file="${svnRevTXT}" type="file" />
-										<then>
-											<copy file="${svnRevTXT}" tofile="${aggregate.zips.dir}/${svnrevPath}.txt" />
-										</then>
-									</if>
-									<if>
-										<available file="${svnRevXML}" type="file" />
-										<then>
-											<copy file="${svnRevXML}" tofile="${aggregate.zips.dir}/${svnrevPath}.xml" />
-										</then>
-									</if>
 									<if>
 										<available file="${buildProperties}" type="file" />
 										<then>
@@ -305,7 +258,6 @@ To:
 								</sequential>
 							</for>
 							<var name="relativePath" unset="true" />
-							<var name="svnrevPath" unset="true" />
 							<var name="buildPropertiesPath" unset="true" />
 						</then>
 					</if>
@@ -318,9 +270,8 @@ To:
 			</if>
 			<var name="location.cleaned" unset="true" />
 			<delete quiet="true">
-				<fileset dir="${aggregate.zips.dir}" includes="zip.list.txt, SVN_REVISION.txt, SVN_REVISION.xml, build.properties" />
+				<fileset dir="${aggregate.zips.dir}" includes="zip.list.txt, build.properties" />
 			</delete>
-			<var name="svnRevFile" unset="true" />
 		</sequential>
 	</macrodef>
 
@@ -808,7 +759,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		<delete dir="${aggregate.zips.dir}" quiet="true" />
 	</target>
 
-	<target name="collect.metadata" description="collect svn revision info + other metadata (JOB_NAME, BUILD_ID, BUILD_NUMBER, WORKSPACE, HUDSON_SLAVE), zip file names+sizes+md5sums">
+	<target name="collect.metadata" description="collect metadata (JOB_NAME, BUILD_ID, BUILD_NUMBER, WORKSPACE, HUDSON_SLAVE), zip file names+sizes+md5sums">
 		<property name="aggregate.zips.dir" value="${output.dir}/zips" />
 		<mkdir dir="${aggregate.zips.dir}" />
 		<!-- load file properties (name, size, md5sum) -->
@@ -823,121 +774,6 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		<for param="propsfile">
 			<path>
 				<fileset dir="${aggregate.zips.dir}" includes="*.build.properties.txt, **/*.build.properties.txt" />
-			</path>
-			<sequential>
-				<!-- load properties file using a prefix which relates to the associated prop file -->
-				<propertyregex override="true" property="prefix" defaultvalue="" input="@{propsfile}" regexp=".+/([^/]+\.build\.properties)\.txt" replace="\1" />
-				<echo level="verbose">Read ${prefix} from @{propsfile}</echo>
-
-				<property file="@{propsfile}" prefix="${prefix}" />
-
-				<!-- now load SVN revs -->
-				<propertyregex override="true" property="svnrevTXT" defaultvalue="" input="@{propsfile}" regexp="\.build\.properties\.txt" replace=".SVN_REVISION.txt" />
-				<propertyregex override="true" property="svnrevXML" defaultvalue="" input="@{propsfile}" regexp="\.build\.properties\.txt" replace=".SVN_REVISION.xml" />
-				<if>
-					<available file="${svnrevXML}" type="file" />
-					<then>
-						<!-- XML way: load into .revision.module and .revision.revision -->
-						<xmlproperty file="${svnrevXML}" collapseAttributes="true" prefix="${prefix}" keeproot="false" />
-						<!-- purge the "<changeSet><kind>" entry if present -->
-						<if>
-							<isset property="${prefix}.kind" />
-							<then>
-								<var name="${prefix}.kind" unset="true" />
-							</then>
-						</if>
-
-						<!-- TXT way: load into .SVN_REVISION -->
-						<if>
-							<and>
-								<isset property="${prefix}.revision.module" />
-								<isset property="${prefix}.revision.revision" />
-							</and>
-							<then>
-								<propertycopy from="${prefix}.revision.module" property="temprm.all" override="true" />
-								<propertycopy from="${prefix}.revision.revision" property="temprr.all" override="true" />
-								<var name="i" value="0" />
-								<for list="${temprm.all}" delimiter=", " param="module">
-									<sequential>
-										<math result="i" operand1="1" operation="+" operand2="${i}" datatype="int" />
-										<var name="j" value="0" />
-										<for list="${temprr.all}" delimiter=", " param="revision">
-											<sequential>
-												<math result="j" operand1="1" operation="+" operand2="${j}" datatype="int" />
-												<if>
-													<equals arg1="${i}" arg2="${j}" />
-													<then>
-														<var name="temprr" value="@{revision}" />
-														<if>
-															<isset property="${prefix}.SVN_REVISION" />
-															<then>
-																<propertycopy from="${prefix}.SVN_REVISION" property="temp.all" override="true" />
-																<var name="${prefix}.SVN_REVISION" value="${temp.all},@{module}@${temprr}" />
-																<var name="temp.all" unset="true" />
-															</then>
-															<else>
-																<var name="${prefix}.SVN_REVISION" value="@{module}@${temprr}" />
-															</else>
-														</if>
-														<var name="temprr" unset="true" />
-													</then>
-												</if>
-											</sequential>
-										</for>
-										<var name="j" unset="true" />
-									</sequential>
-								</for>
-								<var name="i" unset="true" />
-								<var name="temprm.all" unset="true" />
-								<var name="temprr.all" unset="true" />
-							</then>
-						</if>
-					</then>
-					<elseif>
-						<available file="${svnrevTXT}" type="file" />
-						<then>
-							<!-- TXT way: load into .SVN_REVISION -->
-							<loadfile property="${prefix}.SVN_REVISION" srcFile="${svnrevTXT}" />
-							<propertycopy from="${prefix}.SVN_REVISION" property="temp" />
-							<propertyregex override="true" property="temp" defaultvalue="${temp}" input="${temp}" regexp="[ \n\t]+" replace="," />
-							<propertyregex override="true" property="${prefix}.SVN_REVISION" defaultvalue="${temp}" input="${temp}" regexp=",$" replace="" />
-
-							<!-- XML way: load into .revision.module and .revision.revision -->
-							<for list="${temp}" delimiter="," param="pair">
-								<sequential>
-									<propertyregex override="true" property="temprm" defaultvalue="@{pair}" input="@{pair}" regexp="(.+)@(.+)" replace="\1" />
-									<propertyregex override="true" property="temprr" defaultvalue="@{pair}" input="@{pair}" regexp="(.+)@(.+)" replace="\2" />
-									<if>
-										<isset property="${prefix}.revision.module" />
-										<then>
-											<propertycopy from="${prefix}.revision.module" property="temprm.all" override="true" />
-											<propertycopy from="${prefix}.revision.revision" property="temprr.all" override="true" />
-											<var name="${prefix}.revision.module" value="${temprm.all},${temprm}" />
-											<var name="${prefix}.revision.revision" value="${temprr.all},${temprr}" />
-											<var name="temprm.all" unset="true" />
-											<var name="temprr.all" unset="true" />
-										</then>
-										<else>
-											<var name="${prefix}.revision.module" value="${temprm}" />
-											<var name="${prefix}.revision.revision" value="${temprr}" />
-										</else>
-									</if>
-									<var name="temprm" unset="true" />
-									<var name="temprr" unset="true" />
-								</sequential>
-							</for>
-							<var name="temp" unset="true" />
-						</then>
-					</elseif>
-				</if>
-
-				<var name="prefix" unset="true" />
-			</sequential>
-
-		</for>
-		<for param="svnrevfile">
-			<path>
-				<fileset dir="${aggregate.zips.dir}" includes="*.SVN_REVISION.txt, **/*.SVN_REVISION.txt" />
 			</path>
 			<sequential>
 				<!-- load properties file using a prefix which relates to the associated prop file -->
@@ -966,7 +802,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 	</target>
 
 	<!-- TODO: write this method -->
-	<target name="create.summary.file" description="create summary file with list of generated files, sizes, and SVN revisions all linked and ordered by source build job">
+	<target name="create.summary.file" description="create summary file with list of generated files, and sizes all linked and ordered by source build job">
 	</target>
 
 	<target name="test.create.summary.file" depends="test.collect.zips,test.collect.metadata">
