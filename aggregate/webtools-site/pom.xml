@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>org.jboss.tools</groupId>
 	<artifactId>org.jboss.tools.site.webtools</artifactId>
-	<name>JBoss Tools - Web Tools Site</name>
+	<name>JBoss Tools - Web Tools</name>
 	<packaging>eclipse-repository</packaging>
 	<build>
 		<plugins>
@@ -32,10 +32,23 @@
 									<property name="output.dir" value="${basedir}" />
 									<property name="inputRepo"
 										value="${jbosstools-nightly-staging-composite}" />
-									<property name="update.site.name" value="JBoss Tools - Web Tools"/>
+									<property name="update.site.name" value="${project.name}"/>
 									<property name="JBT_VERSION" value="${project.version}" />
 									<property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
 								</ant>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>copy-repo-zip</id>
+						<phase>integration-test</phase>
+						<configuration>
+							<quiet>true</quiet>
+							<target>
+								<copy file="${basedir}/target/${project.artifactId}-${project.version}.zip" tofile="${basedir}/target/site_assembly.zip"/>
 							</target>
 						</configuration>
 						<goals>
@@ -81,6 +94,32 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<!-- TODO: enable this once we have a way to suppress uncategorized an uninstallable features
+			<plugin>
+				<groupId>org.jboss.tools.tycho-plugins</groupId>
+				<artifactId>repository-utils</artifactId>
+				<version>0.16.0.CR1</version>
+				<executions>
+					<execution>
+					<id>generate-facade</id>
+					<phase>package</phase>
+					<goals>
+						<goal>generate-repository-facade</goal>
+					</goals>
+					<configuration>
+						<associateSites>
+							<associateSite>http://download.jboss.org/jbosstools/updates/kepler/</associateSite>
+							<associateSite>http://download.jboss.org/jbosstools/updates/development/kepler/</associateSite>
+						</associateSites>
+						<symbols>
+							<update.site.name>${project.name}</update.site.name>
+							<update.site.version>${project.version}</update.site.version>
+							<target.eclipse.version>4.3 (Kepler)</target.eclipse.version>
+						</symbols>
+					</configuration>
+					</execution>
+				</executions>
+			</plugin> -->
 		</plugins>
 	</build>
 
