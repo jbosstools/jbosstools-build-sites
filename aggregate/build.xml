@@ -1,4 +1,21 @@
 <project default="custom.build" name="jbosstools aggregate site build.xml">
+
+	<!-- TODO JBIDE-11065: migrate these steps to maven mojo:
+
+	add.repo.properties :: use org.eclipse.wtp.releng.tools.addRepoProperties to add p2.statsURI and download.stats properties for a list of features
+
+	remove.uncategorized.category
+
+	remove.uninstallable (eg., central discovery feature)
+
+	collect.zips :: look for http://download.jboss.org/jbosstools/builds/staging/<job_name>/logs/zip.list.txt; if found, load file get list of relative path zips to then fetch
+
+	collect.metadata :: collect metadata (JOB_NAME, BUILD_ID, BUILD_NUMBER, WORKSPACE, HUDSON_SLAVE), zip file names+sizes+md5sums
+
+	ensure that org.jboss.tools.site.webtools-4.1.0-SNAPSHOT.zip contents match site_assembly.zip contents, ie., 
+	<copy file="${basedir}/target/${project.artifactId}-${project.version}.zip" tofile="${basedir}/target/site_assembly.zip"/>
+	-->
+
 	<!--
 	To test output, run maven in this folder:
 		$ mvn install -DJOB_NAME=jbosstools-3.3_trunk.aggregate -DBUILD_ID=2011-09-19_19-10-45 -DBUILD_NUMBER=6969 -DJBT_VERSION=3.3.99 -DBUILD_ALIAS=M7 -Dupdate.site.description="Stable Milestone"
@@ -33,6 +50,7 @@
 		<available file="${project.build.directory}/site" type="dir" />
 	</condition>
 
+	<!-- BEGIN DEPRECATED: this can now be done via mojo -->
 	<!-- load properties from file -->
 	<condition property="associate.properties" value="${output.dir}/associate.properties">
 		<available file="${output.dir}/associate.properties" type="file" />
@@ -42,6 +60,7 @@
 	</condition>
 	<property file="${associate.properties}" />
 	<echo level="verbose">Loaded associate sites from ${associate.properties}</echo>
+	<!-- END DEPRECATED -->
 	<property name="web.content.files" value="index.html, web/*.css, README*, *directory.xml, site.xml, category.xml, site.properties" />
 	
 	<property name="target.zip" value="${project.build.directory}/site_assembly.zip"/>
@@ -66,6 +85,8 @@ $java.home = ${java.home}</echo>
 		<antcall target="get.saxon" />
 	</target>
 
+	<!-- TODO: disable remove.references and add.associate.sites (DEPRECATED: can be done via mojo) -->
+	<!-- <target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" /> -->
 	<target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.references,add.associate.sites,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" />
 	<target name="custom.build" description="JBT aggregate update site extra processing steps" depends="basic.build,collect.zips,collect.metadata,create.summary.file,cleanup" />
 
@@ -350,6 +371,7 @@ To:
 		</sequential>
 	</macrodef>
 
+	<!-- BEGIN DEPRECATED: this can now be done via mojo -->
 	<target name="add.associate.sites" if="associate.sites">
 		<if>
 			<and>
@@ -393,21 +415,27 @@ To:
 			</then>
 		</if>
 	</target>
+	<!-- END DEPRECATED -->
 
+	<!-- BEGIN DEPRECATED: this can now be done via mojo -->
 	<target name="remove.references">
 		<copy file="${update.site.source.dir}/content.xml" tofile="${update.site.source.dir}/content.old.xml" overwrite="true" />
 		<xslt style="remove-references.xsl" in="${update.site.source.dir}/content.old.xml" out="${update.site.source.dir}/content.xml" />
 	</target>
+	<!-- END DEPRECATED -->
 
+	<!-- TODO: implement this as a mojo -->
 	<target name="remove.uncategorized.category">
 		<copy file="${update.site.source.dir}/content.xml" tofile="${update.site.source.dir}/content.old.xml" overwrite="true" />
 		<xslt style="remove-uncategorized.xsl" in="${update.site.source.dir}/content.old.xml" out="${update.site.source.dir}/content.xml" />
 	</target>
 
+	<!-- BEGIN DEPRECATED: this will no longer be relevant when Central discovery features (and plugins) are removed from the sites -->
 	<target name="remove.uninstallable">
 		<copy file="${update.site.source.dir}/content.xml" tofile="${update.site.source.dir}/content.old.xml" overwrite="true" />
 		<xslt style="remove-uninstallable.xsl" in="${update.site.source.dir}/content.old.xml" out="${update.site.source.dir}/content.xml" />
 	</target>
+	<!-- END DEPRECATED -->
 
 	<target name="unpack.content.jar">
 		<if>
@@ -433,8 +461,19 @@ To:
 		<zip destfile="${target.zip}" update="true" basedir="${update.site.source.dir}" includes="content.*, ${web.content.files}" />
 	</target>
 
-	<target name="check.target">
+	<!-- support eclipse-repository (new) and eclipse-update-site (old): rename central.site-1.1.0-SNAPSHOT.zip to site_assembly.zip to be compatible with publish.sh script -->
+	<target name="copy.to.site_assembly.zip">
+		<if>
+			<not><available file="${project.build.directory}/site_assembly.zip" type="file"/></not>
+			<then>
+				<move tofile="${project.build.directory}/site_assembly.zip">
+					<fileset dir="${project.build.directory}" includes="*.zip" excludes="site.zip, site_assembly.zip"/>
+				</move>
+			</then>
+		</if>
+	</target>
 
+	<target name="check.target">
 		<!-- clean -SNAPSHOT off JBT_VERSION, so we can just pull the value from the project instead of hardcoding it -->
 		<propertyregex property="VERSION" defaultvalue="${JBT_VERSION}" input="${JBT_VERSION}" regexp="-SNAPSHOT" replace="" override="true" />
 
@@ -445,15 +484,8 @@ To:
 				<move file="${project.build.directory}/category.xml" tofile="${update.site.source.dir}/category.xml" />
 			</then>
 		</if>
-		<!-- support eclipse-repository (new) and eclipse-update-site (old): rename central.site-1.1.0-SNAPSHOT.zip to site_assembly.zip to be compatible with publish.sh script -->
-		<if>
-			<not><available file="${project.build.directory}/site_assembly.zip" type="file"/></not>
-			<then>
-				<move tofile="${project.build.directory}/site_assembly.zip">
-					<fileset dir="${project.build.directory}" includes="*.zip" excludes="site.zip, site_assembly.zip"/>
-				</move>
-			</then>
-		</if>
+
+		<antcall target="copy.to.site_assembly.zip"/>
 
 		<if>
 			<not>
@@ -477,6 +509,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		</if>
 	</target>
 
+	<!-- TODO: implement this as a mojo -->
 	<target name="install.releng.tools" depends="get.eclipse">
 		<!-- install releng tools; want more verbose output? use -consolelog -debug -console -->
 		<exec executable="${eclipseDir}/eclipse" failonerror="true" dir="${eclipseDir}" timeout="300000" taskname="p2">
@@ -493,6 +526,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 			-DJOB_NAME=jbosstools-4.0_trunk.webtools.aggregate \
 			-DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 -DJBT_VERSION=4.1.0 -DBUILD_ALIAS=Alpha1
 	-->
+	<!-- TODO: implement this as a mojo -->
 	<target name="add.repo.properties" depends="install.releng.tools" description="use org.eclipse.wtp.releng.tools.addRepoProperties to add p2.statsURI and download.stats properties for a list of features">
 		<antcallback target="get.update.site.properties" return="update.site.name,update.site.version"/>
 		 <!-- TODO: externalize these to maven vars / Jenkins vars ? -->
