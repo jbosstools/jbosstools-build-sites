@@ -42,6 +42,7 @@
 							<goal>run</goal>
 						</goals>
 					</execution>
+					<!-- TODO: enable this as a conditional step - only if a matching zip exists
 					<execution>
 						<id>copy-repo-zip</id>
 						<phase>integration-test</phase>
@@ -55,6 +56,7 @@
 							<goal>run</goal>
 						</goals>
 					</execution>
+				-->
 				</executions>
 				<dependencies>
 					<dependency>
