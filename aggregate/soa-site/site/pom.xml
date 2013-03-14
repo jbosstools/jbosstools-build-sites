@@ -11,11 +11,22 @@
 	<artifactId>org.jboss.tools.soa-tooling.site</artifactId>
 	<name>JBoss Tools - Integration Stack Site</name>
 	<packaging>eclipse-repository</packaging>
-	
+
 	<!-- DEPRECATED. See https://github.com/jbosstools/jbosstools-integration-stack/tree/master/aggregate-site -->
-	
+
 	<build>
 		<plugins>
+		    <plugin>
+				<groupId>org.jboss.tools.tycho-plugins</groupId>
+        		<artifactId>repository-utils</artifactId>
+        		<configuration>
+        		    <associateSites>
+        		        <site>http://download.jboss.org/jbosstools/updates/juno/soa-tooling/</site>
+        		        <site>http://download.jboss.org/jbosstools/updates/juno/</site>
+        		        <site>http://download.jboss.org/jbosstools/updates/stable/juno/</site>
+        		    </associateSites>
+        		</configuration>
+		    </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -87,7 +98,7 @@
 		</plugins>
 	</build>
 
-	<!-- 
+	<!--
 		mvn install -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum \
 		-Dcollect.zips.skip \
 		-DJOB_NAME=jbosstools-build-sites.aggregate.soa-site_master \
