@@ -12,14 +12,14 @@
 
 	collect.metadata :: collect metadata (JOB_NAME, BUILD_ID, BUILD_NUMBER, WORKSPACE, HUDSON_SLAVE), zip file names+sizes+md5sums
 
-	ensure that org.jboss.tools.site.webtools-4.1.0-SNAPSHOT.zip contents match site_assembly.zip contents, ie., 
+	ensure that org.jboss.tools.site.webtools-4.1.0-SNAPSHOT.zip contents match site_assembly.zip contents, ie.,
 	<copy file="${basedir}/target/${project.artifactId}-${project.version}.zip" tofile="${basedir}/target/site_assembly.zip"/>
 	-->
 
 	<!--
 	To test output, run maven in this folder:
 		$ mvn install -DJOB_NAME=jbosstools-3.3_trunk.aggregate -DBUILD_ID=2011-09-19_19-10-45 -DBUILD_NUMBER=6969 -DJBT_VERSION=3.3.99 -DBUILD_ALIAS=M7 -Dupdate.site.description="Stable Milestone"
-		
+
 	Or, to run just the ant script:
 		$ cd ~/tru/build/aggregate/webtools-site; ant basic.build -f ../build.xml -Doutput.dir=`pwd`
 		$ cd ~/tru/build/aggregate/site; ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=http://download.jboss.org/jbosstools/builds/staging/_composite_/core/trunk/
@@ -50,19 +50,8 @@
 		<available file="${project.build.directory}/site" type="dir" />
 	</condition>
 
-	<!-- BEGIN DEPRECATED: this can now be done via mojo -->
-	<!-- load properties from file -->
-	<condition property="associate.properties" value="${output.dir}/associate.properties">
-		<available file="${output.dir}/associate.properties" type="file" />
-	</condition>
-	<condition property="associate.properties" value="${output.dir}/../associate.properties">
-		<available file="${output.dir}/../associate.properties" type="file" />
-	</condition>
-	<property file="${associate.properties}" />
-	<echo level="verbose">Loaded associate sites from ${associate.properties}</echo>
-	<!-- END DEPRECATED -->
 	<property name="web.content.files" value="index.html, web/*.css, README*, *directory.xml, site.xml, category.xml, site.properties" />
-	
+
 	<property name="target.zip" value="${project.build.directory}/site_assembly.zip"/>
 
 	<target name="init">
@@ -85,9 +74,7 @@ $java.home = ${java.home}</echo>
 		<antcall target="get.saxon" />
 	</target>
 
-	<!-- TODO: disable remove.references and add.associate.sites (DEPRECATED: can be done via mojo) -->
-	<!-- <target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" /> -->
-	<target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.references,add.associate.sites,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" />
+	<target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" />
 	<target name="custom.build" description="JBT aggregate update site extra processing steps" depends="basic.build,collect.zips,collect.metadata,create.summary.file,cleanup" />
 
 	<target name="get.ant-contrib" unless="ant-contrib.jar.exists">
@@ -111,7 +98,7 @@ $java.home = ${java.home}</echo>
 	</target>
 
 	<!-- = = = = = = = = = = = = = = = = =
-          macrodef: fetchZipsFromList - given a list of zips in zip.list.txt, fetch those zips           
+          macrodef: fetchZipsFromList - given a list of zips in zip.list.txt, fetch those zips
          = = = = = = = = = = = = = = = = = -->
 	<macrodef name="fetchZipsFromList">
 		<attribute name="repo" default="" />
@@ -208,7 +195,7 @@ DEST = ${aggregate.zips.dir}/@{zipPath}
 													<!-- <exec executable="wget" dir="${aggregate.zips.dir}/${relativePath}" failonerror="false" failifexecutionfails="false" resultproperty="wget.return" outputproperty="null">
 														<arg line="${location.cleaned}/@{zipPath} -q - -no-clobber - -tries=3" />
 													</exec> -->
-													<!-- <echo>&lt;get&gt; From: 
+													<!-- <echo>&lt;get&gt; From:
 * $location.cleaned: ${location.cleaned}
 * @zipPath: @{zipPath}
 To:
@@ -217,7 +204,7 @@ To:
 * @zipPath: @{zipPath}
 </echo> -->
 													<!--
-     [echo] <get> From: 
+     [echo] <get> From:
      [echo] * $location.cleaned: http://download.jboss.org/jbosstools/builds/staging/jbosstools-3.3_trunk.component- -archives
      [echo] * @zipPath: all/jbosstools-3.3_trunk.component- -archives-Update-SNAPSHOT.zip
      [echo] To:
@@ -371,58 +358,6 @@ To:
 		</sequential>
 	</macrodef>
 
-	<!-- BEGIN DEPRECATED: this can now be done via mojo -->
-	<target name="add.associate.sites" if="associate.sites">
-		<if>
-			<and>
-				<!-- Defined in associate.sites -->
-				<isset property="associate.sites" />
-				<not>
-					<equals arg1="${associate.sites}" arg2="" />
-				</not>
-			</and>
-			<then>
-				<!-- counter variable -->
-				<var name="associate.sites.0" value="" />
-				<for param="associate.site" list="${associate.sites}" delimiter=", 
-	">
-					<sequential>
-						<var name="associate.sites.0" value="${associate.sites.0}00" />
-					</sequential>
-				</for>
-				<length property="associate.sites.length" string="${associate.sites.0}" />
-
-				<loadfile srcfile="${update.site.source.dir}/content.xml" property="content.xml">
-					<filterchain>
-						<tailfilter lines="-1" skip="1" />
-					</filterchain>
-				</loadfile>
-				<echo file="${update.site.source.dir}/content.xml" message="${content.xml}" />
-				<echo file="${update.site.source.dir}/content.xml" append="true">  &lt;references size='${associate.sites.length}'>
-</echo>
-				<for param="associate.site" list="${associate.sites}" delimiter=", 
-	">
-					<sequential>
-						<!-- insert into content.xml -->
-						<echo file="${update.site.source.dir}/content.xml" append="true">    &lt;repository uri='@{associate.site}' url='@{associate.site}' type='0' options='1'/>
-    &lt;repository uri='@{associate.site}' url='@{associate.site}' type='1' options='1'/>
-</echo>
-					</sequential>
-				</for>
-				<echo file="${update.site.source.dir}/content.xml" append="true">  &lt;/references>
-&lt;/repository>
-</echo>
-			</then>
-		</if>
-	</target>
-	<!-- END DEPRECATED -->
-
-	<!-- BEGIN DEPRECATED: this can now be done via mojo -->
-	<target name="remove.references">
-		<copy file="${update.site.source.dir}/content.xml" tofile="${update.site.source.dir}/content.old.xml" overwrite="true" />
-		<xslt style="remove-references.xsl" in="${update.site.source.dir}/content.old.xml" out="${update.site.source.dir}/content.xml" />
-	</target>
-	<!-- END DEPRECATED -->
 
 	<!-- TODO: implement this as a mojo -->
 	<target name="remove.uncategorized.category">
@@ -515,10 +450,10 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		<exec executable="${eclipseDir}/eclipse" failonerror="true" dir="${eclipseDir}" timeout="300000" taskname="p2">
 			<arg line=" -application org.eclipse.equinox.p2.director -nosplash -installIUs org.eclipse.wtp.releng.tools.feature.feature.group" />
 			<arg line=" -repository http://download.eclipse.org/webtools/releng/repository/" />
-		</exec>		
+		</exec>
 	</target>
 
-	<!-- adds download.stats properties to specified features and 
+	<!-- adds download.stats properties to specified features and
 		 <property name='p2.statsURI' value='http://download.jboss.org/jbosstools/usage/installs/..'/>
 
 		 To tet, pass in commandline flags:
@@ -562,9 +497,9 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 	</target>
 
 	<target name="get.update.site.properties">
-		<!-- 
+		<!--
 		Properties calculated here
-			from ${JOB_NAME} = jbosstools-3.2.0.M1.aggregate get 3.2.0.M1  
+			from ${JOB_NAME} = jbosstools-3.2.0.M1.aggregate get 3.2.0.M1
 			from ${BUILD_ID} and ${BUILD_NUMBER}, get .${BUILD_ID}-B${BUILD_NUMBER}
 			default update.site.description=Nightly Build
 			default update.site.versionstring=(null)
@@ -609,30 +544,6 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 	</target>
 
 	<target name="add.web.content">
-		<antcallback target="get.update.site.properties" return="update.site.name,update.site.description,update.site.version,update.site.versionstring"/>
-
-		<!-- get site.xml as HTML, then load into ${site.contents} in order to merge into index.html -->
-		<antcallback target="transform.site.xml" return="site.contents" />
-
-		<antcallback target="generate.site.properties" return="site.properties.html"/>
-		
-		<antcallback target="generate.directory.xml" return="directory.xml.html"/>
-		
-	        <condition property="index-template.html" value="${output.dir}/index-template.html" else="${basedir}/index-template.html">
-        	        <available file="${output.dir}/index-template.html" />
-	        </condition>
-		<copy todir="${output.dir}" overwrite="true">
-			<fileset file="${index-template.html}" />
-			<mapper type="merge" to="index.html" />
-			<filterchain>
-				<expandproperties />
-				<replacetokens>
-					<token key="DIRECTORY.XML" value="${directory.xml.html}"/>
-					<token key="SITE.PROPERTIES" value="${site.properties.html}"/>
-				</replacetokens>
-			</filterchain>
-		</copy>
-
 		<copy todir="${update.site.source.dir}" overwrite="true">
 			<fileset dir="${basedir}" includes="${web.content.files}" />
 		</copy>
@@ -641,75 +552,10 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 		</copy>
 
 		<!-- use updated site.xml instead of version with 0.0.0 -->
-		<move file="${update.site.source.dir}/site.out.xml" tofile="${update.site.source.dir}/site.xml" overwrite="true"/>
-
+		
+		<!-- TODO: make sure that the resulting category.xml file doesn't contain 0.0.0 but the generated values -->
 	</target>
-
-	<target name="generate.site.properties">
-		<!-- turn site.xml into site.properties -->
-		<delete quiet="true" file="${update.site.source.dir}/site.properties" />
-		<xslt style="site.properties.xsl" in="${update.site.source.dir}/site.xml" out="${update.site.source.dir}/site.properties" force="true">
-			<classpath location="${COMMON_TOOLS}/saxon.jar" />
-		</xslt>
-		<var name="site.properties.html" value=":: &lt;a href=&quot;site.properties&quot; style=&quot;font-size:x-small&quot;&gt;site.properties&lt;/a&gt;"/>
-	</target>
-
-	<target name="generate.directory.xml">
-	<!-- get filename matching org.jboss.tools.central.discovery_1.0.0.v20111013-0511-M4.jar, then generate replacement directory.xml file -->
-	<path id="central.discovery.jar.id">
-		<fileset dir="${update.site.source.dir}/plugins">
-			<include name="org.jboss.tools.central.discovery_*.jar" />
-			<include name="org.jboss.tools.central.discovery.soa-tooling_*.jar" />
-		</fileset>
-	</path>
-	<property name="central.discovery.path" refid="central.discovery.jar.id" />
-	<basename property="central.discovery.jar" file="${central.discovery.path}" />
-	<var name="directory.xml.html" value=""/>
-	<if>
-		<not>
-			<equals arg1="${central.discovery.path}" arg2="" trim="true" />
-		</not>
-		<then>
-			<echo level="verbose">Generate ${output.dir}/jbosstools-directory.xml pointing at discovery jar: plugins/${central.discovery.jar}</echo>
-			<echo file="${output.dir}/jbosstools-directory.xml">&lt;?xml version='1.0' encoding='UTF-8'?>
-&lt;directory xmlns="http://www.eclipse.org/mylyn/discovery/directory/">
-&lt;entry url="plugins/${central.discovery.jar}" permitCategories="true"/>
-&lt;/directory>
-</echo>
-		<var name="directory.xml.html" value=":: &lt;a href=&quot;jbosstools-directory.xml&quot; style=&quot;font-size:x-small&quot;&gt;jbosstools-directory.xml&lt;/a&gt;"/>
-		</then>
-	</if>
-	</target>
-
-	<target name="transform.site.xml">
-		<!-- turn site.xml into site.html via site.xsl -->
-		<delete quiet="true" file="${update.site.source.dir}/site.html" />
-		<if>
-			<and>
-				<available file="${update.site.source.dir}/category.xml" />
-				<not>
-					<available file="${update.site.source.dir}/site.xml" />
-				</not>
-			</and>
-			<then>
-				<copy file="${update.site.source.dir}/category.xml" tofile="${update.site.source.dir}/site.xml"/>
-			</then>
-		</if>
-		<xslt style="site.xsl" in="${update.site.source.dir}/site.xml" out="${update.site.source.dir}/site.html" force="true">
-			<classpath location="${COMMON_TOOLS}/saxon.jar" />
-		</xslt>
-		<!-- merge contents of site.html into index.html, then remove site.html -->
-		<loadfile property="site.contents" srcfile="${update.site.source.dir}/site.html" failonerror="false" />
-		<property name="site.contents" value="" />
-		<delete file="${update.site.source.dir}/site.html" quiet="true" />
-
-		<!-- update site.xml to replace 0.0.0 with actual versions -->
-		<xslt style="site.xml.xsl" in="${update.site.source.dir}/site.xml" out="${update.site.source.dir}/site.out.xml" force="true">
-			<classpath location="${COMMON_TOOLS}/saxon.jar" />
-		</xslt>
-	</target>
-
-	<!-- look for http://download.jboss.org/jbosstools/builds/staging/jbosstools-3.*/logs/zip.list.txt; 
+	<!-- look for http://download.jboss.org/jbosstools/builds/staging/jbosstools-3.*/logs/zip.list.txt;
 	if found, load file and use ${ALL_ZIPS} to get list of relative path zips to fetch -->
 	<target name="collect.zips" description="collect zips from the sites we aggregated" unless="collect.zips.skip">
 		<property name="aggregate.zips.dir" value="${output.dir}/zips" />
