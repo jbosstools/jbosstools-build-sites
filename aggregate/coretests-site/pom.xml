@@ -11,17 +11,29 @@
   <artifactId>org.jboss.tools.site.core.tests</artifactId>
   <name>JBoss Tools - Core Tests</name>
   <packaging>eclipse-repository</packaging>
+  <properties>
+      <update.site.name>${project.name}</update.site.name>
+  </properties>
   <build>
     <plugins>
       <plugin>
         <groupId>org.jboss.tools.tycho-plugins</groupId>
         <artifactId>repository-utils</artifactId>
-        <configuration>
-          <symbols>
-            <update.site.name>${project.name}</update.site.name>
-            <update.site.version>${project.version} (${buildQualifier})</update.site.version>
-          </symbols>
-        </configuration>
+        <executions>
+          <execution>
+            <id>generate-facade</id>
+            <phase>package</phase>
+            <goals>
+              <goal>generate-repository-facade</goal>
+            </goals>
+            <configuration>
+              <symbols>
+                <update.site.name>${update.site.name}</update.site.name>
+                <update.site.description>${update.site.description}</update.site.description>
+              </symbols>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -29,7 +41,7 @@
         <version>1.7</version>
         <executions>
           <execution>
-              <!-- Most of it already performed by generate-facade mojo
+            <!-- Most of it already performed by generate-facade mojo
               We need to remove from the Ant file what's already done.
               Temporarily, we can run both Mojo + Ant -->
             <id>add-content</id>
@@ -41,7 +53,6 @@
                 <ant antfile="build.xml" target="basic.build" dir="../">
                   <property name="output.dir" value="${basedir}" />
                   <property name="inputRepo" value="${jbosstools-nightly-staging-composite}" />
-                  <property name="update.site.name" value="${project.name}"/>
                   <property name="update.site.version" value="${project.version}" />
                   <property name="update.site.qualifier" value="${buildQualifier}"/>
                   <property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
