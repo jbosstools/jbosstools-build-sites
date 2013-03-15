@@ -30,6 +30,7 @@
           </associateSites>
           <symbols>
             <update.site.name>${project.name}</update.site.name>
+            <update.site.version>${project.version} (${buildQualifier})</update.site.version>
             <target.eclipse.version>4.2 (Juno)</target.eclipse.version>
           </symbols>
         </configuration>
@@ -51,10 +52,10 @@
                 <!-- called AFTER generating update site + zip to add in extra content -->
                 <ant antfile="build.xml" target="basic.build" dir="../">
                   <property name="output.dir" value="${basedir}" />
-                  <property name="inputRepo"
-                    value="${jbosstools-nightly-staging-composite-soa-tooling}" />
+                  <property name="inputRepo" value="${jbosstools-nightly-staging-composite-soa-tooling}" />
                   <property name="update.site.name" value="${project.name}"/>
-                  <property name="JBT_VERSION" value="${project.version}" />
+                  <property name="update.site.version" value="${project.version}" />
+                  <property name="update.site.qualifier" value="${buildQualifier}"/>
                   <property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
                 </ant>
               </target>
