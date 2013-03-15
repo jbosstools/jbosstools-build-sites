@@ -12,7 +12,7 @@
   <name>JBoss Tools - Integration Stack</name>
   <packaging>eclipse-repository</packaging>
 
-  <!-- DEPRECATED. See https://github.com/jbosstools/jbosstools-integration-stack/tree/master/aggregate-site -->
+  <!-- DEPRECATED. See https://github.com/jbosstools/jbosstools-integration-stack/tree/master/jbosstools/site -->
 
   <build>
     <plugins>
