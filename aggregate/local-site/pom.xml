@@ -12,32 +12,32 @@
 	<packaging>pom</packaging>
 	<modules>
 		<!--
-		<module>../../../build/parent</module>
-		<module>../../../build/target-platforms</module>
+		<module>../../../jbosstools-build/parent</module>
+		<module>../../../jbosstools-target-platforms</module>
 		-->
 
-		<module>../../../base</module>
-		<module>../../../server</module>
-		<module>../../../openshift</module>
-		<module>../../../webservices</module>
-		<module>../../../gwt</module>
+		<module>../../../jbosstools-base</module>
+		<module>../../../jbosstools-server</module>
+		<module>../../../jbosstools-openshift</module>
+		<module>../../../jbosstools-webservices</module>
+		<module>../../../jbosstools-gwt</module>
 
-		<module>../../../forge</module>
-		<module>../../../freemarker</module>
-		<module>../../../hibernate</module>
-		<module>../../../birt</module>
-		<module>../../../jst</module>
+		<module>../../../jbosstools-forge</module>
+		<module>../../../jbosstools-freemarker</module>
+		<module>../../../jbosstools-hibernate</module>
+		<module>../../../jbosstools-birt</module>
+		<module>../../../jbosstools-jst</module>
 
-		<module>../../../xulrunner</module>
-		<module>../../../vpe</module>
-		<module>../../../javaee</module>
-		<module>../../../portlet</module>
-		<module>../../../central</module>
+		<module>../../../jbosstools-xulrunner</module>
+		<module>../../../jbosstools-vpe</module>
+		<module>../../../jbosstools-javaee</module>
+		<module>../../../jbosstools-portlet</module>
+		<module>../../../jbosstools-central</module>
 
 		<!--
-		<module>../../../build-sites/aggregate/webtools-site</module>
-		<module>../../../build-sites/aggregate/site</module>
-		<module>../../../build-sites/aggregate/coretests-site</module>
+		<module>../../../jbosstools-build-sites/aggregate/webtools-site</module>
+		<module>../../../jbosstools-build-sites/aggregate/site</module>
+		<module>../../../jbosstools-build-sites/aggregate/coretests-site</module>
 		-->
 	</modules>
 </project>

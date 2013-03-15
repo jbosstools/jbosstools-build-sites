@@ -1,93 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.jboss.tools</groupId>
-		<artifactId>org.jboss.tools.site</artifactId>
-		<version>4.1.0-SNAPSHOT</version>
-	</parent>
-	<groupId>org.jboss.tools</groupId>
-	<artifactId>org.jboss.tools.site.core.tests</artifactId>
-	<name>JBoss Tools - Core Tests Site</name>
-	<packaging>eclipse-repository</packaging>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-					    <!-- Most of it already performed by generate-facade mojo
-					    We need to remove from the Ant file what's already done.
-					    Temporarily, we can run both Mojo + Ant -->
-						<id>add-content</id>
-						<phase>package</phase>
-						<configuration>
-							<quiet>true</quiet>
-							<target>
-								<!-- called AFTER generating update site + zip to add in extra content -->
-								<ant antfile="build.xml" target="basic.build" dir="../">
-									<property name="output.dir" value="${basedir}" />
-									<property name="inputRepo"
-										value="${jbosstools-nightly-staging-composite}" />
-									<property name="update.site.name" value="JBoss Tools - Core Tests"/>
-									<property name="JBT_VERSION" value="${project.version}" />
-									<property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
-								</ant>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>commons-net</groupId>
-						<artifactId>commons-net</artifactId>
-						<version>1.4.1</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.ant</groupId>
-						<artifactId>ant</artifactId>
-						<version>1.8.2</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.ant</groupId>
-						<artifactId>ant-nodeps</artifactId>
-						<version>1.8.1</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.ant</groupId>
-						<artifactId>ant-trax</artifactId>
-						<version>1.8.0</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.ant</groupId>
-						<artifactId>ant-commons-net</artifactId>
-						<version>1.8.2</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.ant</groupId>
-						<artifactId>ant-apache-regexp</artifactId>
-						<version>1.8.2</version>
-					</dependency>
-					<dependency>
-						<groupId>ant-contrib</groupId>
-						<artifactId>ant-contrib</artifactId>
-						<version>1.0b3</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss.tools</groupId>
+    <artifactId>org.jboss.tools.site</artifactId>
+    <version>4.1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>org.jboss.tools</groupId>
+  <artifactId>org.jboss.tools.site.core.tests</artifactId>
+  <name>JBoss Tools - Core Tests</name>
+  <packaging>eclipse-repository</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jboss.tools.tycho-plugins</groupId>
+        <artifactId>repository-utils</artifactId>
+        <configuration>
+          <symbols>
+            <update.site.name>${project.name}</update.site.name>
+            <update.site.version>${project.version} (${buildQualifier})</update.site.version>
+          </symbols>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+              <!-- Most of it already performed by generate-facade mojo
+              We need to remove from the Ant file what's already done.
+              Temporarily, we can run both Mojo + Ant -->
+            <id>add-content</id>
+            <phase>package</phase>
+            <configuration>
+              <quiet>true</quiet>
+              <target>
+                <!-- called AFTER generating update site + zip to add in extra content -->
+                <ant antfile="build.xml" target="basic.build" dir="../">
+                  <property name="output.dir" value="${basedir}" />
+                  <property name="inputRepo" value="${jbosstools-nightly-staging-composite}" />
+                  <property name="update.site.name" value="${project.name}"/>
+                  <property name="update.site.version" value="${project.version}" />
+                  <property name="update.site.qualifier" value="${buildQualifier}"/>
+                  <property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
+                </ant>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>1.4.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.8.2</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-nodeps</artifactId>
+            <version>1.8.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-trax</artifactId>
+            <version>1.8.0</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-commons-net</artifactId>
+            <version>1.8.2</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-apache-regexp</artifactId>
+            <version>1.8.2</version>
+          </dependency>
+          <dependency>
+            <groupId>ant-contrib</groupId>
+            <artifactId>ant-contrib</artifactId>
+            <version>1.0b3</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
 
-	<!-- 
-		mvn install -Pjbosstools-nightly-staging-composite,unified.target,maximum \
-		-DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_master \
-		-DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 \
-		-DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
-	-->
+  <!--
+    mvn install -Pjbosstools-nightly-staging-composite,unified.target,maximum \
+    -DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_master \
+    -DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 \
+    -DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
+  -->
 </project>
