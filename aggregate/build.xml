@@ -18,7 +18,7 @@
 
   <!--
   To test output, run maven in this folder:
-    $ mvn install -DJOB_NAME=jbosstools-3.3_trunk.aggregate -DBUILD_ID=2011-09-19_19-10-45 -DBUILD_NUMBER=6969 -DJBT_VERSION=3.3.99 -DBUILD_ALIAS=M7 -Dupdate.site.description="Stable Milestone"
+    $ mvn install -DJOB_NAME=jbosstools-build-sites.aggregate.webtools-site_41 -DBUILD_ID=2011-09-19_19-10-45 -DBUILD_NUMBER=69 -DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
 
   Or, to run just the ant script:
     $ cd ~/tru/build/aggregate/webtools-site; ant basic.build -f ../build.xml -Doutput.dir=`pwd`
@@ -449,7 +449,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
      To test, pass in commandline flags:
        mvn install \
       -DJOB_NAME=jbosstools-4.0_trunk.webtools.aggregate \
-      -DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 -DJBT_VERSION=4.1.0 -DBUILD_ALIAS=Alpha1
+      -DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 -Dupdate.site.version=4.1.0 -DBUILD_ALIAS=Alpha1
   -->
   <!-- TODO: implement this as a mojo -->
   <target name="add.repo.properties" depends="install.releng.tools" description="use org.eclipse.wtp.releng.tools.addRepoProperties to add p2.statsURI and download.stats properties for a list of features">
