@@ -12,8 +12,8 @@
 
   collect.metadata :: collect metadata (JOB_NAME, BUILD_ID, BUILD_NUMBER, WORKSPACE, HUDSON_SLAVE), zip file names+sizes+md5sums
 
-  ensure that org.jboss.tools.site.webtools-4.1.0-SNAPSHOT.zip contents match site_assembly.zip contents, ie.,
-  <copy file="${basedir}/target/${project.artifactId}-${project.version}.zip" tofile="${basedir}/target/site_assembly.zip"/>
+  create.results.html :: generate a results.html from a template + a bunch of variables, which links to test results, metadata, target platforms. Page is then copied into build folder when publish.sh runs from a job w/ .aggregate in the name
+
   -->
 
   <!--
@@ -634,6 +634,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
     <if>
       <and>
         <isset property="JOB_NAME"/>
+        <contains string="${JOB_NAME}" substring=".aggregate" />
         <isset property="update.site.description"/>
         <isset property="TARGET_PLATFORM_VERSION_MAXIMUM"/>
       </and>
@@ -693,7 +694,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 
       </then>
       <else>
-        <echo>Skip generating results.html: update.site.description, JOB_NAME and TARGET_PLATFORM_VERSION_MAXIMUM are not set.</echo>
+        <echo level="verbose">Skip generating results.html: update.site.description, JOB_NAME and TARGET_PLATFORM_VERSION_MAXIMUM are not set.</echo>
       </else>
     </if>
   </target>
