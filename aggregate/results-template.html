@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>JBoss Tools - Core - Nightly Build: ${qualifier}</title>
+<title>JBoss Tools - Core - ${update.site.description_STRING}: ${update.site.qualifier}</title>
 <style>
 @import url("http://download.jboss.org/jbosstools/updates/web/site.css");
 </style>
@@ -29,7 +29,7 @@
 					</td>
 					<td align="right"><small>
 						<a id="buildName" href="http://hudson.jboss.org/hudson/job/${JOB_NAME}/${BUILD_NUMBER_STRING}/">
-						<span style="font-size: x-small;">Build ${qualifier}</span>
+						<span style="font-size: x-small;">Build ${update.site.qualifier}</span>
 						</a>
 					</td>
 				</tr>
@@ -43,7 +43,7 @@
 	<tr>
 <td colspan="3">
 <div style="background-color:#eeeecc; width:880px;padding:10px;margin:0px;padding-top:0px;margin-top:0px;border:1px #aaaaaa solid;z-index:1;position:relative;float:left">
-<h2 class="prime">JBoss Tools - ${update.site.description_STRING}: ${qualifier}
+<h2 class="prime">JBoss Tools - ${update.site.description_STRING}: ${update.site.qualifier}
 	</span></h2>
 
     <ul>
@@ -74,27 +74,27 @@
 			<a class="blue" style="align: right;" href="http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/${JOB_NAME}/lastBuild/console">Lastest Console</a> (!)
 		</div>
 
-		<h4>SVN Revisions</h4>
+		<h4>Git Revision</h4>
 		<p>
-			<small>
-				<i>SVN Revision is for upstream <b>
-						<a class="blue" href="http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.aggregate/">jbosstools-4.0${STREAM_SUFFIX}.aggregate</a>
+			<!-- <small>
+				<i>Git Revisions are from latest <b>
+						<a class="blue" href="https://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/${JOB_NAME}/">${JOB_NAME}</a>
 					</b>
 					<br />
 job. Results are live, 
 not specific to this build.</i>
-			</small>
+			</small> -->
 		</p>
 		<div align="right">
-			<a class="blue" style="align: right;" href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-4.0${STREAM_SUFFIX}.aggregate/logs/">SVN Revision</a> (!)
+			<a class="blue" style="align: right;" href="logs/">Git Revision</a>
 		</div>
 
-		<h4>Target Platform: Juno SR0 (incl. Eclipse 4.2 + Web Tools 3.4)</h4>
+		<h4>Target Platforms: </h4>
 		<p>
 			<small>
-				<i>Target Platforms are built upstream via these jobs: <br />
+				<i>Target Platforms are built upstream via this job: <br />
 &nbsp;&nbsp;&nbsp;<b>
-						<a class="blue" href="http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.target-platform/">jbosstools-4.0${STREAM_SUFFIX}.target-platform</a>
+						<a class="blue" href="https://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/jbosstoolstargetplatforms-matrix/">jbosstoolstargetplatforms-matrix</a>
 					</b>
 					<br />
 				</i>
@@ -102,59 +102,23 @@ not specific to this build.</i>
 		</p>
 
 		<div align="right">
-			<a class="blue" style="align: right;" href="http://download.jboss.org/jbosstools/updates/target-platform_4.0.juno.SR0/">JBT Target Platform Update Site</a> (!)
+			JBT Target Platforms: <a class="blue" style="align: right;" href="http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${TARGET_PLATFORM_VERSION}">Min</a> &amp; <a class="blue" style="align: right;" href="http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${TARGET_PLATFORM_VERSION_MAXIMUM}">Max</a>
 		</div>
 		<div align="right">
-			<a class="blue" style="align: right;" href="http://anonsvn.jboss.org/repos/jbosstools/trunk/build/target-platform/unified.target">JBT Target Platform Definition File</a> (!)
+			JBT Target Platform Definitions: <a class="blue" style="align: right;" href="https://github.com/jbosstools/jbosstools-target-platforms/blob/${TARGET_PLATFORM_BRANCH}/jbosstools/multiple/jbosstools-multiple.target">Min</a> &amp; <a class="blue" style="align: right;" href="https://github.com/jbosstools/jbosstools-target-platforms/blob/${TARGET_PLATFORM_BRANCH_MAXIMUM}/jbosstools/multiple/jbosstools-multiple.target">Min</a>
 		</div>
 
 		<h4>Test Results</h4>
 		<p>
 			<small>
-				<i>Test results at <b style="font-weight:bold;font-size:12px">right</b> are for upstream <b>
-						<a class="blue" href="http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/">jbosstools-4.0${STREAM_SUFFIX}.tests</a>
-					</b>
-job. <br/>
-Test results <b style="font-weight:bold;font-size:12px">below</b> are cumulative across all jobs in the <a href="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}/">DevStudio_${STREAM_NAME} view</a></i>.<br/>
+Test results <b style="font-weight:bold;font-size:12px">below</b> are cumulative across all jobs in the <a href="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}">JBossTools_${STREAM_NAME}</a> view</i>.<br/>
 Results are live, not specific to this build. 
 			</small>
 		</p>
 
-<p>
-		<div style="float:right">
-		<a class="blue" style="align: right" href="http://hudson.jboss.org/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/test/?width=800&height=600"><img src="http://hudson.jboss.org/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/test/trend?width=300&height=120" border="0"></a>&nbsp;(!)
-		<br/>
-		<a class="blue" style="align: right" href="http://hudson.jboss.org/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/test/?width=800&height=600&failureOnly=true"><img src="http://hudson.jboss.org/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/test/trend?width=300&height=80&failureOnly=true" border="0"></a>&nbsp;(!)
-		<br/>
-		<a class="blue" style="align: right;" href="http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/lastCompletedBuild/testReport/">Unit test report</a> (!)
-		<br/>
-		<a class="blue" style="align: right;" href="http://hudson.jboss.org/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/ws/sources/*/tests/*.test/target/work/data/.metadata/.log">Unit test workspace logs</a> (!)
-		</div>
-
-	<img src="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}/portlet/dashboard_portlet_${PORTLET.1}/summaryGraph/png?width=600&height=440"/>
-	<br/>
-	<img src="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}/portlet/dashboard_portlet_${PORTLET.2}/summaryGraph/png?width=600&height=440"/>
+<p align="center">
+	<a href="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}/"><img border="0" src="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}/portlet/dashboard_portlet_${PORTLET.1}/summaryGraph/png?width=600&height=450"/></a>&nbsp;<a href="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}/"><img border="0" src="http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_${STREAM_NAME}/portlet/dashboard_portlet_${PORTLET.2}/summaryGraph/png?width=300&height=450"/></a>
 </p>
-
-			<h4>Test Coverage Results</h4>
-			<p>
-				<small>
-					<i>Test coverage is of upstream <b>
-							<a class="blue" href="http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/">jbosstools-4.0${STREAM_SUFFIX}.tests</a>
-						</b>
-						<br />
-job. Results are live, 
-not specific to this build.</i>
-				</small>
-			</p>
-			<div align="right">
-				<a class="blue" style="align: right;" href="http://hudson.jboss.org/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/ws/sources/build/reports/emma-coverage/target/">Test
-coverage results</a> (!)
-			</div>
-			<div align="right">
-				<a class="blue" style="align: right;" href="http://hudson.jboss.org/hudson/job/jbosstools-4.0${STREAM_SUFFIX}.tests/ws/sources/build/reports/emma-coverage/target/emma/">Coverage.es
-session files</a> (!)
-			</div>
 
 		<h4>WARNING</h4>
 

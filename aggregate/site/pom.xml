@@ -59,6 +59,10 @@
                   <property name="update.site.version" value="${project.version}" />
                   <property name="update.site.qualifier" value="${buildQualifier}"/>
                   <property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
+                  <!-- these are needed for generating results.xml -->
+                  <property name="update.site.description" value="${update.site.description}"/>
+                  <property name="TARGET_PLATFORM_VERSION" value="${TARGET_PLATFORM_VERSION}"/>
+                  <property name="TARGET_PLATFORM_VERSION_MAXIMUM" value="${TARGET_PLATFORM_VERSION-maximum}"/>
                 </ant>
               </target>
             </configuration>

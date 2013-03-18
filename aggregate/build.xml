@@ -74,7 +74,7 @@ $java.home = ${java.home}</echo>
     <antcall target="get.saxon" />
   </target>
 
-  <target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,cleanup" />
+  <target name="basic.build" description="JBT aggregate update site extra processing steps" depends="init,check.target,add.repo.properties,unpack.content.jar,remove.uncategorized.category,remove.uninstallable,add.web.content,pack.content.jar,pack.zip,create.results.html,cleanup" />
   <target name="custom.build" description="JBT aggregate update site extra processing steps" depends="basic.build,collect.zips,collect.metadata,create.summary.file,cleanup" />
 
   <target name="get.ant-contrib" unless="ant-contrib.jar.exists">
@@ -628,6 +628,74 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
     <property name="isTest" value="true" />
     <antcall target="collect.metadata">
     </antcall>
+  </target>
+
+  <target name="create.results.html">
+    <if>
+      <and>
+        <isset property="JOB_NAME"/>
+        <isset property="update.site.description"/>
+        <isset property="TARGET_PLATFORM_VERSION_MAXIMUM"/>
+      </and>
+      <then>
+        <propertyregex property="update.site.version" defaultvalue="${update.site.version}" input="${update.site.version}" regexp="-SNAPSHOT" replace="" override="true" />
+
+        <echo level="verbose">Generate index page for version = ${update.site.version}, qualifier = ${update.site.qualifier}</echo>
+
+        <condition property="BUILD_NUMBER_STRING" value="" else="${BUILD_NUMBER}">
+          <contains string="${BUILD_NUMBER}" substring="BUILD_NUMBER" />
+        </condition>
+        <condition property="BUILD_ALIAS_STRING" value="" else="${BUILD_ALIAS}">
+          <contains string="${BUILD_ALIAS}" substring="BUILD_ALIAS" />
+        </condition>
+
+        <property name="TARGET_PLATFORM_VERSION" value=""/>
+        <property name="TARGET_PLATFORM_VERSION_MAXIMUM" value=""/>
+        <propertyregex property="TARGET_PLATFORM_BRANCH" defaultvalue="${TARGET_PLATFORM_VERSION}" input="${TARGET_PLATFORM_VERSION}" regexp="([0-9]+\.[0-9]+)\..+" replace="\1.x" override="true" />
+        <propertyregex property="TARGET_PLATFORM_BRANCH_MAXIMUM" defaultvalue="${TARGET_PLATFORM_VERSION_MAXIMUM}" input="${TARGET_PLATFORM_VERSION_MAXIMUM}" regexp="([0-9]+\.[0-9]+)\..+" replace="\1.x" override="true" />
+
+        <echo level="verbose">Using target platform versions = ${TARGET_PLATFORM_VERSION}, ${TARGET_PLATFORM_VERSION_MAXIMUM}
+    From github branches = ${TARGET_PLATFORM_BRANCH}, ${TARGET_PLATFORM_BRANCH_MAXIMUM}</echo>
+
+        <!-- replace links to jobs w/ correct stream (eg., 4.0_stable_branch, 4.0_stable_branch or 4.0_trunk) -->
+        <propertyregex property="STREAM_SUFFIX" defaultvalue="_master" input="${JOB_NAME}" regexp=".+(_[^_]+)" replace="\1" override="true"/>
+
+        <propertyregex property="STREAM_NAME" defaultvalue="Trunk" input="${inputRepo}" regexp=".+[^/]+/([^/]+)/*" replace="\1" override="true"/>
+        <propertyregex property="STREAM_NAME" defaultvalue="${STREAM_NAME}" input="${STREAM_NAME}" regexp="trunk" replace="Trunk" override="true"/>
+
+        <echo level="verbose">For JOB_NAME = ${JOB_NAME} and ${inputRepo} got stream = ${STREAM_SUFFIX} and ${STREAM_NAME}</echo>
+
+        <condition property="update.site.description_STRING" value="Nightly Build" else="${update.site.description}">
+          <contains string="${update.site.description}" substring="update.site.description" />
+        </condition>
+        <condition property="WARNING" value="This nightly build is a direct build from SVN/CVS and is provided as-is with no guarantees. Be advised that while there is no prior proof, if this build sets fire to your computer, you were sufficiently warned!" else="This build has been deemed by the JBossTools team to be in good working condition. Please note that this build may be a developer release, and if so should be treated with slightly more understanding and care than a stable release. Please see the release notes on JIRA and/or Sourceforge for further information.">
+          <contains string="${update.site.description_STRING}" substring="Nightly"/>
+        </condition>
+
+        <!-- set IDs for the chart widgets from the views -->
+        <!-- tests trend chart -->
+        <condition property="PORTLET.1" value="20174" else="27842">
+          <contains string="${JOB_NAME}" substring="_41" />
+        </condition>
+        <!-- tests pie chart -->
+        <condition property="PORTLET.2" value="25688" else="23303">
+          <contains string="${JOB_NAME}" substring="_41" />
+        </condition>
+
+        <!-- use locally built files with relative paths -->
+        <copy todir="${project.build.directory}" overwrite="true">
+          <fileset file="results-template.html" />
+          <mapper type="merge" to="results.html" />
+          <filterchain>
+            <expandproperties />
+          </filterchain>
+        </copy>
+
+      </then>
+      <else>
+        <echo>Skip generating results.html: update.site.description, JOB_NAME and TARGET_PLATFORM_VERSION_MAXIMUM are not set.</echo>
+      </else>
+    </if>
   </target>
 
   <!-- TODO: write this method -->
