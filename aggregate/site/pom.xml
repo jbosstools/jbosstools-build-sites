@@ -56,7 +56,7 @@
                 <ant antfile="build.xml" target="custom.build" dir="../">
                   <property name="output.dir" value="${basedir}" />
                   <property name="inputRepo" value="${jbosstools-nightly-staging-composite}" />
-                  <property name="update.site.version" value="${project.version}" />
+                  <property name="project.version" value="${project.version}" />
                   <property name="update.site.qualifier" value="${buildQualifier}"/>
                   <property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
                   <!-- these are needed for generating results.xml -->
