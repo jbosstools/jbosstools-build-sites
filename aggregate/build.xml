@@ -410,7 +410,7 @@ To:
 
   <target name="check.target">
     <!-- clean -SNAPSHOT off update.site.version, so we can just pull the value from the project instead of hardcoding it -->
-    <propertyregex property="update.site.version" defaultvalue="${update.site.version}" input="${update.site.version}" regexp="-SNAPSHOT" replace="" override="true" />
+    <propertyregex property="update.site.version" defaultvalue="${project.version}" input="${project.version}" regexp="-SNAPSHOT" replace="" override="true" />
     <antcall target="copy.to.site_assembly.zip"/>
     <if>
       <not>
@@ -630,7 +630,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
     </antcall>
   </target>
 
-  <!-- this is copied verbatim to devstudio/product/site/build.xml -->
+  <!-- this method is the same in jbosstools-build-sites/aggregate/build.xml and in devstudio/product/site/build.xml -->
   <target name="create.results.html">
     <property name="input" value="results-template.html"/>
     <property name="output" value="results.html"/>
@@ -638,13 +638,14 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
     <if>
       <and>
         <isset property="JOB_NAME"/>
-        <contains string="${JOB_NAME}" substring=".aggregate" />
+        <or>
+          <contains string="${JOB_NAME}" substring=".aggregate" />
+          <contains string="${JOB_NAME}" substring=".product" />
+        </or>
         <isset property="update.site.description"/>
         <isset property="TARGET_PLATFORM_VERSION_MAXIMUM"/>
       </and>
       <then>
-        <propertyregex property="update.site.version" defaultvalue="${update.site.version}" input="${update.site.version}" regexp="-SNAPSHOT" replace="" override="true" />
-
         <echo level="verbose">Generate index page for version = ${update.site.version}, qualifier = ${update.site.qualifier}</echo>
 
         <condition property="BUILD_NUMBER_STRING" value="" else="${BUILD_NUMBER}">
@@ -685,6 +686,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
         </condition>
 
         <!-- use locally built files with relative paths -->
+        <echo level="verbose">Generate ${project.build.directory}/${output} from ${input}</echo>
         <copy todir="${project.build.directory}" overwrite="true">
           <fileset file="${input}" />
           <mapper type="merge" to="${output}" />
@@ -695,7 +697,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 
       </then>
       <else>
-        <echo level="verbose">Skip generating results.html: update.site.description, JOB_NAME and TARGET_PLATFORM_VERSION_MAXIMUM are not set.</echo>
+        <echo level="verbose">Skip generating results.html: update.site.description and TARGET_PLATFORM_VERSION_MAXIMUM are not set, and JOB_NAME does not contain .aggregate or .product.</echo>
       </else>
     </if>
   </target>
