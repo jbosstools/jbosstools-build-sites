@@ -630,7 +630,11 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
     </antcall>
   </target>
 
+  <!-- this is copied verbatim to devstudio/product/site/build.xml -->
   <target name="create.results.html">
+    <property name="input" value="results-template.html"/>
+    <property name="output" value="results.html"/>
+
     <if>
       <and>
         <isset property="JOB_NAME"/>
@@ -646,9 +650,6 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
         <condition property="BUILD_NUMBER_STRING" value="" else="${BUILD_NUMBER}">
           <contains string="${BUILD_NUMBER}" substring="BUILD_NUMBER" />
         </condition>
-        <condition property="BUILD_ALIAS_STRING" value="" else="${BUILD_ALIAS}">
-          <contains string="${BUILD_ALIAS}" substring="BUILD_ALIAS" />
-        </condition>
 
         <property name="TARGET_PLATFORM_VERSION" value=""/>
         <property name="TARGET_PLATFORM_VERSION_MAXIMUM" value=""/>
@@ -658,7 +659,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
         <echo level="verbose">Using target platform versions = ${TARGET_PLATFORM_VERSION}, ${TARGET_PLATFORM_VERSION_MAXIMUM}
     From github branches = ${TARGET_PLATFORM_BRANCH}, ${TARGET_PLATFORM_BRANCH_MAXIMUM}</echo>
 
-        <!-- replace links to jobs w/ correct stream (eg., 4.0_stable_branch, 4.0_stable_branch or 4.0_trunk) -->
+        <!-- replace links to jobs w/ correct stream (eg., _41, _master, _70, _trunk) -->
         <propertyregex property="STREAM_SUFFIX" defaultvalue="_master" input="${JOB_NAME}" regexp=".+(_[^_]+)" replace="\1" override="true"/>
 
         <propertyregex property="STREAM_NAME" defaultvalue="Trunk" input="${inputRepo}" regexp=".+[^/]+/([^/]+)/*" replace="\1" override="true"/>
@@ -685,8 +686,8 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 
         <!-- use locally built files with relative paths -->
         <copy todir="${project.build.directory}" overwrite="true">
-          <fileset file="results-template.html" />
-          <mapper type="merge" to="results.html" />
+          <fileset file="${input}" />
+          <mapper type="merge" to="${output}" />
           <filterchain>
             <expandproperties />
           </filterchain>

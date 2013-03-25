@@ -113,7 +113,7 @@
   </build>
 
   <!--
-    mvn install -Pjbosstools-nightly-staging-composite,unified.target,maximum -Dcollect.zips.skip \
+    mvn install -Pjbosstools-nightly-staging-composite,maximum -Dcollect.zips.skip \
     -DJOB_NAME=jbosstools-build-sites.aggregate.site_master \
     -DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 \
     -DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
