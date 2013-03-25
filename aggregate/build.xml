@@ -638,7 +638,10 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
     <if>
       <and>
         <isset property="JOB_NAME"/>
-        <contains string="${JOB_NAME}" substring=".aggregate" />
+        <or>
+          <contains string="${JOB_NAME}" substring=".aggregate" />
+          <contains string="${JOB_NAME}" substring=".product" />
+        </or>
         <isset property="update.site.description"/>
         <isset property="TARGET_PLATFORM_VERSION_MAXIMUM"/>
       </and>
@@ -695,7 +698,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 
       </then>
       <else>
-        <echo level="verbose">Skip generating results.html: update.site.description, JOB_NAME and TARGET_PLATFORM_VERSION_MAXIMUM are not set.</echo>
+        <echo level="verbose">Skip generating results.html: update.site.description and TARGET_PLATFORM_VERSION_MAXIMUM are not set, and JOB_NAME does not contain .aggregate or .product.</echo>
       </else>
     </if>
   </target>
