@@ -662,6 +662,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
 
         <!-- replace links to jobs w/ correct stream (eg., _41, _master, _70, _trunk) -->
         <propertyregex property="STREAM_SUFFIX" defaultvalue="_master" input="${JOB_NAME}" regexp=".+(_[^_]+)" replace="\1" override="true"/>
+        <propertyregex property="STREAM_SUFFIX" defaultvalue="_master" input="${STREAM_SUFFIX}" regexp="_trunk" replace="_master" override="true"/>
 
         <propertyregex property="STREAM_NAME" defaultvalue="Trunk" input="${inputRepo}" regexp=".+[^/]+/([^/]+)/*" replace="\1" override="true"/>
         <propertyregex property="STREAM_NAME" defaultvalue="${STREAM_NAME}" input="${STREAM_NAME}" regexp="trunk" replace="Trunk" override="true"/>
