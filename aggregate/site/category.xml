@@ -9,37 +9,31 @@
 
   <!-- only in JBDS
   <feature url="features/com.jboss.jbds.product.feature_0.0.0.jar" id="com.jboss.jbds.product.feature" version="0.0.0" patch="false">
-    <category name="AbridgedTools" />
-  </feature>
-  <feature url="features/com.jboss.jbds.central.discovery.feature_0.0.0.jar" id="com.jboss.jbds.central.discovery.feature" version="0.0.0">
+    <category name="BringYourOwnEclipse" />
+    <category name="CoreTools" />
   </feature>
   -->
 
   <feature url="features/org.jboss.tools.central.feature_0.0.0.jar" id="org.jboss.tools.central.feature" version="0.0.0">
   </feature>
-  <!-- only in JBT -->
-  <feature url="features/org.jboss.tools.community.central.feature_0.0.0.jar" id="org.jboss.tools.community.central.feature" version="0.0.0">
-    <category name="AbridgedTools" />
-    <category name="GeneralTools" />
-  </feature>
   <feature url="features/org.jboss.tools.richfaces.feature_0.0.0.jar" id="org.jboss.tools.richfaces.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.vpe.browsersim.feature_0.0.0.jar" id="org.jboss.tools.vpe.browsersim.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.jst.feature_0.0.0.jar" id="org.jboss.tools.jst.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.vpe.feature_0.0.0.jar" id="org.jboss.tools.vpe.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.jsf.feature_0.0.0.jar" id="org.jboss.tools.jsf.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
 
@@ -48,84 +42,90 @@
   <feature url="features/org.mozilla.xulrunner.feature_0.0.0.jar" id="org.mozilla.xulrunner.feature" version="0.0.0">  </feature>
 
   <feature url="features/org.jboss.tools.seam.feature_0.0.0.jar" id="org.jboss.tools.seam.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.cdi.feature_0.0.0.jar" id="org.jboss.tools.cdi.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.jboss.tools.cdi.seam.feature_0.0.0.jar" id="org.jboss.tools.cdi.seam.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.jboss.tools.cdi.deltaspike.feature_0.0.0.jar" id="org.jboss.tools.cdi.deltaspike.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.jboss.tools.jmx.feature_0.0.0.jar" id="org.jboss.tools.jmx.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.jboss.ide.eclipse.as.feature_0.0.0.jar" id="org.jboss.ide.eclipse.as.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.openshift.express.feature_0.0.0.jar" id="org.jboss.tools.openshift.express.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="CloudTools" />
   </feature>
   <feature url="features/org.jboss.tools.openshift.egit.integration.feature_0.0.0.jar" id="org.jboss.tools.openshift.egit.integration.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="CloudTools" />
   </feature>
+  
   <!-- only in JBDS
   <feature url="features/org.eclipse.egit_0.0.0.jar" id="org.eclipse.egit" version="0.0.0">
   </feature>
   <feature url="features/org.eclipse.jgit_0.0.0.jar" id="org.eclipse.jgit" version="0.0.0">
   </feature>
   -->
+  
   <feature url="features/org.jboss.ide.eclipse.archives.feature_0.0.0.jar" id="org.jboss.ide.eclipse.archives.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.hibernate.eclipse.feature_0.0.0.jar" id="org.hibernate.eclipse.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
     <category name="DataTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.jboss.ide.eclipse.freemarker.feature_0.0.0.jar" id="org.jboss.ide.eclipse.freemarker.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.jboss.tools.ws.feature_0.0.0.jar" id="org.jboss.tools.ws.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.ws.jaxrs.feature_0.0.0.jar" id="org.jboss.tools.ws.jaxrs.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.portlet.feature_0.0.0.jar" id="org.jboss.tools.portlet.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.forge.feature_0.0.0.jar" id="org.jboss.tools.forge.feature" version="0.0.0">
-    <category name="AbridgedTools"/>
+    <category name="CoreTools"/>
     <category name="WebTools" />
   </feature>
   <feature url="features/org.jboss.tools.project.examples.feature_0.0.0.jar" id="org.jboss.tools.project.examples.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
 
   <!-- only in JBT -->
+  <feature url="features/org.jboss.tools.community.central.feature_0.0.0.jar" id="org.jboss.tools.community.central.feature" version="0.0.0">
+    <category name="CoreTools" />
+    <category name="GeneralTools" />
+  </feature>
   <feature url="features/org.jboss.tools.community.project.examples.feature_0.0.0.jar" id="org.jboss.tools.community.project.examples.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
   <feature url="features/org.jboss.tools.birt.feature_0.0.0.jar" id="org.jboss.tools.birt.feature" version="0.0.0">
@@ -134,71 +134,75 @@
 
   <!-- only in JBDS
   <feature url="features/com.jboss.jbds.m2e.feature_0.0.0.jar" id="com.jboss.jbds.m2e.feature" version="0.0.0">
-    <category name="AbridgedTools"/>
+    <category name="CoreTools"/>
     <category name="MavenTools" />
   </feature>
-  <feature url="features/org.eclipse.m2e.feature_0.0.0.jar" id="org.eclipse.m2e.feature" version="0.0.0">
-  </feature>
-  <feature url="features/org.maven.ide.eclipse.wtp.feature_0.0.0.jar" id="org.maven.ide.eclipse.wtp.feature" version="0.0.0">
-  </feature>
-  <feature url="features/org.sonatype.m2e.mavenarchiver.feature_0.0.0.jar" id="org.sonatype.m2e.mavenarchiver.feature" version="0.0.0">
-  </feature>
+  <feature url="features/org.eclipse.m2e.feature_0.0.0.jar" id="org.eclipse.m2e.feature" version="0.0.0"></feature>
+  <feature url="features/org.eclipse.m2e.wtp.feature_0.0.0.jar" id="org.eclipse.m2e.wtp.feature" version="0.0.0"></feature>
+  <feature url="features/org.sonatype.m2e.mavenarchiver.feature_0.0.0.jar" id="org.sonatype.m2e.mavenarchiver.feature" version="0.0.0"></feature>
   -->
+  
   <feature url="features/org.jboss.tools.maven.feature_0.0.0.jar" id="org.jboss.tools.maven.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
+    <category name="MavenTools" />
+  </feature>
+  <feature url="features/org.jboss.tools.maven.apt.feature_0.0.0.jar" id="org.jboss.tools.maven.apt.feature" version="0.0.0">
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.cdi.feature_0.0.0.jar" id="org.jboss.tools.maven.cdi.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.hibernate.feature_0.0.0.jar" id="org.jboss.tools.maven.hibernate.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.jdt.feature_0.0.0.jar" id="org.jboss.tools.maven.jdt.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.portlet.feature_0.0.0.jar" id="org.jboss.tools.maven.portlet.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.profiles.feature_0.0.0.jar" id="org.jboss.tools.maven.profiles.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.project.examples.feature_0.0.0.jar" id="org.jboss.tools.maven.project.examples.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.seam.feature_0.0.0.jar" id="org.jboss.tools.maven.seam.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools"/>
   </feature>
   <feature url="features/org.jboss.tools.maven.sourcelookup.feature_0.0.0.jar" id="org.jboss.tools.maven.sourcelookup.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
-  <!-- only in JBT and JBDS Extras -->
+  
+  <!-- only in JBT and JBDS Central -->
   <feature url="features/org.jboss.tools.maven.jbosspackaging.feature_0.0.0.jar" id="org.jboss.tools.maven.jbosspackaging.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature url="features/org.jboss.tools.maven.gwt.feature_0.0.0.jar" id="org.jboss.tools.maven.gwt.feature" version="0.0.0">
     <category name="MavenTools" />
   </feature>
+  
   <!-- only in JBT -->
   <feature url="features/org.jboss.tools.gwt.feature_0.0.0.jar" id="org.jboss.tools.gwt.feature" version="0.0.0">
     <category name="GeneralTools" />
   </feature>
-  <feature url="features/org.jboss.tools.common.mylyn.feature_0.0.0.jar" id="org.jboss.tools.common.mylyn.feature" version="0.0.0">
-    <category name="AbridgedTools" />
-    <category name="GeneralTools"/>
-  </feature>
 
   <feature url="features/org.jboss.tools.common.jdt.feature_0.0.0.jar" id="org.jboss.tools.common.jdt.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
+    <category name="GeneralTools"/>
+  </feature>
+  <feature url="features/org.jboss.tools.common.mylyn.feature_0.0.0.jar" id="org.jboss.tools.common.mylyn.feature" version="0.0.0">
+    <category name="CoreTools" />
     <category name="GeneralTools"/>
   </feature>
 
@@ -209,20 +213,21 @@
   <feature url="features/org.jboss.tools.common.ui.feature_0.0.0.jar" id="org.jboss.tools.common.ui.feature" version="0.0.0">  </feature>
   <feature url="features/org.jboss.tools.common.verification.feature_0.0.0.jar" id="org.jboss.tools.common.verification.feature" version="0.0.0">  </feature>
 
+  <!-- only in JBT -->
   <feature url="features/org.jboss.tools.central.themes.feature_0.0.0.jar" id="org.jboss.tools.central.themes.feature" version="0.0.0">
     <category name="OtherTools" />
   </feature>
 
   <feature url="features/org.jboss.tools.runtime.core.feature_0.0.0.jar" id="org.jboss.tools.runtime.core.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
   </feature>
   <feature url="features/org.jboss.tools.runtime.seam.detector.feature_0.0.0.jar" id="org.jboss.tools.runtime.seam.detector.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
 
   <feature url="features/org.jboss.tools.usage.feature_0.0.0.jar" id="org.jboss.tools.usage.feature" version="0.0.0">
-    <category name="AbridgedTools" />
+    <category name="CoreTools" />
     <category name="GeneralTools"/>
   </feature>
 
@@ -230,10 +235,13 @@
   <!-- ####### -->
   <!-- SOURCES -->
   <!-- ####### -->
-  <feature url="features/org.jboss.tools.central.feature.source_0.0.0.jar" id="org.jboss.tools.central.feature.source" version="0.0.0">
+  <!-- only in JBDS
+  <feature url="features/com.jboss.jbds.product.feature.source_0.0.0.jar" id="com.jboss.jbds.product.feature.source" version="0.0.0" patch="false">
     <category name="DeveloperResources"/>
   </feature>
-  <feature url="features/org.jboss.tools.community.central.feature.source_0.0.0.jar" id="org.jboss.tools.community.central.feature.source" version="0.0.0">
+  -->
+
+  <feature url="features/org.jboss.tools.central.feature.source_0.0.0.jar" id="org.jboss.tools.central.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
   <feature url="features/org.jboss.tools.richfaces.feature.source_0.0.0.jar" id="org.jboss.tools.richfaces.feature.source" version="0.0.0">
@@ -304,13 +312,10 @@
   <feature url="features/org.jboss.tools.project.examples.feature.source_0.0.0.jar" id="org.jboss.tools.project.examples.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
-  <feature url="features/org.jboss.tools.community.project.examples.feature.source_0.0.0.jar" id="org.jboss.tools.community.project.examples.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
-  <feature url="features/org.jboss.tools.birt.feature.source_0.0.0.jar" id="org.jboss.tools.birt.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
   <feature url="features/org.jboss.tools.maven.feature.source_0.0.0.jar" id="org.jboss.tools.maven.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.maven.apt.feature.source_0.0.0.jar" id="org.jboss.tools.maven.apt.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
   <feature url="features/org.jboss.tools.maven.cdi.feature.source_0.0.0.jar" id="org.jboss.tools.maven.cdi.feature.source" version="0.0.0">
@@ -319,25 +324,25 @@
   <feature url="features/org.jboss.tools.maven.hibernate.feature.source_0.0.0.jar" id="org.jboss.tools.maven.hibernate.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
-  <feature url="features/org.jboss.tools.maven.portlet.feature.source_0.0.0.jar" id="org.jboss.tools.maven.portlet.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
-  <feature url="features/org.jboss.tools.maven.seam.feature.source_0.0.0.jar" id="org.jboss.tools.maven.seam.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
-  <feature url="features/org.jboss.tools.maven.project.examples.feature.source_0.0.0.jar" id="org.jboss.tools.maven.project.examples.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
   <feature url="features/org.jboss.tools.maven.jdt.feature.source_0.0.0.jar" id="org.jboss.tools.maven.jdt.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.maven.portlet.feature.source_0.0.0.jar" id="org.jboss.tools.maven.portlet.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
   <feature url="features/org.jboss.tools.maven.profiles.feature.source_0.0.0.jar" id="org.jboss.tools.maven.profiles.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
+  <feature url="features/org.jboss.tools.maven.project.examples.feature.source_0.0.0.jar" id="org.jboss.tools.maven.project.examples.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.maven.seam.feature.source_0.0.0.jar" id="org.jboss.tools.maven.seam.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
   <feature url="features/org.jboss.tools.maven.sourcelookup.feature.source_0.0.0.jar" id="org.jboss.tools.maven.sourcelookup.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
-  <feature url="features/org.jboss.tools.runtime.core.featur.source_0.0.0.jar" id="org.jboss.tools.runtime.core.feature.source" version="0.0.0">
+  <feature url="features/org.jboss.tools.runtime.core.feature.source_0.0.0.jar" id="org.jboss.tools.runtime.core.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
   <feature url="features/org.jboss.tools.runtime.seam.detector.feature.source_0.0.0.jar" id="org.jboss.tools.runtime.seam.detector.feature.source" version="0.0.0">
@@ -346,21 +351,10 @@
   <feature url="features/org.jboss.tools.usage.feature.source_0.0.0.jar" id="org.jboss.tools.usage.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
-  <!-- only in JBT and JBDS Extras -->
-  <feature url="features/org.jboss.tools.maven.jbosspackaging.feature.source_0.0.0.jar" id="org.jboss.tools.maven.jbosspackaging.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
-  <feature url="features/org.jboss.tools.maven.gwt.feature.source_0.0.0.jar" id="org.jboss.tools.maven.gwt.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
-  <!-- only in JBT -->
-  <feature url="features/org.jboss.tools.gwt.feature.source_0.0.0.jar" id="org.jboss.tools.gwt.feature.source" version="0.0.0">
+  <feature url="features/org.jboss.tools.common.jdt.feature.source_0.0.0.jar" id="org.jboss.tools.common.jdt.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
   <feature url="features/org.jboss.tools.common.mylyn.feature.source_0.0.0.jar" id="org.jboss.tools.common.mylyn.feature.source" version="0.0.0">
-    <category name="DeveloperResources"/>
-  </feature>
-  <feature url="features/org.jboss.tools.common.jdt.feature.source_0.0.0.jar" id="org.jboss.tools.common.jdt.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
 
@@ -370,12 +364,47 @@
   <feature url="features/org.jboss.tools.common.text.ext.feature.source_0.0.0.jar" id="org.jboss.tools.common.text.ext.feature.source" version="0.0.0">  </feature>
   <feature url="features/org.jboss.tools.common.ui.feature.source_0.0.0.jar" id="org.jboss.tools.common.ui.feature.source" version="0.0.0">  </feature>
   <feature url="features/org.jboss.tools.common.verification.feature.source_0.0.0.jar" id="org.jboss.tools.common.verification.feature.source" version="0.0.0">  </feature>
+
+  <!-- only in JBT and JBDS Central -->
+  <feature url="features/org.jboss.tools.maven.jbosspackaging.feature.source_0.0.0.jar" id="org.jboss.tools.maven.jbosspackaging.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.maven.gwt.feature.source_0.0.0.jar" id="org.jboss.tools.maven.gwt.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+
+  <!-- only in JBT -->
+  <feature url="features/org.jboss.tools.community.central.feature.source_0.0.0.jar" id="org.jboss.tools.community.central.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.community.project.examples.feature.source_0.0.0.jar" id="org.jboss.tools.community.project.examples.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.birt.feature.source_0.0.0.jar" id="org.jboss.tools.birt.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.gwt.feature.source_0.0.0.jar" id="org.jboss.tools.gwt.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
   <feature url="features/org.jboss.tools.central.themes.feature.source_0.0.0.jar" id="org.jboss.tools.central.themes.feature.source" version="0.0.0">  </feature>
 
   <!-- ########## -->
   <!-- CATEGORIES -->
   <!-- ########## -->
-  <category-def name="AbridgedTools" label="Abridged JBoss Tools">
+
+  <!-- only in JBDS
+  <category-def name="BringYourOwnEclipse" label="* JBoss Developer Studio 6.0 - Bring Your Own Eclipse [Technology Preview]">
+    <description>Select this feature if you want to install all of the JBoss Developer Studio (Core Features) into your own Eclipse Juno 4.2. 
+
+Note: this is a Technology Preview. It is provided for users and customers to try out and to provide the developers with feedback.</description>
+  </category-def>
+  <category-def name="CoreTools" label="* JBoss Developer Studio 6.0 - Core">
+    <description>Contains most of the JBoss Developer Studio features. Excluded are those related to integration with 3rd party plugins. Selecting this category will give you all tools needed for Web and Seam Development.</description>
+  </category-def>
+  -->
+
+  <!-- only in JBT -->
+  <category-def name="CoreTools" label="* Abridged JBoss Tools">
     <description>Contains most of the JBoss Tools features. Excluded are those related to integration with 3rd party plugins. Selecting this category will give you all tools needed for Web and Seam Development.</description>
   </category-def>
 
@@ -403,7 +432,7 @@
 Note that if you install source features you may it more difficult to automatically update from one version of JBT to another, as you will ALSO have to update the source features at the same time.</description>
   </category-def>
 
-  <!-- Only in JBT -->
+  <!-- only in JBT -->
   <category-def name="OtherTools" label="Other Tools">
     <description>Miscellaneous other features, including incubating features. See individual feature descriptions for details.</description>
   </category-def>
