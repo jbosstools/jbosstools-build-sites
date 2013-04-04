@@ -319,7 +319,9 @@
   <feature url="features/org.jboss.tools.maven.feature.source_0.0.0.jar" id="org.jboss.tools.maven.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
-  <!-- JBIDE-13926, JBIDE-13928 Do not include source feature <feature url="features/org.jboss.tools.maven.apt.feature.source_0.0.0.jar" id="org.jboss.tools.maven.apt.feature.source" version="0.0.0"> <category name="DeveloperResources"/> </feature> -->
+  <!-- JBIDE-13926, JBIDE-13928 remove source feature pending decision to include in TP or JBDS Extras/Central <feature url="features/org.jboss.tools.maven.apt.feature.source_0.0.0.jar" id="org.jboss.tools.maven.apt.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature> -->
   <feature url="features/org.jboss.tools.maven.cdi.feature.source_0.0.0.jar" id="org.jboss.tools.maven.cdi.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
