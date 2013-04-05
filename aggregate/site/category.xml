@@ -214,14 +214,14 @@
   <feature url="features/org.jboss.tools.common.verification.feature_0.0.0.jar" id="org.jboss.tools.common.verification.feature" version="0.0.0">  </feature>
 
   <!-- only in JBT -->
-  <!-- JBIDE-13919 new livereload feature -->
-  <feature url="features/org.jboss.tools.livereload.feature_0.0.0.jar" id="org.jboss.tools.livereload.feature" version="0.0.0">
-    <category name="OtherTools" />
-  </feature>
   <feature url="features/org.jboss.tools.central.themes.feature_0.0.0.jar" id="org.jboss.tools.central.themes.feature" version="0.0.0">
     <category name="OtherTools" />
   </feature>
-
+  <!-- JBIDE-13919 new livereload feature -->
+  <feature url="features/org.jboss.tools.livereload.feature_0.0.0.jar" id="org.jboss.tools.livereload.feature" version="0.0.0">
+    <category name="CoreTools" />
+    <category name="WebTools" />
+  </feature>
   <feature url="features/org.jboss.tools.runtime.core.feature_0.0.0.jar" id="org.jboss.tools.runtime.core.feature" version="0.0.0">
     <category name="CoreTools" />
   </feature>
@@ -390,10 +390,10 @@
   <feature url="features/org.jboss.tools.gwt.feature.source_0.0.0.jar" id="org.jboss.tools.gwt.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
-  <!-- TODO JBIDE-13930 add livereload source feature
+  <!-- JBIDE-13919 new livereload source feature -->
   <feature url="features/org.jboss.tools.livereload.feature.source_0.0.0.jar" id="org.jboss.tools.livereload.feature.source" version="0.0.0">
     <category name="DeveloperResources" />
-  </feature> -->
+  </feature>
   <feature url="features/org.jboss.tools.central.themes.feature.source_0.0.0.jar" id="org.jboss.tools.central.themes.feature.source" version="0.0.0">  </feature>
 
   <!-- ########## -->
