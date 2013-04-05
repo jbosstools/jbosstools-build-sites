@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.jboss.tools</groupId>
-		<artifactId>parent</artifactId>
-		<version>4.1.0.Alpha2-SNAPSHOT</version>
-		<relativePath>../../jbosstools-build/parent/pom.xml</relativePath>
-	</parent>
-	<groupId>org.jboss.tools</groupId>
-	<artifactId>org.jboss.tools.site</artifactId>
-	<version>4.1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss.tools</groupId>
+    <artifactId>parent</artifactId>
+    <version>4.1.0.Beta1-SNAPSHOT</version>
+    <relativePath>../../jbosstools-build/parent/pom.xml</relativePath>
+  </parent>
+  <groupId>org.jboss.tools</groupId>
+  <artifactId>org.jboss.tools.site</artifactId>
+  <version>4.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<modules>
-		<module>site</module>
-	</modules>
-		
-	
-	<!-- to build an individual site, use this:
+  <modules>
+    <module>site</module>
+  </modules>
+  <!-- to build an individual site, use this:
 
-		mvn clean install -f webtools-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
+    mvn clean install -f webtools-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
 
-		mvn clean install -f site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite,unified.target,maximum
-		mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
-		
-		mvn clean install -f soa-site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
-		mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
-		...
+    mvn clean install -f site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite,unified.target,maximum
+    mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
+    
+    mvn clean install -f soa-site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
+    mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
+    ...
 
-	     to build against local sources, use these properties:
+       to build against local sources, use these properties:
 
-		mvn clean install ... \
-			-Djbosstools-nightly-staging-composite=file:///home/nboldt/tru/build/aggregate/local-site/ \
-			-Djbosstools-target-site=file:///home/nboldt/tru/build/target-platform/REPO/
-	-->
+    mvn clean install ... \
+      -Djbosstools-nightly-staging-composite=file:///home/nboldt/tru/jbosstools-build/aggregate/local-site/ \
+      -Djbosstools-target-site=file:///home/nboldt/tru/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
+  -->
 </project>
