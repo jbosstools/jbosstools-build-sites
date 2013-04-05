@@ -64,7 +64,7 @@
 
     mvn clean install -f site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite,unified.target,maximum
     mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
-
+    
     mvn clean install -f soa-site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
     mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
     ...
