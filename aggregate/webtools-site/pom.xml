@@ -1,122 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.jboss.tools</groupId>
-    <artifactId>org.jboss.tools.site</artifactId>
-    <version>4.1.0-SNAPSHOT</version>
-  </parent>
-  <groupId>org.jboss.tools</groupId>
-  <artifactId>org.jboss.tools.site.webtools</artifactId>
-  <name>JBoss Tools - Web Tools</name>
-  <packaging>eclipse-repository</packaging>
-  <properties>
-      <update.site.name>${project.name}</update.site.name>
-  </properties>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.jboss.tools.tycho-plugins</groupId>
-        <artifactId>repository-utils</artifactId>
-        <executions>
-          <execution>
-            <id>generate-facade</id>
-            <phase>package</phase>
-            <goals>
-              <goal>generate-repository-facade</goal>
-            </goals>
-            <configuration>
-              <associateSites>
-                <site>http://download.jboss.org/jbosstools/updates/kepler/</site>
-                <site>http://download.jboss.org/jbosstools/updates/development/kepler/</site>
-              </associateSites>
-              <symbols>
-                <update.site.name>${update.site.name}</update.site.name>
-                <update.site.description>${update.site.description}</update.site.description>
-              </symbols>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.7</version>
-        <executions>
-          <execution>
-            <!-- Most of it already performed by generate-facade mojo
-              We need to remove from the Ant file what's already done.
-              Temporarily, we can run both Mojo + Ant -->
-            <id>add-content</id>
-            <phase>package</phase>
-            <configuration>
-              <quiet>true</quiet>
-              <target>
-                <!-- called AFTER generating update site + zip to add in extra content -->
-                <ant antfile="build.xml" target="basic.build" dir="../">
-                  <property name="output.dir" value="${basedir}" />
-                  <property name="inputRepo" value="${jbosstools-nightly-staging-composite}" />
-                  <property name="project.version" value="${project.version}" />
-                  <property name="update.site.qualifier" value="${buildQualifier}"/>
-                  <property name="BUILD_ALIAS" value="${BUILD_ALIAS}" />
-                  <!-- these are needed for generating results.xml -->
-                  <property name="update.site.description" value="${update.site.description}"/>
-                  <property name="TARGET_PLATFORM_VERSION" value="${TARGET_PLATFORM_VERSION}"/>
-                  <property name="TARGET_PLATFORM_VERSION_MAXIMUM" value="${TARGET_PLATFORM_VERSION_MAXIMUM}"/>
-                </ant>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>1.4.1</version>
-          </dependency>
-          <dependency>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant</artifactId>
-            <version>1.8.2</version>
-          </dependency>
-          <dependency>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant-nodeps</artifactId>
-            <version>1.8.1</version>
-          </dependency>
-          <dependency>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant-trax</artifactId>
-            <version>1.8.0</version>
-          </dependency>
-          <dependency>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant-commons-net</artifactId>
-            <version>1.8.2</version>
-          </dependency>
-          <dependency>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant-apache-regexp</artifactId>
-            <version>1.8.2</version>
-          </dependency>
-          <dependency>
-            <groupId>ant-contrib</groupId>
-            <artifactId>ant-contrib</artifactId>
-            <version>1.0b3</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.jboss.tools</groupId>
+		<artifactId>org.jboss.tools.site</artifactId>
+		<version>4.1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>org.jboss.tools</groupId>
+	<artifactId>org.jboss.tools.site.webtools</artifactId>
+	<name>JBoss Tools - Web Tools</name>
+	<packaging>eclipse-repository</packaging>
+	<properties>
+		<update.site.name>${project.name}</update.site.name>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jboss.tools.tycho-plugins</groupId>
+				<artifactId>repository-utils</artifactId>
+				<executions>
+					<execution>
+						<id>generate-facade</id>
+						<phase>package</phase>
+						<goals>
+							<goal>generate-repository-facade</goal>
+						</goals>
+						<configuration>
+							<associateSites>
+								<site>http://download.jboss.org/jbosstools/updates/kepler/</site>
+								<site>http://download.jboss.org/jbosstools/updates/development/kepler/</site>
+							</associateSites>
+							<symbols>
+								<update.site.name>${update.site.name}</update.site.name>
+								<update.site.description>${update.site.description}</update.site.description>
+							</symbols>
+							<additionalWebResources>
+								<resource>../README.building.txt</resource>
+								<resource>../README.installation.txt</resource>
+							</additionalWebResources>
+							<p2StatsUrl>http://download.jboss.org/jbosstools/usage/${JBT_VERSION}/${BUILD_ALIAS}/${JOB_NAME}/${buildQualifier}/</p2StatsUrl>
+							<removeDefaultCategory>true</removeDefaultCategory>
+							<repositories>
+								<repo>${jbosstools-nightly-staging-composite}</repo>
+							</repositories>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- Workaround for publish script not able to deal with ${artifactId}-${version}.zip -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>copy-site-to-site_assembly.zip</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<copy
+									file="${project.build.directory}/${project.artifactId}-${project.version}.zip"
+									tofile="${project.build.directory}/site_assembly.zip" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
-  <!--
-    mvn install -Pjbosstools-nightly-staging-composite,unified.target,maximum \
-    -DJOB_NAME=jbosstools-build-sites.aggregate.webtools-site_master \
-    -DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 \
-    -DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
+	<!-- mvn install -Pjbosstools-nightly-staging-composite,unified.target,maximum \
+		-DJOB_NAME=jbosstools-build-sites.aggregate.webtools-site_master \
+		-DBUILD_ID=2012-12-12_01-02-03 -DBUILD_NUMBER=69 \
+		-DBUILD_ALIAS=Alpha2 -Dupdate.site.description="Stable Milestone"
   -->
 </project>
