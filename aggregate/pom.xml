@@ -23,7 +23,7 @@
 	    		<plugins>
 		    		<plugin>
 					<groupId>org.jboss.tools.maven</groupId>
-					<artifactId>gstring-maven-plugin</artifactId>
+          <artifactId>gstring-maven-plugin</artifactId>
 					<version>0.0.1-SNAPSHOT</version>
 					<executions>
 						<execution>
@@ -54,10 +54,11 @@
 	</profiles>
 
 	<!-- to build an individual site, use this:
-		mvn clean install -f site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite,unified.target,maximum
-		mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
+		mvn clean install -f site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum -Presults
+    mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
+    mvn clean install -f webtools-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
 
-		mvn clean install -f soa-site/pom.xml -Dcollect.zips.skip -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
+		mvn clean install -f soa-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum -Presults
 		mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
 		...
 
