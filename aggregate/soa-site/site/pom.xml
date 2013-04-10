@@ -28,6 +28,7 @@
 						<phase>package</phase>
 						<goals>
 							<goal>generate-repository-facade</goal>
+							<goal>fetch-zips-for-aggregate</goal>
 						</goals>
 						<configuration>
 							<associateSites>
