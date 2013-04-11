@@ -54,11 +54,11 @@
 	</profiles>
 
 	<!-- to build an individual site, use this:
-		mvn clean install -f site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum -Presults
+		mvn clean install -f site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum -Presults -Dfetch-zips-for-aggregate.skip
     mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
     mvn clean install -f webtools-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
 
-		mvn clean install -f soa-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum -Presults
+		mvn clean install -f soa-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum -Presults -Dfetch-zips-for-aggregate.skip
 		mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
 		...
 

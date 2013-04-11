@@ -26,7 +26,7 @@
             <phase>package</phase>
             <goals>
               <goal>generate-repository-facade</goal>
-              <!-- to disable long-running step fetch-zips-for-aggregate, simply comment it out when building locally (-Dcollect.zips.skip no longer works) -->
+              <!-- to skip this long-running step, use -Dfetch-zips-for-aggregate.skip -->
               <goal>fetch-zips-for-aggregate</goal>
             </goals>
             <configuration>
@@ -76,7 +76,7 @@
   </build>
 
   <!-- 
-    mvn install -Pjbosstools-nightly-staging-composite,maximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -BUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.site_master -Presults
+    mvn install -Pjbosstools-nightly-staging-composite,maximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -BUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.site_master -Presults -Dfetch-zips-for-aggregate.skip
   -->
 
 </project>
