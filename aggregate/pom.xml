@@ -11,56 +11,56 @@
   <artifactId>org.jboss.tools.site</artifactId>
   <version>4.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-	
-	<modules>
-		<module>site</module>
-	</modules>
+  
+  <modules>
+    <module>site</module>
+  </modules>
 
-	<profiles>
-	    <profile>
-	      	<id>results</id>
-	    	<build>
-	    		<plugins>
-		    		<plugin>
-					<groupId>org.jboss.tools.maven</groupId>
+  <profiles>
+      <profile>
+          <id>results</id>
+        <build>
+          <plugins>
+            <plugin>
+          <groupId>org.jboss.tools.maven</groupId>
           <artifactId>gstring-maven-plugin</artifactId>
-					<version>0.0.1-SNAPSHOT</version>
-					<executions>
-						<execution>
-							<id>create-results-html</id>
-							<phase>package</phase>
-							<goals>
-								<goal>process-templates</goal>
-							</goals>
-							<configuration>
-								<files>
-									<file>../results.html</file>
-								</files>
-								<symbols>
-									<update_site_description>${update.site.description}</update_site_description>
-									<TARGET_PLATFORM_VERSION>${TARGET_PLATFORM_VERSION}</TARGET_PLATFORM_VERSION>
-									<TARGET_PLATFORM_VERSION_MAXIMUM>${TARGET_PLATFORM_VERSION_MAXIMUM}</TARGET_PLATFORM_VERSION_MAXIMUM>
-									<update_site_qualifier>${buildQualifier}</update_site_qualifier>
-									<JOB_NAME>${JOB_NAME}</JOB_NAME>
-									<BUILD_NUMBER>${BUILD_NUMBER}</BUILD_NUMBER>
-								</symbols>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-	    		</plugins>
-	    	</build>
-	    </profile>
-	</profiles>
+          <version>0.0.1-SNAPSHOT</version>
+          <executions>
+            <execution>
+              <id>create-results-html</id>
+              <phase>package</phase>
+              <goals>
+                <goal>process-templates</goal>
+              </goals>
+              <configuration>
+                <files>
+                  <file>../results.html</file>
+                </files>
+                <symbols>
+                  <update_site_description>${update.site.description}</update_site_description>
+                  <TARGET_PLATFORM_VERSION>${TARGET_PLATFORM_VERSION}</TARGET_PLATFORM_VERSION>
+                  <TARGET_PLATFORM_VERSION_MAXIMUM>${TARGET_PLATFORM_VERSION_MAXIMUM}</TARGET_PLATFORM_VERSION_MAXIMUM>
+                  <update_site_qualifier>${buildQualifier}</update_site_qualifier>
+                  <JOB_NAME>${JOB_NAME}</JOB_NAME>
+                  <BUILD_NUMBER>${BUILD_NUMBER}</BUILD_NUMBER>
+                </symbols>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+          </plugins>
+        </build>
+      </profile>
+  </profiles>
 
-	<!-- to build an individual site, use this:
-		mvn clean install -f site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum -Presults -Dfetch-zips-for-aggregate.skip
+  <!-- to build an individual site, use this:
+    mvn clean install -f site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum -Presults -Dfetch-zips-for-aggregate.skip
     mvn clean install -f coretests-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
     mvn clean install -f webtools-site/pom.xml -Pjbosstools-nightly-staging-composite,unified.target,maximum
 
-		mvn clean install -f soa-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum -Presults -Dfetch-zips-for-aggregate.skip
-		mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
-		...
+    mvn clean install -f soa-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum -Presults -Dfetch-zips-for-aggregate.skip
+    mvn clean install -f soatests-site/pom.xml -Pjbosstools-nightly-staging-composite-soa-tooling,unified.target,maximum
+    ...
 
        to build against local sources, use these properties:
 
