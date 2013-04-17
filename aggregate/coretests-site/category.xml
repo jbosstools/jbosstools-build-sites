@@ -27,6 +27,7 @@
 <feature url="features/org.jboss.tools.common.all.test.feature_0.0.0.jar" id="org.jboss.tools.common.all.test.feature" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.tools.project.examples.test.feature_0.0.0.jar" id="org.jboss.tools.project.examples.test.feature" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.tools.forge.test.feature_0.0.0.jar" id="org.jboss.tools.forge.test.feature" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
+<feature url="features/org.jboss.tools.forge.ext.test.feature_0.0.0.jar" id="org.jboss.tools.forge.ext.test.feature" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.ide.eclipse.freemarker.test.feature_0.0.0.jar" id="org.jboss.ide.eclipse.freemarker.test.feature" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.hibernate.eclipse.test.feature_0.0.0.jar" id="org.hibernate.eclipse.test.feature" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.tools.jmx.test.feature_0.0.0.jar" id="org.jboss.tools.jmx.test.feature" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
@@ -52,6 +53,7 @@
 <feature url="features/org.jboss.tools.common.all.test.feature.source_0.0.0.jar" id="org.jboss.tools.common.all.test.feature.source" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.tools.project.examples.test.feature.source_0.0.0.jar" id="org.jboss.tools.project.examples.test.feature.source" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.tools.forge.test.feature.source_0.0.0.jar" id="org.jboss.tools.forge.test.feature.source" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
+<feature url="features/org.jboss.tools.forge.ext.test.feature.source_0.0.0.jar" id="org.jboss.tools.forge.ext.test.feature.source" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.ide.eclipse.freemarker.test.feature.source_0.0.0.jar" id="org.jboss.ide.eclipse.freemarker.test.feature.source" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.hibernate.eclipse.test.feature.source_0.0.0.jar" id="org.hibernate.eclipse.test.feature.source" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
 <feature url="features/org.jboss.tools.jmx.test.feature.source_0.0.0.jar" id="org.jboss.tools.jmx.test.feature.source" version="0.0.0"><category name="JBoss Tools - Core Tests"/></feature>
