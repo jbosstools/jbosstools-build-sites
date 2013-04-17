@@ -114,6 +114,10 @@
     <category name="CoreTools"/>
     <category name="WebTools" />
   </feature>
+  <feature url="features/org.jboss.tools.forge.ext.feature_0.0.0.jar" id="org.jboss.tools.forge.ext.feature" version="0.0.0">
+    <category name="CoreTools"/>
+    <category name="WebTools"/>
+  </feature>
   <feature url="features/org.jboss.tools.project.examples.feature_0.0.0.jar" id="org.jboss.tools.project.examples.feature" version="0.0.0">
     <category name="CoreTools" />
     <category name="GeneralTools" />
@@ -311,6 +315,9 @@
     <category name="DeveloperResources"/>
   </feature>
   <feature url="features/org.jboss.tools.forge.feature.source_0.0.0.jar" id="org.jboss.tools.forge.feature.source" version="0.0.0">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature url="features/org.jboss.tools.forge.ext.feature.source_0.0.0.jar" id="org.jboss.tools.forge.ext.feature.source" version="0.0.0">
     <category name="DeveloperResources"/>
   </feature>
   <feature url="features/org.jboss.tools.project.examples.feature.source_0.0.0.jar" id="org.jboss.tools.project.examples.feature.source" version="0.0.0">
