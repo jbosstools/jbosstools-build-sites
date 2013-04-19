@@ -459,7 +459,7 @@ Using ant:   ant custom.build -f ../build.xml -Doutput.dir=`pwd` -DinputRepo=htt
     <var name="STATS_SERVER" value="http://download.jboss.org/jbosstools/usage/installs"/>
     <!-- should be set already by Jenkins, so make it blank for local builds -->
     <property name="JOB_NAME" value=""/>
-    <var name="TARGET_FOLDER" value="${update.site.version}/${BUILD_ALIAS}/${JOB_NAME}/${update.site.qualifier}/"/>
+    <var name="TARGET_FOLDER" value="${JOB_NAME}/${update.site.version}/${BUILD_ALIAS}/${update.site.qualifier}/"/>
     <echo>Insert download.stats metadata using p2.StatsURI = ${STATS_SERVER}/${TARGET_FOLDER}</echo>
     <var name="install" value=""/>
     <!-- TODO: JBIDE-12432 support use of a properties file that lists specific features to track, rather than tracking all features? -->
