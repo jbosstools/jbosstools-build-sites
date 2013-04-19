@@ -46,7 +46,7 @@
                 <resource>../README.building.txt</resource>
                 <resource>../README.installation.txt</resource>
               </additionalWebResources>
-              <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${project.version}/${BUILD_ALIAS}/${JOB_NAME}/${buildQualifier}/</p2StatsUrl>
+              <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${JOB_NAME}/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
               <repositories>
                 <repo>${jbosstools-nightly-staging-composite-soa-tooling}</repo>
               </repositories>
