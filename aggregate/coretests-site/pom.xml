@@ -75,7 +75,7 @@
   </build>
 
   <!-- 
-    mvn install -Pjbosstools-nightly-staging-composite,maximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -BUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_master
+    mvn install -Pjbosstools-nightly-staging-composite,maximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_master
   -->
 
 </project>

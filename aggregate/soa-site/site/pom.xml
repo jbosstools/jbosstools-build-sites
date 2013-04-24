@@ -81,7 +81,7 @@
   </build>
 
   <!--
-    mvn install -Pjbosstools-nightly-staging-composite-soa-tooling,maximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -BUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.soa-site_master -Presults -Dfetch-zips-for-aggregate.skip
+    mvn install -Pjbosstools-nightly-staging-composite-soa-tooling,maximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.soa-site_master -Presults -Dfetch-zips-for-aggregate.skip
   -->
 
 </project>
