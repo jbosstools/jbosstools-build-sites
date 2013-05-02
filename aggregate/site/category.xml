@@ -206,6 +206,8 @@
     <category name="CoreTools" />
     <category name="GeneralTools"/>
   </feature>
+
+  <!-- categorized in JBT; uncategorized in JBDS -->
   <feature id="org.jboss.tools.common.mylyn.feature">
     <category name="CoreTools" />
     <category name="GeneralTools"/>
