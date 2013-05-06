@@ -14,8 +14,6 @@
   </feature>
   -->
 
-  <feature id="org.jboss.tools.central.feature">
-  </feature>
   <feature id="org.jboss.tools.richfaces.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
@@ -38,8 +36,9 @@
   </feature>
 
   <!-- include but do not categorize -->
-  <feature id="org.jboss.tools.xulrunner.feature">  </feature>
-  <feature id="org.mozilla.xulrunner.feature">  </feature>
+  <feature id="org.jboss.tools.central.feature"/>
+  <feature id="org.jboss.tools.xulrunner.feature"/>
+  <feature id="org.mozilla.xulrunner.feature"/>
 
   <feature id="org.jboss.tools.seam.feature">
     <category name="CoreTools" />
@@ -78,10 +77,8 @@
   </feature>
   
   <!-- only in JBDS
-  <feature id="org.eclipse.egit">
-  </feature>
-  <feature id="org.eclipse.jgit">
-  </feature>
+  <feature id="org.eclipse.egit"/>
+  <feature id="org.eclipse.jgit"/>
   -->
   
   <feature id="org.jboss.ide.eclipse.archives.feature">
@@ -187,8 +184,8 @@
     <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
-  
-  <!-- only in JBT and JBDS Central -->
+
+  <!-- only in JBT and JBDS Central (uncategorized in JBDS) -->
   <feature id="org.jboss.tools.maven.jbosspackaging.feature">
     <category name="CoreTools" />
     <category name="MavenTools" />
@@ -213,11 +210,11 @@
   </feature>
 
   <!-- include but do not categorize -->
-  <feature id="org.jboss.tools.common.feature">  </feature>
-  <feature id="org.jboss.tools.common.core.feature">  </feature>
-  <feature id="org.jboss.tools.common.text.ext.feature">  </feature>
-  <feature id="org.jboss.tools.common.ui.feature">  </feature>
-  <feature id="org.jboss.tools.common.verification.feature">  </feature>
+  <feature id="org.jboss.tools.common.feature"/>
+  <feature id="org.jboss.tools.common.core.feature"/>
+  <feature id="org.jboss.tools.common.text.ext.feature"/>
+  <feature id="org.jboss.tools.common.ui.feature"/>
+  <feature id="org.jboss.tools.common.verification.feature"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.central.themes.feature">
@@ -236,6 +233,7 @@
     <category name="WebTools" />
   </feature>
 
+  <!-- categorized in JBT; uncategorized in JBDS -->
   <feature id="org.jboss.tools.usage.feature">
     <category name="CoreTools" />
     <category name="GeneralTools"/>
@@ -270,9 +268,9 @@
     <category name="DeveloperResources"/>
   </feature>
 
-  <!-- include but do not categorize -->
-  <feature id="org.jboss.tools.xulrunner.feature.source">  </feature>
-  <feature id="org.mozilla.xulrunner.feature.source">  </feature>
+  <!-- uncategorized in JBT and JBDS -->
+  <feature id="org.jboss.tools.xulrunner.feature.source"/>
+  <feature id="org.mozilla.xulrunner.feature.source"/>
 
   <feature id="org.jboss.tools.seam.feature.source">
     <category name="DeveloperResources"/>
@@ -371,13 +369,13 @@
   </feature>
 
   <!-- include but do not categorize -->
-  <feature id="org.jboss.tools.common.feature.source">  </feature>
-  <feature id="org.jboss.tools.common.core.feature.source">  </feature>
-  <feature id="org.jboss.tools.common.text.ext.feature.source">  </feature>
-  <feature id="org.jboss.tools.common.ui.feature.source">  </feature>
-  <feature id="org.jboss.tools.common.verification.feature.source">  </feature>
+  <feature id="org.jboss.tools.common.feature.source"/>
+  <feature id="org.jboss.tools.common.core.feature.source"/>
+  <feature id="org.jboss.tools.common.text.ext.feature.source"/>
+  <feature id="org.jboss.tools.common.ui.feature.source"/>
+  <feature id="org.jboss.tools.common.verification.feature.source"/>
 
-  <!-- only in JBT and JBDS Central -->
+  <!-- only in JBT and JBDS Central (unctegorized in JBDS) -->
   <feature id="org.jboss.tools.maven.jbosspackaging.feature.source">
     <category name="DeveloperResources"/>
   </feature>
@@ -402,19 +400,19 @@
   <feature id="org.jboss.tools.livereload.feature.source">
     <category name="DeveloperResources" />
   </feature>
-  <feature id="org.jboss.tools.central.themes.feature.source">  </feature>
+  <feature id="org.jboss.tools.central.themes.feature.source"/>
 
   <!-- ########## -->
   <!-- CATEGORIES -->
   <!-- ########## -->
 
   <!-- only in JBDS
-  <category-def name="BringYourOwnEclipse" label="* JBoss Developer Studio 6.0 - Bring Your Own Eclipse [Technology Preview]">
-    <description>Select this feature if you want to install all of the JBoss Developer Studio (Core Features) into your own Eclipse Juno 4.2. 
+  <category-def name="BringYourOwnEclipse" label="* JBoss Developer Studio 7.0 - Bring Your Own Eclipse [Technology Preview]">
+    <description>Select this feature if you want to install all of the JBoss Developer Studio (Core Features) into your own Eclipse Kepler 4.3. 
 
 Note: this is a Technology Preview. It is provided for users and customers to try out and to provide the developers with feedback.</description>
   </category-def>
-  <category-def name="CoreTools" label="* JBoss Developer Studio 6.0 - Core">
+  <category-def name="CoreTools" label="* JBoss Developer Studio 7.0 - Core">
     <description>Contains most of the JBoss Developer Studio features. Excluded are those related to integration with 3rd party plugins. Selecting this category will give you all tools needed for Web and Seam Development.</description>
   </category-def>
   -->
