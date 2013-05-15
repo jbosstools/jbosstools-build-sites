@@ -39,6 +39,7 @@
 <feature id="org.jboss.tools.runtime.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.seam.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <!-- JBIDE-13618 remove struts <feature id="org.jboss.tools.struts.test.feature"><category name="JBoss Tools - Core Tests"/></feature> -->
+<feature id="org.jboss.tools.foundation.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.stacks.core.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.usage.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
