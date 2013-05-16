@@ -23,6 +23,9 @@
     <category name="WebTools" />
     <category name="MobileTools"/>
   </feature>
+  <feature id="org.jboss.tools.vpe.cordovasim.feature">
+    <category name="MobileTools"/>
+  </feature>
   <feature id="org.jboss.tools.jst.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
@@ -277,6 +280,9 @@
     <category name="DeveloperResources"/>
   </feature>
   <feature id="org.jboss.tools.vpe.browsersim.feature.source">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature id="org.jboss.tools.vpe.cordovasim.feature.source">
     <category name="DeveloperResources"/>
   </feature>
   <feature id="org.jboss.tools.jst.feature.source">
