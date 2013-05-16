@@ -121,6 +121,10 @@
     <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
+  <feature id="org.jboss.tools.forge.feature">
+    <category name="CoreTools"/>
+    <category name="WebTools" />
+  </feature>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.community.central.feature">
@@ -243,6 +247,12 @@
   <feature id="org.jboss.tools.aerogear.hybrid.feature">
      <category name="MobileTools"/>
   </feature>
+  <!-- JBIDE-14473 Arquillian content -->
+  <feature id="org.jboss.tools.arquillian.feature">
+    <category name="WebTools" />
+    <category name="GeneralTools"/>
+  </feature>
+  
 
   <!-- categorized in JBT; uncategorized in JBDS -->
   <feature id="org.jboss.tools.usage.feature">
@@ -379,6 +389,9 @@
     <category name="DeveloperResources"/>
   </feature>
   <feature id="org.jboss.tools.aerogear.hybrid.feature.source">
+    <category name="DeveloperResources"/>
+  </feature>
+  <feature id="org.jboss.tools.arquillian.feature.source">
     <category name="DeveloperResources"/>
   </feature>
 
