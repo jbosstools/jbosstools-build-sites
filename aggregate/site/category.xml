@@ -21,6 +21,7 @@
   <feature id="org.jboss.tools.vpe.browsersim.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
+    <category name="MobileTools"/>
   </feature>
   <feature id="org.jboss.tools.jst.feature">
     <category name="CoreTools" />
@@ -238,6 +239,11 @@
     <category name="WebTools" />
   </feature>
 
+  <!-- JBIDE-14471 Aerogear content -->
+  <feature id="org.jboss.tools.aerogear.hybrid.feature">
+     <category name="MobileTools"/>
+  </feature>
+
   <!-- categorized in JBT; uncategorized in JBDS -->
   <feature id="org.jboss.tools.usage.feature">
     <category name="CoreTools" />
@@ -372,6 +378,9 @@
   <feature id="org.jboss.tools.common.mylyn.feature.source">
     <category name="DeveloperResources"/>
   </feature>
+  <feature id="org.jboss.tools.aerogear.hybrid.feature.source">
+    <category name="DeveloperResources"/>
+  </feature>
 
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.common.feature.source"/>
@@ -429,6 +438,10 @@ Note: this is a Technology Preview. It is provided for users and customers to tr
 
   <category-def name="WebTools" label="JBoss Web and Java EE Development">
     <description>Tools to help create web and enterprise applications, using JSF, Facelets, Seam, Hibernate/JPA, CSS, Webservices and more.</description>
+  </category-def>
+
+  <category-def name="MobileTools" label="JBoss Mobile Development">
+    <description>Tools to create applications targeting mobile devices.</description>
   </category-def>
 
   <category-def name="GeneralTools" label="JBoss Application Development">
