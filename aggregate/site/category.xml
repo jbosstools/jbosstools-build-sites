@@ -28,12 +28,6 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
-
-  <!-- include but do not categorize -->
-  <feature id="org.jboss.tools.central.feature"/>
-  <feature id="org.jboss.tools.xulrunner.feature"/>
-  <feature id="org.mozilla.xulrunner.feature"/>
-
   <feature id="org.jboss.tools.seam.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
@@ -166,11 +160,14 @@
   </feature>
 
   <!-- include but do not categorize -->
+  <feature id="org.jboss.tools.central.feature"/>
   <feature id="org.jboss.tools.common.feature"/>
   <feature id="org.jboss.tools.common.core.feature"/>
   <feature id="org.jboss.tools.common.text.ext.feature"/>
   <feature id="org.jboss.tools.common.ui.feature"/>
   <feature id="org.jboss.tools.common.verification.feature"/>
+  <feature id="org.jboss.tools.xulrunner.feature"/>
+  <feature id="org.mozilla.xulrunner.feature"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.aerogear.hybrid.feature">
@@ -273,7 +270,6 @@
   <feature id="org.jboss.tools.common.text.ext.feature.source"/>
   <feature id="org.jboss.tools.common.ui.feature.source"/>
   <feature id="org.jboss.tools.common.verification.feature.source"/>
-
   <feature id="org.jboss.tools.maven.jbosspackaging.feature.source"/>
   <feature id="org.jboss.tools.maven.gwt.feature.source"/>
 
