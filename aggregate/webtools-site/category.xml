@@ -5,6 +5,7 @@
 	<feature id="org.jboss.ide.eclipse.as.feature">
 		<category name="org.eclipse.wst.server.core.serverAdapter"/>
 	</feature>
+	<feature id="org.jboss.tools.foundation.feature"></feature>
 	<feature id="org.jboss.tools.stacks.core.feature"></feature>
 	<feature id="org.jboss.ide.eclipse.archives.feature"></feature>
 	<feature id="org.jboss.tools.jmx.feature"></feature>
