@@ -273,6 +273,7 @@
   <feature id="org.jboss.tools.usage.feature.source"/>
   <feature id="org.jboss.tools.common.jdt.feature.source"/>
   <feature id="org.jboss.tools.common.mylyn.feature.source"/>
+  <feature id="org.jboss.tools.foundation.feature.source"/>
 
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.common.feature.source"/>
