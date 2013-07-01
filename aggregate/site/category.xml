@@ -168,6 +168,10 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
+  <feature id="org.jboss.tools.wtp.runtimes.tomcat.feature">
+    <category name="CoreTools" />
+    <category name="WebTools" />
+  </feature>
 
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.central.feature"/>
@@ -288,6 +292,7 @@
   <feature id="org.jboss.tools.common.verification.feature.source"/>
   <feature id="org.jboss.tools.maven.jbosspackaging.feature.source"/>
   <feature id="org.jboss.tools.maven.gwt.feature.source"/>
+  <feature id="org.jboss.tools.wtp.runtimes.tomcat.feature.source"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.aerogear.hybrid.feature.source"/>
