@@ -47,6 +47,7 @@
 <feature id="org.jboss.tools.usage.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.vpe.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.ws.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
+<feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature"><category name="JBoss Tools - Core Tests"/></feature>
 
 
 
@@ -78,5 +79,6 @@
 <feature id="org.jboss.tools.usage.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.vpe.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.ws.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
+<feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 
 </site>
