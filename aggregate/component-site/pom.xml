@@ -4,8 +4,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jboss.tools</groupId>
-    <artifactId>org.jboss.tools.site</artifactId>
-    <version>4.1.1-SNAPSHOT</version>
+    <artifactId>parent</artifactId>
+    <version>4.1.1.Alpha2-SNAPSHOT</version>
   </parent>
   <groupId>org.jboss.tools</groupId>
   <artifactId>org.jboss.tools.site.component</artifactId>
@@ -33,23 +33,6 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
-        <artifactId>maven-download-plugin</artifactId>
-        <version>1.1.0</version>
-        <executions>
-          <execution>
-            <id>get-category.xml</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>${category}</url>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>${maven.antrun.plugin.version}</version>
@@ -60,7 +43,7 @@
             <configuration>
               <quiet>true</quiet>
               <tasks>
-                <move file="${project.build.directory}/requirements/category.xml" todir="${basedir}" overwrite="true"/>
+                <get src="${category}" dest="${basedir}/category.xml" verbose="true"/>
               </tasks>
             </configuration>
             <goals>
