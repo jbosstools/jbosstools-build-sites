@@ -10,10 +10,10 @@
   <groupId>org.jboss.tools</groupId>
   <artifactId>org.jboss.tools.site.component</artifactId>
   <name>${name}</name>
-  <version>${version}</version>
+  <version>${ver}-SNAPSHOT</version>
   <packaging>eclipse-repository</packaging>
   <properties>
-    <version>0.0.0-SNAPSHOT</version>
+    <ver>0.0.0</ver>
     <qualifier>Final</qualifier>
     <name>freemarker</name>
     <branch>jbosstools-4.1.x</branch>
@@ -73,6 +73,6 @@
   </build>
   <!-- 
     mvn clean install -Dname=freemarker -Dbranch=jbosstools-4.1.0.Final \
-    -Dversion=1.3.100-SNAPSHOT -Dqualifier=Final-v20130717-0627-B14
+    -Dver=1.3.100 -Dqualifier=Final-v20130717-0627-B14
   -->
 </project>
