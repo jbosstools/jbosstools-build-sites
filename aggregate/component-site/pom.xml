@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jboss.tools</groupId>
     <artifactId>parent</artifactId>
-    <version>4.1.1.Alpha2-SNAPSHOT</version>
+    <version>4.2.0.Alpha1-SNAPSHOT</version>
   </parent>
   <groupId>org.jboss.tools</groupId>
   <artifactId>org.jboss.tools.site.component</artifactId>
@@ -16,10 +16,10 @@
     <ver>0.0.0</ver>
     <qualifier>Final</qualifier>
     <name>freemarker</name>
-    <branch>jbosstools-4.1.x</branch>
+    <branch>jbosstools-4.2.x</branch>
     <category>https://raw.github.com/jbosstools/jbosstools-${name}/${branch}/site/category.xml</category>
-    <jbosstools-site>http://download.jboss.org/jbosstools/updates/stable/kepler/</jbosstools-site>
-    <jbosstools-tests-site>http://download.jboss.org/jbosstools/updates/nightly/coretests/4.1.kepler/</jbosstools-tests-site>
+    <jbosstools-site>http://download.jboss.org/jbosstools/updates/stable/luna/</jbosstools-site>
+    <jbosstools-tests-site>http://download.jboss.org/jbosstools/updates/nightly/coretests/master/</jbosstools-tests-site>
     <update.site.name>JBoss Tools - ${name}</update.site.name>
   </properties>
   <build>
@@ -72,7 +72,7 @@
     </plugins>
   </build>
   <!-- 
-    mvn clean install -Dname=freemarker -Dbranch=jbosstools-4.1.0.Final \
+    mvn clean install -Dname=freemarker -Dbranch=jbosstools-4.2.0.Final \
     -Dver=1.3.100 -Dqualifier=Final-v20130717-0627-B14
   -->
 </project>
