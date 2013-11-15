@@ -214,11 +214,6 @@
     <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
-  <feature id="org.jboss.tools.forge.ext.feature">
-    <!-- JBIDE-13691 don't put in CoreTools category yet <category name="CoreTools"/> -->
-    <category name="AdditionalTools" />
-    <category name="WebTools"/>
-  </feature>
 
   <!-- categorized in JBT; uncategorized in JBDS -->
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"><category name="CoreTools" /><category name="MavenTools" /></feature>
@@ -305,7 +300,6 @@
   <feature id="org.jboss.tools.community.central.feature.source"/>
   <feature id="org.jboss.tools.community.project.examples.feature.source"/>
   <feature id="org.jboss.tools.birt.feature.source"/>
-  <feature id="org.jboss.tools.forge.ext.feature.source"/>
   <feature id="org.jboss.tools.gwt.feature.source"/>
 
   <!-- only in JBDS
