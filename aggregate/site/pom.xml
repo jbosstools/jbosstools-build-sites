@@ -13,6 +13,7 @@
   <packaging>eclipse-repository</packaging>
   <properties>
     <update.site.name>${project.name}</update.site.name>
+    <xulrunner-site>http://download.jboss.org/jbosstools/updates/integration/kepler/core/xulrunner/1.9.2.Experimental-v20131218-0930-JBIDE-16280/</xulrunner-site>
   </properties>
   <build>
     <plugins>
@@ -73,6 +74,15 @@
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>xulrunner-site</id>
+      <url>${xulrunner-site}</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
+
 
   <!-- 
     mvn install -Pjbosstools-nightly-staging-composite,maximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.site_master -Presults -Dfetch-zips-for-aggregate.skip
