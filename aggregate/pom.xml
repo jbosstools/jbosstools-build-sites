@@ -11,10 +11,21 @@
   <version>4.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <!-- For best results, use the following command-line
-    $ mvn clean verify -Pmaximum,results -Dfetch-zip-for-aggregate.skip
-  -->
+  <!-- 
+    To build aggregate sites such as coretests-site or webtools-site, cd into the correct folder then:
+  
+      mvn clean verify -Pmaximum
+    
+    For the JBoss Tools aggregate site (in site/ folder):
+    
+      mvn clean verify -Pmaximum -Presults -Dfetch-zip-for-aggregate.skip
 
+    To build against locally build updates sites or target platforms, use these properties:
+	
+      mvn clean verify ... \
+        -Djbosstools-base-site=file:///home/nboldt/tru/jbosstools-build/aggregate/local-site/ \
+        -Djbosstools-target-site=file:///home/nboldt/tru/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
+  -->
   <modules>
     <module>site</module>
   </modules>
