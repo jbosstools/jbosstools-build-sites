@@ -18,7 +18,7 @@
     
     For the JBoss Tools aggregate site (in site/ folder):
     
-      mvn clean verify -Pmaximum -Presults -Dfetch-zip-for-aggregate.skip
+      mvn clean verify -Pmaximum -Presults -Dfetch-zips-for-aggregate.skip
 
     To build against locally build updates sites or target platforms, use these properties:
 	
@@ -66,97 +66,4 @@
         </build>
       </profile>
   </profiles>
-
-  <repositories>
-    <repository>
-      <id>jbosstools-base-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-base-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-server-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-server-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-openshift-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-openshift-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-jst-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-jst-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-aerogear-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-aerogear-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-hibernate-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-hibernate-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-javaee-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-javaee-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-webservices-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-webservices-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-portlet-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-portlet-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-vpe-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-vpe-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-arquillian-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-arquillian-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-forge-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-forge-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-livereload-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-livereload-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-central-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-central-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-xulrunner-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-xulrunner-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-gwt-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-gwt-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-freemarker-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-freemarker-site}</url>
-    </repository>
-    <repository>
-      <id>jbosstools-birt-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-birt-site}</url>
-    </repository>
-  </repositories>
 </project>

@@ -72,8 +72,37 @@
     </plugins>
   </build>
 
-  <!-- 
-    mvn install -Pmaximum -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.webtools-site_master
-  -->
+ <repositories>
+    <repository>
+      <id>jbosstools-base-site</id>
+      <layout>p2</layout>
+      <url>${jbosstools-base-site}</url>
+    </repository>
+    <repository>
+      <id>jbosstools-server-site</id>
+      <layout>p2</layout>
+      <url>${jbosstools-server-site}</url>
+    </repository>
+  </repositories>
 
+  <!-- 
+    When building locally, use base-site and server-site as above:
+
+      mvn verify
+
+    When building in Jenkins, point at upstream build of JBT aggregate so that we ensure we're using the same bits:
+
+      mvn install -Pmaximum \
+        -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 -Dupdate.site.description="Stable Milestone" \
+        -DJOB_NAME=jbosstools-build-sites.aggregate.webtools-site_4.2.luna \
+        -Djbosstools-base-site=http://download.jboss.org/jbosstools/updates/nightly/core/4.2.luna/ \
+        -Djbosstools-server-site=http://download.jboss.org/jbosstools/updates/nightly/core/4.2.luna/
+
+        or
+
+      mvn install -Pmaximum \
+        -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 -Dupdate.site.description="Nightly Build" \
+        -DJOB_NAME=jbosstools-build-sites.aggregate.webtools-site_master \
+        -Djbosstools-base-site=http://download.jboss.org/jbosstools/updates/nightly/core/master/ \
+        -Djbosstools-server-site=http://download.jboss.org/jbosstools/updates/nightly/core/mas
 </project>
