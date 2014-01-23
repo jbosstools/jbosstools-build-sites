@@ -13,6 +13,8 @@
   <packaging>eclipse-repository</packaging>
   <properties>
     <update.site.name>${project.name}</update.site.name>
+    <!-- TODO: JBIDE-16376 remove this property when no longer needed -->
+    <fetch-zips-for-aggregate.skip>true</fetch-zips-for-aggregate.skip>
   </properties>
   <build>
     <plugins>
