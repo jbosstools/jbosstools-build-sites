@@ -20,11 +20,14 @@
     
       mvn clean verify -Pmaximum -Presults -Dfetch-zips-for-aggregate.skip
 
-    To build against locally build updates sites or target platforms, use these properties:
+    To build against locally built target platform or updates sites, use these properties:
 	
       mvn clean verify ... \
-        -Djbosstools-base-site=file:///home/nboldt/tru/jbosstools-build/aggregate/local-site/ \
-        -Djbosstools-target-site=file:///home/nboldt/tru/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
+        -Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
+        -Djbosstools-base-site=file:///path/to/jbosstools-base/site/target/repository/ \
+        -Djbosstools-server-site=file:///path/to/jbosstools-server/site/target/repository/ \
+        -Djbosstools-hibernate-site=file:///path/to/jbosstools-hibernate/site/target/repository/ \
+          ...
   -->
   <modules>
     <module>site</module>
