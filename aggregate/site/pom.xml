@@ -27,8 +27,6 @@
             <phase>package</phase>
             <goals>
               <goal>generate-repository-facade</goal>
-              <!-- to skip this long-running step, use -Dfetch-zips-for-aggregate.skip -->
-              <goal>fetch-zips-for-aggregate</goal>
             </goals>
             <configuration>
               <associateSites>
@@ -44,9 +42,6 @@
               </additionalWebResources>
               <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${JOB_NAME}/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
               <removeDefaultCategory>true</removeDefaultCategory>
-              <repositories>
-                <repo>${jbosstools-nightly-staging-composite}</repo>
-              </repositories>
             </configuration>
           </execution>
         </executions>
