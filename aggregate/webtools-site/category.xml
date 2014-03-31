@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<category-def label="JBoss Application Server Adapters" name="org.eclipse.wst.server.core.serverAdapter">
-	</category-def>
-	<feature id="org.jboss.ide.eclipse.as.feature">
-		<category name="org.eclipse.wst.server.core.serverAdapter"/>
-	</feature>
-	<feature id="org.jboss.tools.foundation.feature"></feature>
-	<feature id="org.jboss.tools.stacks.core.feature"></feature>
-	<feature id="org.jboss.ide.eclipse.archives.feature"></feature>
-	<feature id="org.jboss.tools.jmx.feature"></feature>
-	<feature id="org.jboss.tools.runtime.core.feature"></feature>
-	<feature id="org.jboss.tools.common.core.feature"></feature>
+  <category-def label="JBoss Application Server Adapters" name="org.eclipse.wst.server.core.serverAdapter">
+  </category-def>
+  <feature id="org.jboss.ide.eclipse.as.feature">
+    <category name="org.eclipse.wst.server.core.serverAdapter"/>
+  </feature>
+  <feature id="org.jboss.tools.foundation.feature"/>
+  <feature id="org.jboss.tools.stacks.core.feature"/>
+  <feature id="org.jboss.ide.eclipse.archives.feature"/>
+  <feature id="org.jboss.tools.jmx.feature"/>
+  <feature id="org.jboss.tools.runtime.core.feature"/>
+  <feature id="org.jboss.tools.common.core.feature"/>
 </site>
