@@ -150,11 +150,11 @@
       <layout>p2</layout>
       <url>${jbosstools-xulrunner-site}</url>
     </repository>
-    <repository>
+    <!-- JBIDE-16960 remove <repository>
       <id>jbosstools-gwt-site</id>
       <layout>p2</layout>
       <url>${jbosstools-gwt-site}</url>
-    </repository>
+    </repository> -->
     <repository>
       <id>jbosstools-freemarker-site</id>
       <layout>p2</layout>
