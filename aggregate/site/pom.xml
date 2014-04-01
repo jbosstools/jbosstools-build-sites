@@ -143,7 +143,7 @@
 										<jbosstools-central>org.jboss.tools.central</jbosstools-central>
 										<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
 										<jbosstools-freemarker>org.jboss.ide.eclipse.freemarker</jbosstools-freemarker>
-										<jbosstools-gwt>org.jboss.tools.gwt.core</jbosstools-gwt>
+										<!-- JBIDE-16960 remove <jbosstools-gwt>org.jboss.tools.gwt.core</jbosstools-gwt> -->
 										<jbosstools-hibernate>org.hibernate.eclipse</jbosstools-hibernate>
 										<jbosstools-javaee>org.jboss.tools.jsf</jbosstools-javaee>
 										<jbosstools-jst>org.jboss.tools.jst.web</jbosstools-jst>
@@ -239,11 +239,11 @@
 			<layout>p2</layout>
 			<url>${jbosstools-xulrunner-site}</url>
 		</repository>
-		<repository>
+		<!-- JBIDE-16960 remove <repository>
 			<id>jbosstools-gwt-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-gwt-site}</url>
-		</repository>
+		</repository> -->
 		<repository>
 			<id>jbosstools-freemarker-site</id>
 			<layout>p2</layout>
