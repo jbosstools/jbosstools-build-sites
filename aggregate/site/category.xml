@@ -215,7 +215,7 @@
 
   <!-- categorized in JBT; uncategorized in JBDS -->
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"><category name="CoreTools" /><category name="MavenTools" /></feature>
-  <feature id="org.jboss.tools.maven.gwt.feature"><category name="AdditionalTools" /><category name="MavenTools" /></feature>
+  <!-- JBIDE-16960 remove <feature id="org.jboss.tools.maven.gwt.feature"><category name="AdditionalTools" /><category name="MavenTools" /></feature> -->
   <feature id="org.jboss.tools.common.mylyn.feature"><category name="AdditionalTools" /><category name="GeneralTools"/></feature>
   <feature id="org.jboss.tools.usage.feature"><category name="CoreTools" /><category name="GeneralTools"/></feature>
 
@@ -288,7 +288,7 @@
   <feature id="org.jboss.tools.common.ui.feature.source"/>
   <feature id="org.jboss.tools.common.verification.feature.source"/>
   <feature id="org.jboss.tools.maven.jbosspackaging.feature.source"/>
-  <feature id="org.jboss.tools.maven.gwt.feature.source"/>
+  <!-- JBIDE-16960 remove <feature id="org.jboss.tools.maven.gwt.feature.source"/> -->
   <feature id="org.jboss.tools.wtp.runtimes.tomcat.feature.source"/>
 
   <!-- only in JBT -->
