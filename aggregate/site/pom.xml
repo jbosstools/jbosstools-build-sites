@@ -140,6 +140,7 @@
 										<jbosstools-aerogear>org.jboss.tools.aerogear.hybrid.core</jbosstools-aerogear>
 										<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
 										<jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt>
+										<jbosstools-browsersim>org.jboss.tools.vpe.browsersim</jbosstools-birt>
 										<jbosstools-central>org.jboss.tools.central</jbosstools-central>
 										<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
 										<jbosstools-freemarker>org.jboss.ide.eclipse.freemarker</jbosstools-freemarker>
@@ -183,6 +184,11 @@
 			<id>jbosstools-jst-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-jst-site}</url>
+		</repository>
+		<repository>
+			<id>jbosstools-browsersim-site</id>
+			<layout>p2</layout>
+			<url>${jbosstools-browsersim-site}</url>
 		</repository>
 		<repository>
 			<id>jbosstools-aerogear-site</id>
