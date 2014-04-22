@@ -32,6 +32,10 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
+  <feature id="org.jboss.tools.vpe.vpv.feature">
+    <category name="CoreTools" />
+    <category name="WebTools" />
+  </feature>
   <feature id="org.jboss.tools.jsf.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
