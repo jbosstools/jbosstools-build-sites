@@ -28,6 +28,10 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
+  <feature id="org.jboss.tools.jst.jsdt.feature" >
+    <category name="CoreTools" />
+    <category name="WebTools" />
+  </feature>
   <feature id="org.jboss.tools.vpe.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
