@@ -196,10 +196,10 @@
     <category name="WebTools" />
     <category name="GeneralTools"/>
   </feature>
-  <feature id="org.jboss.tools.birt.feature">
+  <!-- https://issues.jboss.org/browse/JBIDE-17266 temporarily remove Birt because no upstream Luna M7 compatible deps <feature id="org.jboss.tools.birt.feature">
     <category name="AdditionalTools" />
     <category name="ReportTools" />
-  </feature>
+  </feature> -->
   <feature id="org.jboss.tools.central.themes.feature">
     <category name="AdditionalTools" />
   </feature>
@@ -300,7 +300,7 @@
   <feature id="org.jboss.tools.central.themes.feature.source"/>
   <feature id="org.jboss.tools.community.central.feature.source"/>
   <feature id="org.jboss.tools.community.project.examples.feature.source"/>
-  <feature id="org.jboss.tools.birt.feature.source"/>
+  <!-- https://issues.jboss.org/browse/JBIDE-17266 temporarily remove Birt because no upstream Luna M7 compatible deps <feature id="org.jboss.tools.birt.feature.source"/> -->
   <feature id="org.jboss.tools.forge.ext.feature.source"/>
 
   <!-- only in JBDS
@@ -318,9 +318,9 @@
   <category-def name="AdditionalTools" label="* Additional JBoss Tools">
     <description>Contains the rest of the JBoss Tools features, not included in Abridged JBoss Tools category. This category includes miscellaneous, new, experimental and incubating features. See individual feature descriptions for details.</description>
   </category-def>
-  <category-def name="ReportTools" label="JBoss Business Intelligence, Reporting and Charting">
+  <!-- https://issues.jboss.org/browse/JBIDE-17266 temporarily remove Birt because no upstream Luna M7 compatible deps <category-def name="ReportTools" label="JBoss Business Intelligence, Reporting and Charting">
     <description>Business Intelligence, Reporting and Charting. Use these if you plan to integrate Hibernate or Seam with Eclipse BIRT.</description>
-  </category-def>
+  </category-def> -->
 
   <!-- only in JBDS
   <category-def name="BringYourOwnEclipse" label="* JBoss Developer Studio 8.0 - Bring Your Own Eclipse [Technology Preview]">

@@ -21,7 +21,7 @@
 <!-- Main Features -->
 <feature id="org.jboss.ide.eclipse.archives.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.birt.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
+<!-- https://issues.jboss.org/browse/JBIDE-17266 temporarily remove Birt because no upstream Luna M7 compatible deps <feature id="org.jboss.tools.birt.test.feature"><category name="JBoss Tools - Core Tests"/></feature> -->
 <feature id="org.jboss.tools.cdi.seam.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.deltaspike.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
@@ -56,7 +56,7 @@
 <feature id="org.jboss.tools.foundation.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.stacks.core.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.birt.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
+<!-- https://issues.jboss.org/browse/JBIDE-17266 temporarily remove Birt because no upstream Luna M7 compatible deps <feature id="org.jboss.tools.birt.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature> -->
 <feature id="org.jboss.tools.cdi.seam.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.central.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
