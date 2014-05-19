@@ -34,10 +34,16 @@
   </modules>
 
   <properties>
-    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/luna/</jbosstools-target-site>
+    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${TARGET_PLATFORM_VERSION_MAXIMUM}</jbosstools-target-site>
   </properties>
 
   <profiles>
+      <profile>
+         <id>use-latest-tp-release</id>
+         <properties>
+            <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/luna</jbosstools-target-site>
+         </properties>
+      </profile>
       <!-- 
           This profile is used to optionally enable a target platform site instead of (or in addition to) the default target platform. 
           Use -Dno-target-platform if you want to disable the default target platform in favour of a specified target platform site
