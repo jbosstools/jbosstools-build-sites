@@ -139,7 +139,7 @@
 										<jbosstools-base>org.jboss.tools.common</jbosstools-base>
 										<jbosstools-aerogear>org.jboss.tools.aerogear.hybrid.core</jbosstools-aerogear>
 										<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
-										<!-- https://issues.jboss.org/browse/JBIDE-17266 temporarily remove Birt because no upstream Luna M7 compatible deps <jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt> -->
+										<jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt>
 										<jbosstools-browsersim>org.jboss.tools.vpe.browsersim</jbosstools-browsersim>
 										<jbosstools-central>org.jboss.tools.central</jbosstools-central>
 										<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
