@@ -52,7 +52,7 @@
 								<resource>../README.building.txt</resource>
 								<resource>../README.installation.txt</resource>
 							</additionalWebResources>
-							<p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${JOB_NAME}/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
+              <p2StatsUrl>${p2StatsUrl}</p2StatsUrl>
 							<removeDefaultCategory>true</removeDefaultCategory>
 						</configuration>
 					</execution>

@@ -35,6 +35,8 @@
 
   <properties>
     <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/luna/</jbosstools-target-site>
+    <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/local/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
+
   </properties>
 
   <profiles>
@@ -58,6 +60,13 @@
             <url>${jbosstools-target-site}</url>
           </repository>
         </repositories>
+      </profile>
+
+      <profile>
+        <id>hudson</id>
+        <properties>
+          <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${JOB_NAME}/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
+        </properties>
       </profile>
 
   </profiles>
