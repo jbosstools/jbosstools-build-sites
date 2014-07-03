@@ -212,14 +212,12 @@
     <category name="GeneralTools" />
   </feature>
   <feature id="org.jboss.tools.forge.ext.feature">
-    <!-- JBIDE-13691 don't put in CoreTools category yet <category name="CoreTools"/> -->
-    <category name="AdditionalTools" />
+    <category name="CoreTools" />
     <category name="WebTools"/>
   </feature>
   <feature id="org.jboss.tools.forge.m2e.feature">
-    <!-- JBIDE-13691 don't put in CoreTools category yet <category name="CoreTools"/> -->
-    <category name="AdditionalTools" />
-    <category name="WebTools"/>
+    <category name="CoreTools" />
+    <category name="MavenTools"/>
   </feature>
 
   <!-- categorized in JBT; uncategorized in JBDS -->
