@@ -137,7 +137,7 @@
 									<!-- <zipCacheFolder>cache</zipCacheFolder> <outputFolder>zips</outputFolder> -->
 									<sourceFetchMap>
 										<jbosstools-base>org.jboss.tools.common</jbosstools-base>
-										<jbosstools-aerogear>org.jboss.tools.aerogear.hybrid.core</jbosstools-aerogear>
+										<jbosstools-aerogear>org.jboss.tools.aerogear.thym.core</jbosstools-aerogear>
 										<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
 										<jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt>
 										<jbosstools-browsersim>org.jboss.tools.vpe.browsersim</jbosstools-browsersim>
