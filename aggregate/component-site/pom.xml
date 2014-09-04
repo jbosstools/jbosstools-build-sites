@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jboss.tools</groupId>
     <artifactId>parent</artifactId>
-    <version>4.2.0.Alpha1-SNAPSHOT</version>
+    <version>4.3.0.Alpha1-SNAPSHOT</version>
   </parent>
   <groupId>org.jboss.tools</groupId>
   <artifactId>org.jboss.tools.site.component</artifactId>
@@ -16,7 +16,7 @@
     <ver>0.0.0</ver>
     <qualifier>Final</qualifier>
     <name>freemarker</name>
-    <branch>jbosstools-4.2.x</branch>
+    <branch>jbosstools-4.3.x</branch>
     <category>https://raw.github.com/jbosstools/jbosstools-${name}/${branch}/site/category.xml</category>
     <jbosstools-site>http://download.jboss.org/jbosstools/updates/stable/luna/</jbosstools-site>
     <jbosstools-tests-site>http://download.jboss.org/jbosstools/updates/nightly/coretests/master/</jbosstools-tests-site>
