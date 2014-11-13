@@ -34,7 +34,7 @@
   </modules>
 
   <properties>
-    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/luna/</jbosstools-target-site>
+    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/mars/</jbosstools-target-site>
     <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/local/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
 
   </properties>
