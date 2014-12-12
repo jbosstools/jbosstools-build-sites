@@ -70,6 +70,7 @@
   <feature id="org.jboss.ide.eclipse.as.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
+    <category name="org.eclipse.wst.server.core.serverAdapter"/>
   </feature>
   <feature id="org.jboss.tools.openshift.express.feature">
     <category name="CoreTools" />
@@ -321,6 +322,8 @@
   <!-- ########## -->
 
  <!-- only in JBT -->
+  <category-def label="JBoss Application Server Adapters" name="org.eclipse.wst.server.core.serverAdapter">
+  </category-def>
   <category-def name="CoreTools" label="* Abridged JBoss Tools">
     <description>Contains most of the JBoss Tools features. Excluded are those related to integration with 3rd party plugins. Selecting this category will give you all tools needed for Web and Seam Development.</description>
   </category-def>
