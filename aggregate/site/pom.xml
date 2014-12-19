@@ -191,6 +191,11 @@
 			<url>${jbosstools-browsersim-site}</url>
 		</repository>
 		<repository>
+			<id>eclipse-thym-site</id>
+			<layout>p2</layout>
+			<url>${eclipse-thym-site}</url>
+		</repository>
+		<repository>
 			<id>jbosstools-aerogear-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-aerogear-site}</url>
