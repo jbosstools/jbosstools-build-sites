@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<description>JBoss Tools 4.3 (Mars) - Core Tests</description>
+<description>JBoss Tools 4.3 (Mars) - Core Tests</description>
 
-	<!-- PLEASE NOTE!
-		When updating this file, please be sure that it parses as valid XML before committing it.
-		To test, just run `mvn clean install` in this folder. 
-		
-		To regenerate the list of included test features, do this:
-		
-		$ cd ~/trunk; find . -mindepth 3 -maxdepth 3 -type d -name "*test*feature" | sort | \
-		sed "s#\.\/.\+\/features\/\(.\+\)#<feature url=\"features/\1_0.0.0.jar\" id=\"\1\" version=\"0.0.0\"><category name=\"JBoss Tools - Core Tests\"/></feature>#g"
-	-->
-
-	<category-def name="JBoss Tools - Core Tests" label="JBoss Tools - Core Tests">
-		<description>JBoss Tools - Core Tests
-		</description>
-	</category-def>
-
+<!-- PLEASE NOTE!
+	When updating this file, please be sure that it parses as valid XML before committing it.
+	To test, just run `mvn clean install` in this folder. 
+-->
+<category-def name="JBoss Tools - Core Tests" label="JBoss Tools - Core Tests">
+	<description>JBoss Tools - Core Tests
+	</description>
+</category-def>
 
 <!-- Main Features -->
 <feature id="org.jboss.ide.eclipse.archives.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.birt.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
+<feature id="org.jboss.tools.batch.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.seam.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.deltaspike.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
@@ -49,14 +43,13 @@
 <feature id="org.jboss.tools.ws.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature"><category name="JBoss Tools - Core Tests"/></feature>
 
-
-
 <!-- Source Features -->
 <feature id="org.jboss.ide.eclipse.archives.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.foundation.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.stacks.core.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.birt.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
+<feature id="org.jboss.tools.batch.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.seam.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.central.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
