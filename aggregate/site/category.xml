@@ -204,6 +204,9 @@
   <feature id="org.jboss.tools.xulrunner.feature"/>
   <feature id="org.mozilla.xulrunner.feature"/>
 
+  <bundle id="org.jboss.tools.discovery.core"/>
+  <bundle id="org.jboss.tools.project.examples.seam"/>
+
   <!-- only in JBT -->
   <feature id="org.jboss.tools.arquillian.feature">
     <category name="AdditionalTools" />
@@ -313,6 +316,9 @@
   <feature id="org.jboss.tools.maven.jbosspackaging.feature.source"/>
   <!-- JBIDE-16960 remove <feature id="org.jboss.tools.maven.gwt.feature.source"/> -->
   <feature id="org.jboss.tools.wtp.runtimes.tomcat.feature.source"/>
+
+  <bundle id="org.jboss.tools.discovery.core.source"/>
+  <bundle id="org.jboss.tools.project.examples.seam.source"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.arquillian.feature.source"/>
