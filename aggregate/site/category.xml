@@ -123,6 +123,9 @@
     <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
+  <feature id="org.jboss.tools.project.examples.seam.feature">
+    <category name="GeneralTools" />
+  </feature>
   <feature id="org.jboss.tools.maven.feature">
     <category name="CoreTools" />
     <category name="MavenTools" />
@@ -205,7 +208,6 @@
   <feature id="org.mozilla.xulrunner.feature"/>
 
   <bundle id="org.jboss.tools.discovery.core"/>
-  <bundle id="org.jboss.tools.project.examples.seam"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.arquillian.feature">
@@ -297,6 +299,7 @@
   <feature id="org.jboss.tools.maven.jdt.feature.source"/>
   <feature id="org.jboss.tools.maven.portlet.feature.source"/>
   <feature id="org.jboss.tools.maven.project.examples.feature.source"/>
+  <feature id="org.jboss.tools.maven.project.examples.seam.feature.source"/>
   <feature id="org.jboss.tools.maven.seam.feature.source"/>
   <feature id="org.jboss.tools.maven.sourcelookup.feature.source"/>
   <feature id="org.jboss.tools.runtime.core.feature.source"/>
@@ -318,7 +321,6 @@
   <feature id="org.jboss.tools.wtp.runtimes.tomcat.feature.source"/>
 
   <bundle id="org.jboss.tools.discovery.core.source"/>
-  <bundle id="org.jboss.tools.project.examples.seam.source"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.arquillian.feature.source"/>
