@@ -24,6 +24,10 @@
     <category name="AdditionalTools" />
     <category name="MobileTools"/>
   </feature>
+  <feature id="org.jboss.tools.feedhenry">
+    <category name="AdditionalTools" />
+    <category name="MobileTools"/>
+  </feature>
   <feature id="org.jboss.tools.vpe.browsersim.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
