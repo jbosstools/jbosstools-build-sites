@@ -43,6 +43,7 @@
       <plugin>
         <groupId>org.jboss.tools.tycho-plugins</groupId>
         <artifactId>repository-utils</artifactId>
+        <executions>
           <execution>
             <id>generate-full-site</id>
             <phase>package</phase>
