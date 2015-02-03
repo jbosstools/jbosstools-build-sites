@@ -181,6 +181,16 @@
 			<url>${jbosstools-openshift-site}</url>
 		</repository>
 		<repository>
+			<id>eclipse-tern-site</id>
+			<layout>p2</layout>
+			<url>${eclipse-tern-site}</url>
+		</repository>
+		<repository>
+			<id>eclipse-angularjs-site</id>
+			<layout>p2</layout>
+			<url>${eclipse-angular-site}</url>
+		</repository>
+		<repository>
 			<id>jbosstools-jst-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-jst-site}</url>
