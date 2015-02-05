@@ -52,6 +52,10 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
+  <feature id="org.jboss.tools.jst.angularjs.feature" >
+    <category name="CoreTools" />
+    <category name="WebTools" />
+  </feature>
   <feature id="org.jboss.tools.vpe.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
@@ -274,6 +278,7 @@
   <feature id="org.jboss.tools.vpe.cordovasim.feature.source"/>
   <feature id="org.jboss.tools.vpe.browsersim.feature.source"/>
   <feature id="org.jboss.tools.jst.feature.source"/>
+  <feature id="org.jboss.tools.jst.jsdt.feature.source"/>
   <feature id="org.jboss.tools.jst.angularjs.feature.source"/>
   <feature id="org.jboss.tools.vpe.feature.source"/>
   <feature id="org.jboss.tools.jsf.feature.source"/>
