@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<description>JBoss Tools 4.2 (Luna) - Core Extras</description>
+
+	<category-def name="JBoss Tools - Core Extras" label="JBoss Tools - Core Extras">
+		<description>JBoss Tools - Core Extras: This site contains JBoss Tools features which are to be included in the JBoss Central and/or Early Access composite sites.</description>
+	</category-def>
+
+	<!-- Central -->
+
+	<feature id="org.jboss.tools.vpe.cordovasim.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.maven.jbosspackaging.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.mylyn.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.jst.angularjs.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.forge.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.forge.ext.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.forge.m2e.feature"><category name="JBoss Tools - Core Extras"/></feature>
+
+	<!-- Early Access -->
+
+	<feature id="org.jboss.tools.arquillian.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.ide.eclipse.as.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.core.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.jdt.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.foundation.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.jmx.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.usage.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.runtime.core.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.ide.eclipse.archives.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.stacks.core.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.ui.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.mylyn.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.text.ext.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.common.verification.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.jst.jsdt.feature"><category name="JBoss Tools - Core Extras"/></feature>
+	<feature id="org.jboss.tools.jst.angularjs.feature"><category name="JBoss Tools - Core Extras"/></feature>
+
+</site>
