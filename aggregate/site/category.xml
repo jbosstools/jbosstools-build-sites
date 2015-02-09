@@ -34,7 +34,7 @@
     <category name="MobileTools"/>
   </feature>
 
-  <!-- JBIDE-19045 include Tern and Angular 0.7 -->
+  <!-- JBIDE-19045 include Tern -->
   <bundle id="minimal-json"/>
   <feature id="tern-feature"/>
   <feature id="tern-jsdt-feature"/>
