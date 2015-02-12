@@ -102,6 +102,10 @@
     <category name="CoreTools" />
     <category name="CloudTools" />
   </feature>
+  <feature id="org.jboss.tools.openshift.feature">
+    <category name="CoreTools" />
+    <category name="CloudTools" />
+  </feature>
   <feature id="org.jboss.ide.eclipse.archives.feature">
     <category name="CoreTools" />
     <category name="GeneralTools" />
@@ -297,6 +301,7 @@
   <feature id="org.jboss.tools.cdi.deltaspike.feature.source"/>
   <feature id="org.jboss.tools.jmx.feature.source"/>
   <feature id="org.jboss.ide.eclipse.as.feature.source"/>
+  <feature id="org.jboss.tools.openshift.feature.source"/>
   <feature id="org.jboss.tools.openshift.express.feature.source"/>
   <feature id="org.jboss.tools.openshift.egit.integration.feature.source"/>
   <feature id="org.jboss.ide.eclipse.archives.feature.source"/>
