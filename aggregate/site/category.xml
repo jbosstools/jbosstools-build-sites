@@ -46,9 +46,10 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
-  <feature id="org.jboss.tools.jst.jsdt.feature" >
+  <feature id="org.jboss.tools.jst.jsdt.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
+    <category name="MobileTools"/>
   </feature>
   <feature id="org.jboss.tools.jst.angularjs.feature" >
     <category name="CoreTools" />
@@ -259,7 +260,6 @@
 
   <!-- categorized in JBT; uncategorized in JBDS -->
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"><category name="CoreTools" /><category name="MavenTools" /></feature>
-  <!-- JBIDE-16960 remove <feature id="org.jboss.tools.maven.gwt.feature"><category name="AdditionalTools" /><category name="MavenTools" /></feature> -->
   <feature id="org.jboss.tools.common.mylyn.feature"><category name="AdditionalTools" /><category name="GeneralTools"/></feature>
   <feature id="org.jboss.tools.usage.feature"><category name="CoreTools" /><category name="GeneralTools"/></feature>
 
@@ -275,6 +275,7 @@
   <feature id="org.jboss.tools.maven.apt.feature"/>
   <feature id="org.jboss.tools.m2e.jdt.feature"/>
   <feature id="org.sonatype.m2e.buildhelper.feature"/>
+  <feature id="org.sonatype.m2e.egit.feature"/>
   <feature id="org.sonatype.m2e.mavenarchiver.feature"/>
   -->
 
@@ -375,7 +376,8 @@
 
   <!-- only in JBDS
   <category-def name="BringYourOwnEclipse" label="* JBoss Developer Studio 8.0 - Bring Your Own Eclipse [Technology Preview]">
-    <description>Select this feature if you want to install all of the JBoss Developer Studio (Core Features) into your own Eclipse Luna 4.4.</category-def>
+    <description>Select this feature if you want to install all of the JBoss Developer Studio (Core Features) into your own Eclipse Luna 4.4.</description>
+    </category-def>
   <category-def name="CoreTools" label="* JBoss Developer Studio 8.0 - Core">
     <description>Contains most of the JBoss Developer Studio features. Excluded are those related to integration with 3rd party plugins. Selecting this category will give you all tools needed for Web and Seam Development.</description>
   </category-def>
