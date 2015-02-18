@@ -68,6 +68,7 @@
   </feature> 
   <feature id="org.jboss.tools.batch.feature">
     <category name="CoreTools" />
+    <category name="WebTools" />
     <category name="GeneralTools" />
   </feature>
   <feature id="org.jboss.tools.cdi.feature">
