@@ -104,6 +104,7 @@
     <category name="CoreTools" />
     <category name="CloudTools" />
   </feature>
+  <!-- openshift v3 -->
   <feature id="org.jboss.tools.openshift.feature">
     <category name="CoreTools" />
     <category name="CloudTools" />
