@@ -26,7 +26,6 @@
         -Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
         -Djbosstools-base-site=file:///path/to/jbosstools-base/site/target/repository/ \
         -Djbosstools-server-site=file:///path/to/jbosstools-server/site/target/repository/ \
-        -Djbosstools-hibernate-site=file:///path/to/jbosstools-hibernate/site/target/repository/ \
           ...
   -->
   <modules>
