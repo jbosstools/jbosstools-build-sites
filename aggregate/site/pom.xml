@@ -136,11 +136,12 @@
 								<configuration>
 									<!-- <zipCacheFolder>cache</zipCacheFolder> <outputFolder>zips</outputFolder> -->
 									<sourceFetchMap>
+										<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
 										<jbosstools-base>org.jboss.tools.common</jbosstools-base>
 										<jbosstools-aerogear>org.jboss.tools.aerogear.thym</jbosstools-aerogear>
 										<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
 										<jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt>
-										<jbosstools-browsersim>org.jboss.tools.browsersim</jbosstools-browsersim>
+										<jbosstools-browsersim>org.jboss.tools.browsersim.eclipse</jbosstools-browsersim>
 										<jbosstools-central>org.jboss.tools.central</jbosstools-central>
 										<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
 										<jbosstools-freemarker>org.jboss.ide.eclipse.freemarker</jbosstools-freemarker>
