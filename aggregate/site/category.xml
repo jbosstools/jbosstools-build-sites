@@ -24,11 +24,11 @@
     <category name="AdditionalTools" />
     <category name="MobileTools"/>
   </feature>
-  <feature id="org.jboss.tools.vpe.cordovasim.feature">
+  <feature id="org.jboss.tools.cordovasim.feature">
     <category name="AdditionalTools" />
     <category name="MobileTools"/>
   </feature>
-  <feature id="org.jboss.tools.vpe.browsersim.feature">
+  <feature id="org.jboss.tools.browsersim.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
     <category name="MobileTools"/>
@@ -288,8 +288,8 @@
   <feature id="org.jboss.tools.richfaces.feature.source"/>
   <feature id="org.jboss.tools.aerogear.thym.feature.source"/>
   <feature id="org.jboss.tools.feedhenry.source"/> 
-  <feature id="org.jboss.tools.vpe.cordovasim.feature.source"/>
-  <feature id="org.jboss.tools.vpe.browsersim.feature.source"/>
+  <feature id="org.jboss.tools.cordovasim.feature.source"/>
+  <feature id="org.jboss.tools.browsersim.feature.source"/>
   <feature id="org.jboss.tools.jst.feature.source"/>
   <feature id="org.jboss.tools.jst.jsdt.feature.source"/>
   <feature id="org.jboss.tools.jst.angularjs.feature.source"/>
