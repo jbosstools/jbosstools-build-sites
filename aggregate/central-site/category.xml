@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this site contains the features of JBoss Tools which live in JBDS Central because they're not ready to be in JBDS update site itself -->
+<site>
+  <feature id="org.jboss.tools.cordovasim.feature"/>
+  <feature id="org.jboss.tools.maven.jbosspackaging.feature"/>
+  <feature id="org.jboss.tools.common.mylyn.feature"/>
+  <feature id="org.jboss.tools.jst.angularjs.feature"/>
+  <feature id="org.jboss.tools.forge.ext.feature"/>
+</site>
