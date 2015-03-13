@@ -228,6 +228,7 @@
   <feature id="org.mozilla.xulrunner.feature"/>
 
   <bundle id="org.jboss.tools.discovery.core"/>
+  <bundle id="org.jboss.tools.foundation.help.ui"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.arquillian.feature">
@@ -344,6 +345,7 @@
   <feature id="org.jboss.tools.wtp.runtimes.tomcat.feature.source"/>
 
   <bundle id="org.jboss.tools.discovery.core.source"/>
+  <bundle id="org.jboss.tools.foundation.help.ui.source"/>
 
   <!-- only in JBT -->
   <feature id="org.jboss.tools.arquillian.feature.source"/>
