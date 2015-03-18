@@ -264,9 +264,9 @@
 	</repositories>
 
 	<!-- 
-		mvn verify -Pmaximum -Presults,fetch-source-zips \ 
+		mvn verify -Pmaximum -Pfetch-source-zips \ 
 			-DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 \ 
-			-Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.site_4.2.luna 
+			-Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.site_4.3.mars
 	-->
 
 </project>
