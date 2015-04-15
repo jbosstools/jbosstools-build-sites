@@ -216,6 +216,9 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
+  <feature id="org.jboss.tools.central.easymport.feature">
+    <category name="CoreTools" />
+  </feature>
 
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.central.feature"/>
