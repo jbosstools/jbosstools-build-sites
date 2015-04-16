@@ -134,7 +134,9 @@
 									<goal>fetch-sources-from-manifests</goal>
 								</goals>
 								<configuration>
-									<!-- <zipCacheFolder>cache</zipCacheFolder> <outputFolder>zips</outputFolder> -->
+									<!-- <zipCacheFolder>${basedir}/cache</zipCacheFolder> -->
+									<!-- <outputFolder>${project.build.directory}/fullSite</outputFolder> -->
+									<!-- <sourcesZip>${project.build.directory}/fullSite/all/jbosstools-src.zip</sourcesZip> -->
 									<sourceFetchMap>
 										<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
 										<jbosstools-base>org.jboss.tools.common</jbosstools-base>
@@ -145,7 +147,6 @@
 										<jbosstools-central>org.jboss.tools.central</jbosstools-central>
 										<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
 										<jbosstools-freemarker>org.jboss.ide.eclipse.freemarker</jbosstools-freemarker>
-										<!-- JBIDE-16960 remove <jbosstools-gwt>org.jboss.tools.gwt.core</jbosstools-gwt> -->
 										<jbosstools-hibernate>org.hibernate.eclipse</jbosstools-hibernate>
 										<jbosstools-javaee>org.jboss.tools.jsf</jbosstools-javaee>
 										<jbosstools-jst>org.jboss.tools.jst.web</jbosstools-jst>
