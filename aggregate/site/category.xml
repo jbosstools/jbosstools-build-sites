@@ -171,7 +171,6 @@
     <category name="MavenTools" />
   </feature>
   <feature id="org.jboss.tools.maven.portlet.feature">
-    <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
   <feature id="org.jboss.tools.maven.project.examples.feature">
@@ -179,7 +178,6 @@
     <category name="MavenTools" />
   </feature>
   <feature id="org.jboss.tools.maven.seam.feature">
-    <category name="CoreTools" />
     <category name="MavenTools"/>
   </feature>
   <feature id="org.jboss.tools.maven.sourcelookup.feature">
