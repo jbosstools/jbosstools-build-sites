@@ -137,8 +137,7 @@
 									<!-- <zipCacheFolder>${basedir}/cache</zipCacheFolder> -->
 									<!-- <outputFolder>${project.build.directory}/fullSite</outputFolder> -->
 									<!-- <sourcesZip>${project.build.directory}/fullSite/all/jbosstools-src.zip</sourcesZip> -->
-									<!-- TODO: JBIDE-19718 until we apply PR 40, need an override here -->
-									<buildInfoJSONPathSuffix>${jbosstools_site_suffix}</buildInfoJSONPathSuffix>
+									<!-- <fallbackToChild>latest/all/repo</fallbackToChild> -->
 									<sourceFetchMap>
 										<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
 										<jbosstools-base>org.jboss.tools.common</jbosstools-base>
