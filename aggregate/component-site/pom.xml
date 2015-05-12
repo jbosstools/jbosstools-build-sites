@@ -7,7 +7,6 @@
     <artifactId>parent</artifactId>
     <version>4.3.0.Alpha1-SNAPSHOT</version>
   </parent>
-  <groupId>org.jboss.tools</groupId>
   <artifactId>org.jboss.tools.site.component</artifactId>
   <name>${name}</name>
   <version>${ver}-SNAPSHOT</version>
@@ -21,6 +20,7 @@
     <jbosstools-site>http://download.jboss.org/jbosstools/updates/stable/luna/</jbosstools-site>
     <jbosstools-tests-site>http://download.jboss.org/jbosstools/updates/nightly/coretests/master/</jbosstools-tests-site>
     <update.site.name>JBoss Tools - ${name}</update.site.name>
+    <snapshotLocation>components</snapshotLocation>
   </properties>
   <build>
     <plugins>
