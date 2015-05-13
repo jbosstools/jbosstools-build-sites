@@ -30,6 +30,24 @@
 					</execution>
 				</executions>
 			</plugin>
+      <!-- get major.minor.incremental from parent pom, then use devstudio.version = ${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS} -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.9.1</version>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <id>parse-version</id>
+            <goals>
+              <goal>parse-version</goal>
+            </goals>
+            <configuration>
+              <versionString>${project.parent.parent.version}</versionString>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 			<plugin>
 				<groupId>org.jboss.tools.tycho-plugins</groupId>
 				<artifactId>repository-utils</artifactId>
@@ -54,28 +72,6 @@
 							</additionalWebResources>
               <p2StatsUrl>${p2StatsUrl}</p2StatsUrl>
 							<removeDefaultCategory>true</removeDefaultCategory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<!-- Workaround for publish script not able to deal with ${artifactId}-${version}.zip -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<id>copy-site-to-site_assembly.zip</id>
-						<phase>package</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target>
-								<copy
-									file="${project.build.directory}/${project.artifactId}-${project.version}.zip"
-									tofile="${project.build.directory}/site_assembly.zip" />
-							</target>
 						</configuration>
 					</execution>
 				</executions>
@@ -136,8 +132,9 @@
 								<configuration>
 									<!-- <zipCacheFolder>${basedir}/cache</zipCacheFolder> -->
 									<!-- <outputFolder>${project.build.directory}/fullSite</outputFolder> -->
-									<!-- <sourcesZip>${project.build.directory}/fullSite/all/jbosstools-src.zip</sourcesZip> -->
 									<!-- <fallbackToChild>latest/all/repo</fallbackToChild> -->
+									<sourcesZip>${project.build.directory}/fullSite/all/jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src.zip</sourcesZip>
+									<sourcesZipRootFolder>jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src</sourcesZipRootFolder>
 									<sourceFetchMap>
 										<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
 										<jbosstools-base>org.jboss.tools.common</jbosstools-base>
