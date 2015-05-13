@@ -1,128 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.jboss.tools</groupId>
-		<artifactId>parent</artifactId>
-		<version>4.3.0.Beta1-SNAPSHOT</version>
-	</parent>
-	<groupId>org.jboss.tools</groupId>
-	<artifactId>org.jboss.tools.site</artifactId>
-	<version>4.3.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss.tools</groupId>
+    <artifactId>parent</artifactId>
+    <version>4.3.0.Beta1-SNAPSHOT</version>
+  </parent>
+  <groupId>org.jboss.tools</groupId>
+  <artifactId>org.jboss.tools.site</artifactId>
+  <version>4.3.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<!-- To build aggregate sites such as coretests-site or webtools-site, cd 
-		into the correct folder then: mvn clean verify -Pmaximum For the JBoss Tools 
-		aggregate site (in site/ folder): mvn clean verify -Pmaximum -Presults To 
-		build against locally built target platform or updates sites, use these properties: 
-		mvn clean verify ... \ -Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/ 
-		-Djbosstools-base-site=file:///path/to/jbosstools-base/site/target/repository/ 
-		\ -Djbosstools-server-site=file:///path/to/jbosstools-server/site/target/repository/ 
-		\ ... -->
-	<modules>
-		<module>site</module>
-	</modules>
+  <!-- 
+    To build aggregate sites such as coretests-site or webtools-site, cd into the correct folder then:
+  
+      mvn clean verify -Pmaximum
+    
+    For the JBoss Tools aggregate site (in site/ folder):
+    
+      mvn clean verify -Pmaximum -Presults
 
-	<properties>
-		<jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/mars/</jbosstools-target-site>
-		<p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/local/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
-	</properties>
+    To build against locally built target platform or updates sites, use these properties:
+	
+      mvn clean verify ... \
+        -Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
+        -Djbosstools-base-site=file:///path/to/jbosstools-base/site/target/repository/ \
+        -Djbosstools-server-site=file:///path/to/jbosstools-server/site/target/repository/ \
+          ...
+  -->
+  <modules>
+    <module>site</module>
+  </modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.jboss.tools.tycho-plugins</groupId>
-				<artifactId>repository-utils</artifactId>
-				<executions>
-					<execution>
-						<id>generate-full-site</id>
-						<phase>package</phase>
-						<goals>
-							<goal>create-full-site</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+  <properties>
+    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/mars/</jbosstools-target-site>
+    <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/local/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
+  </properties>
 
-	<profiles>
-		<!-- This profile is used to optionally enable a target platform site instead 
-			of (or in addition to) the default target platform. Use -Dno-target-platform 
-			if you want to disable the default target platform in favour of a specified 
-			target platform site mvn clean install -Dno-target-platform \ -Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/ -->
-		<profile>
-			<id>target-site</id>
-			<activation>
-				<property>
-					<name>jbosstools-target-site</name>
-				</property>
-			</activation>
-			<repositories>
-				<repository>
-					<id>jbosstools-target-site</id>
-					<layout>p2</layout>
-					<url>${jbosstools-target-site}</url>
-				</repository>
-			</repositories>
-		</profile>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jboss.tools.tycho-plugins</groupId>
+        <artifactId>repository-utils</artifactId>
+        <executions>
+          <execution>
+            <id>generate-full-site</id>
+            <phase>package</phase>
+            <goals>
+              <goal>create-full-site</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>net.ju-n.maven.plugins</groupId>
+        <artifactId>checksum-maven-plugin</artifactId>
+        <version>1.3-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>files</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <quiet>true</quiet>
+          <csvSummary>false</csvSummary>
+          <algorithms>
+            <!-- <algorithm>MD5</algorithm> -->
+            <algorithm>SHA-1</algorithm>
+          </algorithms>
+          <fileSets>
+            <fileSet>
+              <directory>${project.build.directory}</directory>
+              <includes>
+                <include>**/*.zip</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
-		<profile>
-			<id>hudson</id>
-			<properties>
-				<p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${JOB_NAME}/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
-			</properties>
-		</profile>
+  <profiles>
+    <!-- 
+        This profile is used to optionally enable a target platform site instead of (or in addition to) the default target platform. 
+        Use -Dno-target-platform if you want to disable the default target platform in favour of a specified target platform site
+          mvn clean install -Dno-target-platform \
+          -Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
+    -->
+    <profile>
+      <id>target-site</id>
+      <activation>
+        <property>
+          <name>jbosstools-target-site</name>
+        </property>
+      </activation>
+      <repositories>
+        <repository>
+          <id>jbosstools-target-site</id>
+          <layout>p2</layout>
+          <url>${jbosstools-target-site}</url>
+        </repository>
+      </repositories>
+    </profile>
 
-		<profile>
-			<id>deploy-to-jboss.org</id>
-			<properties>
-				<!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
-				<maven.deploy.skip>true</maven.deploy.skip>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>exec-maven-plugin</artifactId>
-						<version>1.3.2</version>
-						<executions>
-							<execution>
-								<id>deploy-fullSite-to-snapshot</id>
-								<goals>
-									<goal>exec</goal>
-								</goals>
-								<phase>deploy</phase>
-								<configuration>
-									<arguments>
-										<arg>-s</arg>
-										<arg>${project.build.directory}/fullSite</arg>
-										<arg>-t</arg>
-										<arg>${jbosstools-build-type}/${JOB_NAME}/${BUILD_ID}-B${BUILD_NUMBER}/</arg>
-									</arguments>
-								</configuration>
-							</execution>
-							<execution>
-								<id>deploy-to-nighlty</id>
-								<goals>
-									<goal>exec</goal>
-								</goals>
-								<phase>deploy</phase>
-								<configuration>
-									<arguments>
-										<arg>-s</arg>
-										<arg>${project.build.directory}/repository</arg>
-										<arg>-t</arg>
-										<arg>mars/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
-									</arguments>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+    <profile>
+      <id>hudson</id>
+      <properties>
+        <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${JOB_NAME}/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>deploy-to-jboss.org</id>
+      <properties>
+        <!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
+        <maven.deploy.skip>true</maven.deploy.skip>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.3.2</version>
+            <executions>
+              <execution>
+                <id>deploy-fullSite-to-snapshot</id>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <phase>deploy</phase>
+                <configuration>
+                  <arguments>
+                    <arg>-s</arg>
+                    <arg>${project.build.directory}/fullSite</arg>
+                    <arg>-t</arg>
+                    <arg>${jbosstools-build-type}/${JOB_NAME}/${BUILD_ID}-B${BUILD_NUMBER}/</arg>
+                  </arguments>
+                </configuration>
+              </execution>
+              <execution>
+                <id>deploy-to-nighlty</id>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <phase>deploy</phase>
+                <configuration>
+                  <arguments>
+                    <arg>-s</arg>
+                    <arg>${project.build.directory}/repository</arg>
+                    <arg>-t</arg>
+                    <arg>mars/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
