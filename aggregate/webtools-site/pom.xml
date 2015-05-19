@@ -40,22 +40,11 @@
               </additionalWebResources>
               <p2StatsUrl>${p2StatsUrl}</p2StatsUrl>
               <removeDefaultCategory>true</removeDefaultCategory>
-              <repositories>
-                <repo>${jbosstools-nightly-staging-composite}</repo>
-              </repositories>
             </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
-
- <repositories>
-    <repository>
-      <id>jbosstools-site</id>
-      <layout>p2</layout>
-      <url>http://download.jboss.org/jbosstools/builds/nightly/core/${jbosstools-site-stream}</url>
-    </repository>
-  </repositories>
 
 </project>
