@@ -186,7 +186,8 @@
                     <arg>-s</arg>
                     <arg>${project.build.directory}/fullSite</arg>
                     <arg>-t</arg>
-                    <arg>mars/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
+                    <!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
+                    <arg>mars/snapshots/builds/jbosstools-build-sites.aggregate.site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
                   </arguments>
                 </configuration>
               </execution>
