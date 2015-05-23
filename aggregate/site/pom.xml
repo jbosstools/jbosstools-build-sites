@@ -49,6 +49,25 @@
         </executions>
       </plugin>
 			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>2.1.13</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<!-- see https://github.com/ktoso/maven-git-commit-id-plugin#using-the-plugin -->
+				<configuration>
+					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+				    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+				    <!-- The path for the to be generated properties file, it's relative to ${project.basedir} -->
+				    <generateGitPropertiesFilename>target/git.properties</generateGitPropertiesFilename>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.jboss.tools.tycho-plugins</groupId>
 				<artifactId>repository-utils</artifactId>
 				<executions>
