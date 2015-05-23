@@ -177,11 +177,6 @@
       <layout>p2</layout>
       <url>${jbosstools-central-site}</url>
     </repository>
-    <repository>
-      <id>jbosstools-xulrunner-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-xulrunner-site}</url>
-    </repository>
     <!-- JBIDE-16960 remove <repository>
       <id>jbosstools-gwt-site</id>
       <layout>p2</layout>

@@ -152,7 +152,7 @@
 										<jbosstools-openshift>org.jboss.tools.openshift.egit.core</jbosstools-openshift>
 										<jbosstools-portlet>org.jboss.tools.portlet.core</jbosstools-portlet>
 										<jbosstools-server>org.jboss.ide.eclipse.as.core</jbosstools-server>
-										<jbosstools-vpe>org.jboss.tools.vpe</jbosstools-vpe>
+										<jbosstools-vpe>org.jboss.tools.vpe.preview.editor</jbosstools-vpe>
 										<jbosstools-webservices>org.jboss.tools.ws.core</jbosstools-webservices>
 									</sourceFetchMap>
 								</configuration>
@@ -289,11 +289,6 @@
 			<id>jbosstools-central-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-central-site}</url>
-		</repository>
-		<repository>
-			<id>jbosstools-xulrunner-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-xulrunner-site}</url>
 		</repository>
 		<!-- JBIDE-16960 remove <repository>
 			<id>jbosstools-gwt-site</id>
