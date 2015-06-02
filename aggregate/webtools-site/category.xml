@@ -11,5 +11,6 @@
   <feature id="org.jboss.tools.jmx.feature"/>
   <feature id="org.jboss.tools.runtime.core.feature"/>
   <feature id="org.jboss.tools.common.core.feature"/>
+  <feature id="org.jboss.tools.wtp.server.launchbar.feature"/>
   <bundle id="org.jboss.tools.usage"/>
 </site>
