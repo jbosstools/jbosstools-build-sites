@@ -225,6 +225,11 @@
   <feature id="org.jboss.tools.central.easymport.feature">
     <category name="CoreTools" />
   </feature>
+  
+  <feature id="org.jboss.tools.jst.jsdt.feature">
+    <category name="CoreTools" />
+    <category name="GeneralTools" />
+  </feature>
 
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.central.feature"/>
@@ -267,6 +272,10 @@
   <feature id="org.jboss.tools.forge.m2e.feature">
     <category name="CoreTools" />
     <category name="MavenTools"/>
+  </feature>
+  <feature id="org.eclipse.linuxtools.docker.feature">
+    <category name="CoreTools" />
+    <category name="GeneralTools"/>
   </feature>
 
   <!-- categorized in JBT; uncategorized in JBDS -->
