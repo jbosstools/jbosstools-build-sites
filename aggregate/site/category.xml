@@ -218,10 +218,6 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
-  <feature id="org.jboss.tools.wtp.server.launchbar.feature">
-    <category name="CoreTools" />
-    <category name="WebTools" />
-  </feature>
   <feature id="org.jboss.tools.central.easymport.feature">
     <category name="CoreTools" />
   </feature>
@@ -276,6 +272,9 @@
   <feature id="org.eclipse.linuxtools.docker.feature">
     <category name="CoreTools" />
     <category name="GeneralTools"/>
+  </feature>
+  <feature id="org.jboss.tools.wtp.server.launchbar.feature">
+    <category name="WebTools" />
   </feature>
 
   <!-- categorized in JBT; uncategorized in JBDS -->
