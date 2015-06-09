@@ -100,4 +100,12 @@
 
   </profiles>
 
+  <repositories>
+    <repository>
+      <id>jbosstools-site</id>
+      <layout>p2</layout>
+      <url>${jbosstools-site}</url>
+    </repository>
+  </repositories>
+
 </project>
