@@ -91,6 +91,7 @@
                     <arg>${project.build.directory}/repository</arg>
                     <arg>-t</arg>
                     <arg>mars/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
+                    <arg>--del</arg>
                   </arguments>
                 </configuration>
               </execution>
