@@ -52,6 +52,7 @@
   </feature>
   <feature id="org.jboss.tools.jst.jsdt.feature">
     <category name="CoreTools" />
+    <category name="GeneralTools" />
     <category name="WebTools" />
     <category name="MobileTools"/>
   </feature>
@@ -226,11 +227,6 @@
     <category name="CoreTools" />
   </feature>
   
-  <feature id="org.jboss.tools.jst.jsdt.feature">
-    <category name="CoreTools" />
-    <category name="GeneralTools" />
-  </feature>
-
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.central.feature"/>
   <feature id="org.jboss.tools.common.feature"/>
