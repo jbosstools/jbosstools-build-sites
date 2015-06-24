@@ -84,11 +84,12 @@
                 <phase>deploy</phase>
                 <configuration>
                   <arguments>
+                    <arg>-d</arg>
+                    <arg>--del</arg>
                     <arg>-s</arg>
                     <arg>${project.build.directory}/repository</arg>
                     <arg>-t</arg>
                     <arg>mars/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
-                    <arg>-d</arg>
                   </arguments>
                 </configuration>
               </execution>
@@ -119,6 +120,8 @@
                 <phase>deploy</phase>
                 <configuration>
                   <arguments>
+                    <arg>-d</arg>
+                    <arg>--del</arg>
                     <arg>-DESTINATION</arg>
                     <arg>devstudio@filemgmt.jboss.org:/www_htdocs/devstudio</arg>
                     <arg>-URL</arg>
@@ -127,7 +130,6 @@
                     <arg>${project.build.directory}/repository</arg>
                     <arg>-t</arg>
                     <arg>9.0/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
-                    <arg>-d</arg>
                   </arguments>
                 </configuration>
               </execution>
