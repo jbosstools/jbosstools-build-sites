@@ -44,7 +44,7 @@
     </plugins>
   </build>
   
-  <!-- webtools site only publishes to download.jboss, whereas other sites like Central & EA publish to both download.jboss and devstudio.redhat.com -->
+  <!-- Central & EA publish to both download.jboss and devstudio.redhat.com -->
   <profiles>
     <profile>
       <id>deploy-to-jboss.org</id>

@@ -12,7 +12,7 @@
   <packaging>pom</packaging>
 
   <!-- 
-    To build aggregate sites such as coretests-site or webtools-site, cd into the correct folder then:
+    To build aggregate sites such as coretests-site, cd into the correct folder then:
   
       mvn clean verify -Pmaximum
     
