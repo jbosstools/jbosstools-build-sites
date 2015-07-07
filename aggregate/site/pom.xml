@@ -173,6 +173,7 @@
 										<jbosstools-server>org.jboss.ide.eclipse.as.core</jbosstools-server>
 										<jbosstools-vpe>org.jboss.tools.vpe</jbosstools-vpe>
 										<jbosstools-webservices>org.jboss.tools.ws.core</jbosstools-webservices>
+										<jbosstools-xulrunner>org.mozilla.xpcom</jbosstools-xulrunner>
 									</sourceFetchMap>
 								</configuration>
 							</execution>
