@@ -29,7 +29,7 @@
           ...
   -->
   <modules>
-    <module>site</module>
+    <!-- do not run from this folder; instead run from the site/ or other subfolder -->
   </modules>
 
   <properties>
