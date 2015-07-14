@@ -30,24 +30,24 @@
 					</execution>
 				</executions>
 			</plugin>
-      <!-- get major.minor.incremental from parent pom, then use devstudio.version = ${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS} -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.9.1</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <id>parse-version</id>
-            <goals>
-              <goal>parse-version</goal>
-            </goals>
-            <configuration>
-              <versionString>${project.parent.parent.version}</versionString>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+			<!-- get major.minor.incremental from parent pom, then use devstudio.version = ${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS} -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.9.1</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<id>parse-version</id>
+						<goals>
+							<goal>parse-version</goal>
+						</goals>
+						<configuration>
+							<versionString>${project.parent.parent.version}</versionString>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
@@ -62,9 +62,9 @@
 				<!-- see https://github.com/ktoso/maven-git-commit-id-plugin#using-the-plugin -->
 				<configuration>
 					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
-				    <generateGitPropertiesFile>true</generateGitPropertiesFile>
-				    <!-- The path for the to be generated properties file, it's relative to ${project.basedir} -->
-				    <generateGitPropertiesFilename>target/git.properties</generateGitPropertiesFilename>
+						<generateGitPropertiesFile>true</generateGitPropertiesFile>
+						<!-- The path for the to be generated properties file, it's relative to ${project.basedir} -->
+						<generateGitPropertiesFilename>target/git.properties</generateGitPropertiesFilename>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -89,8 +89,44 @@
 								<resource>../README.building.txt</resource>
 								<resource>../README.installation.txt</resource>
 							</additionalWebResources>
-              <p2StatsUrl>${p2StatsUrl}</p2StatsUrl>
+							<p2StatsUrl>${p2StatsUrl}</p2StatsUrl>
 							<removeDefaultCategory>true</removeDefaultCategory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>fetch-sources</id>
+						<phase>package</phase>
+						<goals>
+							<goal>fetch-sources-from-manifests</goal>
+						</goals>
+						<configuration>
+							<!-- <zipCacheFolder>${basedir}/cache</zipCacheFolder> -->
+							<!-- <outputFolder>${project.build.directory}/fullSite</outputFolder> -->
+							<!-- <fallbackToChild>latest/all/repo</fallbackToChild> -->
+							<sourcesZip>${project.build.directory}/fullSite/all/jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src.zip</sourcesZip>
+							<sourcesZipRootFolder>jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src</sourcesZipRootFolder>
+							<sourceFetchMap>
+								<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
+								<jbosstools-base>org.jboss.tools.common</jbosstools-base>
+								<jbosstools-aerogear>org.jboss.tools.aerogear.thym</jbosstools-aerogear>
+								<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
+								<jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt>
+								<jbosstools-browsersim>org.jboss.tools.browsersim.eclipse</jbosstools-browsersim>
+								<jbosstools-central>org.jboss.tools.central</jbosstools-central>
+								<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
+								<jbosstools-freemarker>org.jboss.ide.eclipse.freemarker</jbosstools-freemarker>
+								<jbosstools-hibernate>org.hibernate.eclipse</jbosstools-hibernate>
+								<jbosstools-javaee>org.jboss.tools.jsf</jbosstools-javaee>
+								<jbosstools-jst>org.jboss.tools.jst.web</jbosstools-jst>
+								<jbosstools-livereload>org.jboss.tools.livereload.core</jbosstools-livereload>
+								<jbosstools-openshift>org.jboss.tools.openshift.egit.core</jbosstools-openshift>
+								<jbosstools-portlet>org.jboss.tools.portlet.core</jbosstools-portlet>
+								<jbosstools-server>org.jboss.ide.eclipse.as.core</jbosstools-server>
+								<jbosstools-vpe>org.jboss.tools.vpe</jbosstools-vpe>
+								<jbosstools-webservices>org.jboss.tools.ws.core</jbosstools-webservices>
+								<!-- instead of pulling from a plugin, pull source info from a URL containing the buildinfo.json file -->
+								<jbosstools-xulrunner>${jbosstools-xulrunner-site}/buildinfo.json</jbosstools-xulrunner>
+							</sourceFetchMap>
 						</configuration>
 					</execution>
 				</executions>
@@ -99,82 +135,82 @@
 	</build>
 
 	<profiles>
-      <profile>
-          <id>results</id>
-        <build>
-          <plugins>
-            <plugin>
-          <groupId>org.jboss.tools.maven</groupId>
-          <artifactId>gstring-maven-plugin</artifactId>
-          <version>1.0.0</version>
-          <executions>
-            <execution>
-              <id>create-results-html</id>
-              <phase>package</phase>
-              <goals>
-                <goal>process-templates</goal>
-              </goals>
-              <configuration>
-                <files>
-                  <file>${basedir}/results.html</file>
-                </files>
-                <symbols>
-                  <update_site_description>${update.site.description}</update_site_description>
-                  <TARGET_PLATFORM_VERSION>${TARGET_PLATFORM_VERSION}</TARGET_PLATFORM_VERSION>
-                  <TARGET_PLATFORM_VERSION_MAXIMUM>${TARGET_PLATFORM_VERSION_MAXIMUM}</TARGET_PLATFORM_VERSION_MAXIMUM>
-                  <update_site_qualifier>${buildQualifier}</update_site_qualifier>
-                  <JOB_NAME>${JOB_NAME}</JOB_NAME>
-                  <BUILD_NUMBER>${BUILD_NUMBER}</BUILD_NUMBER>
-                </symbols>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-          </plugins>
-        </build>
-      </profile>
-
-      <profile>
-			<id>fetch-source-zips</id>
+		<profile>
+				<id>results</id>
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.jboss.tools.tycho-plugins</groupId>
-						<artifactId>repository-utils</artifactId>
+				<groupId>org.jboss.tools.maven</groupId>
+				<artifactId>gstring-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<id>create-results-html</id>
+						<phase>package</phase>
+						<goals>
+							<goal>process-templates</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>${basedir}/results.html</file>
+							</files>
+							<symbols>
+								<update_site_description>${update.site.description}</update_site_description>
+								<TARGET_PLATFORM_VERSION>${TARGET_PLATFORM_VERSION}</TARGET_PLATFORM_VERSION>
+								<TARGET_PLATFORM_VERSION_MAXIMUM>${TARGET_PLATFORM_VERSION_MAXIMUM}</TARGET_PLATFORM_VERSION_MAXIMUM>
+								<update_site_qualifier>${buildQualifier}</update_site_qualifier>
+								<JOB_NAME>${JOB_NAME}</JOB_NAME>
+								<BUILD_NUMBER>${BUILD_NUMBER}</BUILD_NUMBER>
+							</symbols>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>deploy-to-jboss.org</id>
+			<properties>
+				<!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
+				<maven.deploy.skip>true</maven.deploy.skip>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
 						<executions>
 							<execution>
-								<id>fetch-sources</id>
-								<phase>package</phase>
+								<id>deploy-snapshot-build</id>
 								<goals>
-									<goal>fetch-sources-from-manifests</goal>
+									<goal>exec</goal>
 								</goals>
+								<phase>deploy</phase>
 								<configuration>
-									<!-- <zipCacheFolder>${basedir}/cache</zipCacheFolder> -->
-									<!-- <outputFolder>${project.build.directory}/fullSite</outputFolder> -->
-									<!-- <fallbackToChild>latest/all/repo</fallbackToChild> -->
-									<sourcesZip>${project.build.directory}/fullSite/all/jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src.zip</sourcesZip>
-									<sourcesZipRootFolder>jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src</sourcesZipRootFolder>
-									<sourceFetchMap>
-										<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
-										<jbosstools-base>org.jboss.tools.common</jbosstools-base>
-										<jbosstools-aerogear>org.jboss.tools.aerogear.thym</jbosstools-aerogear>
-										<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
-										<jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt>
-										<jbosstools-browsersim>org.jboss.tools.browsersim.eclipse</jbosstools-browsersim>
-										<jbosstools-central>org.jboss.tools.central</jbosstools-central>
-										<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
-										<jbosstools-freemarker>org.jboss.ide.eclipse.freemarker</jbosstools-freemarker>
-										<jbosstools-hibernate>org.hibernate.eclipse</jbosstools-hibernate>
-										<jbosstools-javaee>org.jboss.tools.jsf</jbosstools-javaee>
-										<jbosstools-jst>org.jboss.tools.jst.web</jbosstools-jst>
-										<jbosstools-livereload>org.jboss.tools.livereload.core</jbosstools-livereload>
-										<jbosstools-openshift>org.jboss.tools.openshift.egit.core</jbosstools-openshift>
-										<jbosstools-portlet>org.jboss.tools.portlet.core</jbosstools-portlet>
-										<jbosstools-server>org.jboss.ide.eclipse.as.core</jbosstools-server>
-										<jbosstools-vpe>org.jboss.tools.vpe</jbosstools-vpe>
-										<jbosstools-webservices>org.jboss.tools.ws.core</jbosstools-webservices>
-										<jbosstools-xulrunner>org.mozilla.xpcom</jbosstools-xulrunner>
-									</sourceFetchMap>
+									<arguments>
+										<arg>-s</arg>
+										<arg>${project.build.directory}/fullSite</arg>
+										<arg>-t</arg>
+										<!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
+										<arg>mars/snapshots/builds/jbosstools-build-sites.aggregate.site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
+									</arguments>
+								</configuration>
+							</execution>
+							<execution>
+								<id>deploy-snapshot-updatesite</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>deploy</phase>
+								<configuration>
+									<arguments>
+										<arg>--del</arg>
+										<arg>-s</arg>
+										<arg>${project.build.directory}/repository</arg>
+										<arg>-t</arg>
+										<arg>mars/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
+									</arguments>
 								</configuration>
 							</execution>
 						</executions>
@@ -182,56 +218,6 @@
 				</plugins>
 			</build>
 		</profile>
-
-    <profile>
-      <id>deploy-to-jboss.org</id>
-      <properties>
-        <!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
-        <maven.deploy.skip>true</maven.deploy.skip>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>deploy-snapshot-build</id>
-                <goals>
-                  <goal>exec</goal>
-                </goals>
-                <phase>deploy</phase>
-                <configuration>
-                  <arguments>
-                    <arg>-s</arg>
-                    <arg>${project.build.directory}/fullSite</arg>
-                    <arg>-t</arg>
-                    <!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
-                    <arg>mars/snapshots/builds/jbosstools-build-sites.aggregate.site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
-                  </arguments>
-                </configuration>
-              </execution>
-              <execution>
-                <id>deploy-snapshot-updatesite</id>
-                <goals>
-                  <goal>exec</goal>
-                </goals>
-                <phase>deploy</phase>
-                <configuration>
-                  <arguments>
-                    <arg>--del</arg>
-                    <arg>-s</arg>
-                    <arg>${project.build.directory}/repository</arg>
-                    <arg>-t</arg>
-                    <arg>mars/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
-                  </arguments>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
 
 	</profiles>
 
@@ -334,7 +320,7 @@
 	</repositories>
 
 	<!-- 
-		mvn verify -Pmaximum -Pfetch-source-zips \ 
+		mvn verify -Pmaximum \ 
 			-DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 \ 
 			-Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.site_4.3.mars
 	-->
