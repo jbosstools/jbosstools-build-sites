@@ -202,7 +202,7 @@
 
   <!-- 
     mvn verify -Pmaximum \
-      -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=Beta1 \
+      -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=CR1 \
       -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_4.2.luna
   -->
 
