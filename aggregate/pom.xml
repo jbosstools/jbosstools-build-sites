@@ -35,7 +35,9 @@
   <properties>
     <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/mars/</jbosstools-target-site>
     <jbosstools-site>http://download.jboss.org/jbosstools/updates/nightly/core/${jbosstools_site_stream}/</jbosstools-site>
-    <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/local/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
+    <!-- this value will be overridden by the child poms in this project: core, coretests, central, earlyaccess. -->
+    <snapshotLocation>local</snapshotLocation>
+    <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${snapshotLocation}-site/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
   </properties>
 
   <build>
@@ -81,13 +83,6 @@
           <url>${jbosstools-target-site}</url>
         </repository>
       </repositories>
-    </profile>
-
-    <profile>
-      <id>hudson</id>
-      <properties>
-        <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${JOB_NAME}/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
-      </properties>
     </profile>
 
   </profiles>
