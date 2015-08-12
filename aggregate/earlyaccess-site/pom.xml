@@ -99,8 +99,6 @@
                   <arguments>
                     <arg>-DESTINATION</arg>
                     <arg>devstudio@filemgmt.jboss.org:/www_htdocs/devstudio</arg>
-                    <arg>-URL</arg>
-                    <arg>https://devstudio.redhat.com</arg>
                     <arg>-s</arg>
                     <arg>${project.build.directory}/fullSite</arg>
                     <arg>-t</arg>
@@ -119,8 +117,6 @@
                     <arg>--del</arg>
                     <arg>-DESTINATION</arg>
                     <arg>devstudio@filemgmt.jboss.org:/www_htdocs/devstudio</arg>
-                    <arg>-URL</arg>
-                    <arg>https://devstudio.redhat.com</arg>
                     <arg>-s</arg>
                     <arg>${project.build.directory}/repository</arg>
                     <arg>-t</arg>
