@@ -4,11 +4,11 @@
   <parent>
     <groupId>org.jboss.tools</groupId>
     <artifactId>parent</artifactId>
-    <version>4.3.0.CR1-SNAPSHOT</version>
+    <version>4.4.0.Alpha1-SNAPSHOT</version>
   </parent>
   <groupId>org.jboss.tools</groupId>
   <artifactId>org.jboss.tools.site</artifactId>
-  <version>4.3.0-SNAPSHOT</version>
+  <version>4.4.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <!-- 
@@ -33,7 +33,7 @@
   </modules>
 
   <properties>
-    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/mars/</jbosstools-target-site>
+    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${eclipseReleaseName}/</jbosstools-target-site>
     <jbosstools-site>http://download.jboss.org/jbosstools/updates/nightly/core/${jbosstools_site_stream}/</jbosstools-site>
     <!-- this value will be overridden by the child poms in this project: core, coretests, central, earlyaccess. -->
     <snapshotLocation>local</snapshotLocation>
