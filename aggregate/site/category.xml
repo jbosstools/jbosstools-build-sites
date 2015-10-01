@@ -284,20 +284,18 @@
     <category name="CoreTools" />
     <category name="MavenTools"/>
   </feature>
+
   <!-- JBDS-3495 add plugins instead of feature to avoid p2.inf instruction which forces JBDS to include Docker nightly update site in disabled state -->
+  <!-- JBIDE-20760 add feature back so it's available on Marketplace -->
+  <feature id="org.eclipse.linuxtools.docker.feature">
+    <category name="CoreTools" />
+    <category name="GeneralTools"/>
+  </feature>
   <bundle id="com.spotify.docker.client"/>
-  <bundle id="org.eclipse.linuxtools.docker.core">
-    <category name="CoreTools" />
-    <category name="GeneralTools"/>
-  </bundle>
-  <bundle id="org.eclipse.linuxtools.docker.ui">
-    <category name="CoreTools" />
-    <category name="GeneralTools"/>
-  </bundle>
-  <bundle id="org.eclipse.linuxtools.docker.docs">
-    <category name="CoreTools" />
-    <category name="GeneralTools"/>
-  </bundle>
+  <bundle id="org.eclipse.linuxtools.docker.core"/>
+  <bundle id="org.eclipse.linuxtools.docker.ui"/>
+  <bundle id="org.eclipse.linuxtools.docker.docs"/>
+
   <feature id="org.jboss.tools.wtp.server.launchbar.feature">
     <category name="WebTools" />
   </feature>
