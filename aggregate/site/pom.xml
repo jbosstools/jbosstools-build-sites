@@ -91,6 +91,7 @@
 							</additionalWebResources>
 							<p2StatsUrl>${p2StatsUrl}</p2StatsUrl>
 							<removeDefaultCategory>true</removeDefaultCategory>
+							<buildInfoJSONPathSuffix>latest/all/repo</buildInfoJSONPathSuffix>
 						</configuration>
 					</execution>
 					<execution>
