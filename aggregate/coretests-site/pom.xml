@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jboss.tools</groupId>
     <artifactId>org.jboss.tools.site</artifactId>
-    <version>4.3.0-SNAPSHOT</version>
+    <version>4.3.1-SNAPSHOT</version>
   </parent>
   <artifactId>org.jboss.tools.site.core.tests</artifactId>
   <name>JBoss Tools - Core Tests</name>
