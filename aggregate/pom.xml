@@ -33,13 +33,13 @@
   </modules>
 
   <properties>
-    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${eclipseReleaseName}/</jbosstools-target-site>
-    <jbosstools-site>http://download.jboss.org/jbosstools/updates/nightly/core/${jbosstools_site_stream}/</jbosstools-site>
+    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${TARGET_PLATFORM_VERSION_MAXIMUM}/</jbosstools-target-site>
+    <jbosstools-site>http://download.jboss.org/jbosstools/${eclipseReleaseName}/snapshots/updates/core/${jbosstools_site_stream}/</jbosstools-site>
     <!-- this value will be overridden by the child poms in this project: core, coretests, central, earlyaccess. -->
     <snapshotLocation>local</snapshotLocation>
     <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${snapshotLocation}-site/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
     <!-- used by central and earlyaccess poms only -->
-    <JBTCENTRALTARGET_VERSION>4.50.0.CR2-SNAPSHOT</JBTCENTRALTARGET_VERSION>
+    <JBTCENTRALTARGET_VERSION>4.60.0.Alpha1-SNAPSHOT</JBTCENTRALTARGET_VERSION>
     <targetplatform.url>http://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${JBTCENTRALTARGET_VERSION}/REPO/</targetplatform.url>
   </properties>
 
