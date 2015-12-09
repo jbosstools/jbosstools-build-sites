@@ -78,9 +78,11 @@
 							<goal>generate-repository-facade</goal>
 						</goals>
 						<configuration>
+							<!-- JBIDE-21233 since we now always co-publish the JBT site w/ its TP, we no longer need this assoc site anymore
 							<associateSites>
 								<site>${jbosstools-target-site}</site>
 							</associateSites>
+							-->
 							<symbols>
 								<update.site.name>${update.site.name}</update.site.name>
 								<update.site.description>${update.site.description}</update.site.description>
