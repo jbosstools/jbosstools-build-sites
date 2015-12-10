@@ -13,6 +13,7 @@
   <properties>
     <update.site.name>${project.name}</update.site.name>
     <snapshotLocation>earlyaccess</snapshotLocation>
+    <skipBaselineComparison>true</skipBaselineComparison>
   </properties>
   <build>
     <plugins>
