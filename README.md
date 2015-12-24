@@ -2,7 +2,7 @@
 
 ## Summary
 
-
+This project is responsible for aggregating upstream JBoss Tools component projects. See also [JBoss Tools Developer Documentation](https://github.com/jbosstools/jbosstools-devdoc/).
 
 ## Install
 
@@ -31,8 +31,7 @@ The general idea is to keep your 'master' branch in-sync with the
 ## Building JBoss Tools Build Sites
 
 To build _JBoss Tools Build Sites_ requires specific versions of Java and
-Maven. Also, there is some Maven setup. The [How to Build JBoss Tools with Maven 3](https://community.jboss.org/wiki/HowToBuildJBossToolsWithMaven3)
-document will guide you through that setup.
+Maven. Also, there is some Maven setup. See [JBoss Tools Developer Documentation](https://github.com/jbosstools/jbosstools-devdoc/)
 
 This command will run the build:
 
@@ -40,7 +39,7 @@ This command will run the build:
 
 If you just want to check if things compiles/builds you can run:
 
-    $ mvn clean verify -DskipTest=true
+    $ mvn clean verify -DskipTests=true
 
 But *do not* push changes without having the new and existing unit tests pass!
  
