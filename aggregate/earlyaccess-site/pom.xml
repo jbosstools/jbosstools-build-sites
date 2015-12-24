@@ -106,48 +106,6 @@
 							</artifactItems>
 						</configuration>
 					</execution>
-					<!-- p2diff -->
-					<execution>
-						<id>unpack</id>
-						<phase>package</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.eclipse.equinox.p2.example.p2diff</groupId>
-									<artifactId>p2diff</artifactId>
-									<version>1.0.0-SNAPSHOT</version>
-									<classifier>${env.arch}</classifier>
-									<type>zip</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${project.build.directory}/p2diff</outputDirectory>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.4.0</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<executable>${project.build.directory}/p2diff/p2diff</executable>
-					<arguments>
-						<argument>file://${project.build.directory}/fullSite/all/repo/</argument>
-						<argument>http://download.jboss.org/jbosstools/${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/latest/all/repo/</argument>
-					</arguments>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
