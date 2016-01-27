@@ -11,7 +11,7 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
-  <!-- JBIDE-18869 add Thym to JBT/JBDS directly -->
+  <!-- JBIDE-18869 add Thym to JBT/JBDS directly  -->
   <feature id="org.eclipse.thym.feature">
     <category name="AdditionalTools" />
     <category name="MobileTools"/>
