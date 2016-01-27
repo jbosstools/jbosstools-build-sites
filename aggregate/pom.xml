@@ -13,9 +13,9 @@
 
   <!-- 
     To build aggregate sites such as coretests-site, cd into the correct folder then:
-  
+
       mvn clean verify -Pmaximum
-    
+
     For the JBoss Tools aggregate site (in site/ folder):
     
       mvn clean verify -Pmaximum -Presults
