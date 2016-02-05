@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- this site contains the features of JBoss Tools which live in JBDS Central Early Access because they're not ready to be in JBDS update site or the JBDS Central site -->
 <site>
-      <feature id="org.jboss.tools.arquillian.feature"/>
+    <feature id="org.jboss.tools.arquillian.feature"/>
 </site>
