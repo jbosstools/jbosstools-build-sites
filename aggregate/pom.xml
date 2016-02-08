@@ -88,6 +88,40 @@
       </repositories>
     </profile>
 
+    <profile>
+      <id>deploy-pr</id>
+      <properties>
+        <!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
+        <maven.deploy.skip>true</maven.deploy.skip>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>deploy-snapshot-build</id>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <phase>deploy</phase>
+                <configuration>
+                  <arguments>
+                    <arg>-s</arg>
+                    <arg>${project.build.directory}/fullSite</arg>
+                    <arg>-t</arg>
+                    <!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
+                    <arg>${eclipseReleaseName}/snapshots/pulls/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}_PR${ghprbPullId}</arg>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
   </profiles>
 
 </project>
