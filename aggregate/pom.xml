@@ -27,7 +27,7 @@
         -Djbosstools-base-site=file:///path/to/jbosstools-base/site/target/repository/ \
         -Djbosstools-server-site=file:///path/to/jbosstools-server/site/target/repository/ \
           ...
-  -->
+  -->  
   <modules>
     <!-- do not run from this folder; instead run from the site/ or other subfolder -->
   </modules>
