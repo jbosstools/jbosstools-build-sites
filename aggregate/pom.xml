@@ -26,7 +26,7 @@
         -Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
         -Djbosstools-base-site=file:///path/to/jbosstools-base/site/target/repository/ \
         -Djbosstools-server-site=file:///path/to/jbosstools-server/site/target/repository/ \
-          ...
+          ...  
   -->
   <modules>
     <!-- do not run from this folder; instead run from the site/ or other subfolder -->
