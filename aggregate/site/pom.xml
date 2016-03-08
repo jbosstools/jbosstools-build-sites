@@ -78,9 +78,11 @@
 							<goal>generate-repository-facade</goal>
 						</goals>
 						<configuration>
+							<!-- JBIDE-21233 JBIDE-21821 since we now always co-publish the JBT site w/ its TP, we no longer need this assoc site anymore
 							<associateSites>
 								<site>${jbosstools-target-site}</site>
 							</associateSites>
+							-->
 							<symbols>
 								<update.site.name>${update.site.name}</update.site.name>
 								<update.site.description>${update.site.description}</update.site.description>
@@ -193,7 +195,7 @@
 										<arg>${project.build.directory}/fullSite</arg>
 										<arg>-t</arg>
 										<!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
-										<arg>mars/snapshots/builds/jbosstools-build-sites.aggregate.site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
+										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
 									</arguments>
 								</configuration>
 							</execution>
@@ -209,7 +211,7 @@
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
-										<arg>mars/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
+										<arg>${eclipseReleaseName}/snapshots/updates/${snapshotLocation}/${jbosstools_site_stream}</arg>
 									</arguments>
 								</configuration>
 							</execution>
