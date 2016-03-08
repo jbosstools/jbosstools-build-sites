@@ -28,8 +28,10 @@
             </goals>
             <configuration>
               <associateSites>
-                <site>${jbosstools-target-site}</site>
-                <site>http://download.jboss.org/jbosstools/updates/development/luna/</site>
+                <!-- JBIDE-21233 no longer needed since JBT co-publishes with its TP
+                <site>${jbosstools-target-site}</site> 
+                -->
+                <site>http://download.jboss.org/jbosstools/${eclipseReleaseName}/development/updates/</site>
               </associateSites>
               <symbols>
                 <update.site.name>${update.site.name}</update.site.name>
