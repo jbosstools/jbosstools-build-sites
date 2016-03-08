@@ -3,9 +3,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-	  <groupId>org.jboss.tools</groupId>
-	  <artifactId>org.jboss.tools.site</artifactId>
-	  <version>4.3.1-SNAPSHOT</version>
+    <groupId>org.jboss.tools</groupId>
+    <artifactId>parent</artifactId>
+    <version>4.3.1.CR1-SNAPSHOT</version>
   </parent>
   <artifactId>org.jboss.tools.site.component</artifactId>
   <name>${name}</name>
@@ -17,8 +17,8 @@
     <name>freemarker</name>
     <branch>jbosstools-4.3.x</branch>
     <category>https://raw.github.com/jbosstools/jbosstools-${name}/${branch}/site/category.xml</category>
-    <jbosstools-site>http://download.jboss.org/jbosstools/updates/stable/luna/</jbosstools-site>
-    <jbosstools-tests-site>http://download.jboss.org/jbosstools/updates/nightly/coretests/master/</jbosstools-tests-site>
+    <jbosstools-site>http://download.jboss.org/jbosstools/${eclipseReleaseName}/development/updates/</jbosstools-site>
+    <jbosstools-tests-site>http://download.jboss.org/jbosstools/updates/${eclipseReleaseName}/snapshots/updates/coretests/master/</jbosstools-tests-site>
     <update.site.name>JBoss Tools - ${name}</update.site.name>
     <snapshotLocation>component</snapshotLocation>
   </properties>
