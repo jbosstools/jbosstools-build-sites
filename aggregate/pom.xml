@@ -33,7 +33,7 @@
   </modules>
 
   <properties>
-    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/mars/</jbosstools-target-site>
+    <jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${eclipseReleaseName}/</jbosstools-target-site>
     <jbosstools-site>http://download.jboss.org/jbosstools/updates/nightly/core/${jbosstools_site_stream}/</jbosstools-site>
     <!-- this value will be overridden by the child poms in this project: core, coretests, central, earlyaccess. -->
     <snapshotLocation>local</snapshotLocation>
