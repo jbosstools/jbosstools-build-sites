@@ -124,6 +124,7 @@
   <feature id="org.jboss.tools.openshift.feature">
     <category name="CoreTools" />
     <category name="CloudTools" />
+    <category name="org.eclipse.wst.server.core.serverAdapter"/>
   </feature>
   <feature id="org.jboss.tools.openshift.cdk.feature">
     <category name="CoreTools" />
