@@ -11,14 +11,10 @@
   <version>4.4.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <!-- 
-    To build aggregate sites such as coretests-site, cd into the correct folder then:
+    To build aggregate sites such as site or coretests-site, cd into the correct folder then:
   
       mvn clean verify -Pmaximum
     
-    For the JBoss Tools aggregate site (in site/ folder):
-    
-      mvn clean verify -Pmaximum
-
     To build against locally built target platform or updates sites, use these properties:
 	
       mvn clean verify ... \
