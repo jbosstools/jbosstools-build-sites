@@ -87,7 +87,7 @@
         </repository>
       </repositories>
     </profile>
-  
+
     <profile>
       <id>deploy-pr</id>
       <properties>
