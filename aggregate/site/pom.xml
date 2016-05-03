@@ -138,40 +138,6 @@
 
 	<profiles>
 		<profile>
-				<id>results</id>
-			<build>
-				<plugins>
-					<plugin>
-				<groupId>org.jboss.tools.maven</groupId>
-				<artifactId>gstring-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<executions>
-					<execution>
-						<id>create-results-html</id>
-						<phase>package</phase>
-						<goals>
-							<goal>process-templates</goal>
-						</goals>
-						<configuration>
-							<files>
-								<file>${basedir}/results.html</file>
-							</files>
-							<symbols>
-								<update_site_description>${update.site.description}</update_site_description>
-								<TARGET_PLATFORM_VERSION>${TARGET_PLATFORM_VERSION}</TARGET_PLATFORM_VERSION>
-								<TARGET_PLATFORM_VERSION_MAXIMUM>${TARGET_PLATFORM_VERSION_MAXIMUM}</TARGET_PLATFORM_VERSION_MAXIMUM>
-								<update_site_qualifier>${buildQualifier}</update_site_qualifier>
-								<JOB_NAME>${JOB_NAME}</JOB_NAME>
-								<BUILD_NUMBER>${BUILD_NUMBER}</BUILD_NUMBER>
-							</symbols>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
 			<id>deploy-to-jboss.org</id>
 			<properties>
 				<!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->

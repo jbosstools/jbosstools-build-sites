@@ -17,7 +17,7 @@
     
     For the JBoss Tools aggregate site (in site/ folder):
     
-      mvn clean verify -Pmaximum -Presults
+      mvn clean verify -Pmaximum
 
     To build against locally built target platform or updates sites, use these properties:
 	
