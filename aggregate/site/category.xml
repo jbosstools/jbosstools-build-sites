@@ -273,10 +273,6 @@
     <category name="WebTools" />
     <category name="GeneralTools"/>
   </feature>
-  <feature id="org.jboss.tools.birt.feature">
-    <category name="AdditionalTools" />
-    <category name="ReportTools" />
-  </feature>
   <feature id="org.jboss.tools.central.themes.feature">
     <category name="AdditionalTools" />
   </feature>
@@ -406,7 +402,6 @@
   <feature id="org.jboss.tools.central.themes.feature.source"/>
   <feature id="org.jboss.tools.community.central.feature.source"/>
   <feature id="org.jboss.tools.community.project.examples.feature.source"/>
-  <feature id="org.jboss.tools.birt.feature.source"/>
   <feature id="org.jboss.tools.forge.ext.feature.source"/>
   <feature id="org.jboss.tools.forge.m2e.feature.source"/>
 
