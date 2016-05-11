@@ -14,7 +14,6 @@
 <!-- Main Features -->
 <feature id="org.jboss.ide.eclipse.archives.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.birt.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.batch.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.seam.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.deltaspike.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
@@ -49,7 +48,6 @@
 <feature id="org.jboss.tools.foundation.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.stacks.core.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.birt.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.batch.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.seam.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.cdi.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>

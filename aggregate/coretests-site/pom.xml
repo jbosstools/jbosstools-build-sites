@@ -195,11 +195,6 @@
       <layout>p2</layout>
       <url>${jbosstools-freemarker-site}</url>
     </repository>
-    <repository>
-      <id>jbosstools-birt-site</id>
-      <layout>p2</layout>
-      <url>${jbosstools-birt-site}</url>
-    </repository>
   </repositories>
 
   <!-- 

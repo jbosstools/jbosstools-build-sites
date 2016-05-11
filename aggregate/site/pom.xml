@@ -112,7 +112,6 @@
 								<jbosstools-base>org.jboss.tools.common</jbosstools-base>
 								<jbosstools-aerogear>org.jboss.tools.aerogear.thym</jbosstools-aerogear>
 								<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
-								<jbosstools-birt>org.jboss.tools.birt.core</jbosstools-birt>
 								<jbosstools-browsersim>org.jboss.tools.browsersim.eclipse</jbosstools-browsersim>
 								<jbosstools-central>org.jboss.tools.central</jbosstools-central>
 								<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
@@ -279,11 +278,6 @@
 			<id>jbosstools-freemarker-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-freemarker-site}</url>
-		</repository>
-		<repository>
-			<id>jbosstools-birt-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-birt-site}</url>
 		</repository>
 	</repositories>
 
