@@ -11,7 +11,7 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
-  <!-- JBIDE-18869 add Thym to JBT/JBDS directly -->
+  <!-- JBIDE-18869 add Thym to JBT/devstudio directly -->
   <feature id="org.eclipse.thym.feature">
     <category name="AdditionalTools" />
     <category name="MobileTools"/>
@@ -81,7 +81,7 @@
     <category name="WebTools" />
   </feature>
   <feature id="org.jboss.tools.seam.feature">
-    <!-- removed from JBDS & JBT CoreTools -->
+    <!-- removed from devstudio & JBT CoreTools -->
     <category name="WebTools" />
   </feature>
   <feature id="org.jboss.tools.batch.feature">
@@ -115,21 +115,21 @@
   </feature>
   <feature id="org.jboss.tools.openshift.express.feature">
     <category name="CoreTools" />
-    <category name="CloudTools" />
+    <category name="CloudContainerTools" />
   </feature>
   <feature id="org.jboss.tools.openshift.egit.integration.feature">
     <category name="CoreTools" />
-    <category name="CloudTools" />
+    <category name="CloudContainerTools" />
   </feature>
   <!-- openshift v3 -->
   <feature id="org.jboss.tools.openshift.feature">
     <category name="CoreTools" />
-    <category name="CloudTools" />
+    <category name="CloudContainerTools" />
     <category name="org.eclipse.wst.server.core.serverAdapter"/>
   </feature>
   <feature id="org.jboss.tools.openshift.cdk.feature">
     <category name="CoreTools" />
-    <category name="CloudTools" />
+    <category name="CloudContainerTools" />
   </feature>
   <feature id="org.jboss.ide.eclipse.archives.feature">
     <category name="CoreTools" />
@@ -158,7 +158,7 @@
     <category name="WebTools" />
   </feature>
   <feature id="org.jboss.tools.portlet.feature">
-    <!-- removed from JBDS & JBT CoreTools -->
+    <!-- removed from devstudio & JBT CoreTools -->
     <category name="WebTools" />
   </feature>
   <feature id="org.jboss.tools.forge.feature">
@@ -292,30 +292,34 @@
     <category name="CoreTools" />
     <category name="MavenTools"/>
   </feature>
+  <feature id="org.jboss.tools.wtp.server.launchbar.feature">
+    <category name="WebTools" />
+  </feature>
 
-  <!-- JBDS-3495 add plugins instead of feature to avoid p2.inf instruction which forces JBDS to include Docker nightly update site in disabled state -->
-  <!-- JBIDE-20760 add feature back so it's available on Marketplace -->
   <feature id="org.eclipse.linuxtools.docker.feature">
     <category name="CoreTools" />
-    <category name="GeneralTools"/>
+    <category name="CloudContainerTools"/>
   </feature>
   <bundle id="com.spotify.docker.client"/>
   <bundle id="org.eclipse.linuxtools.docker.core"/>
   <bundle id="org.eclipse.linuxtools.docker.ui"/>
   <bundle id="org.eclipse.linuxtools.docker.docs"/>
-
-  <feature id="org.jboss.tools.wtp.server.launchbar.feature">
-    <category name="WebTools" />
+  <feature id="org.eclipse.linuxtools.vagrant.feature">
+    <category name="CloudContainerTools"/>
   </feature>
 
-  <!-- categorized in JBT; uncategorized in JBDS -->
+  <!-- categorized in JBT; uncategorized in devstudio -->
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"><category name="CoreTools" /><category name="MavenTools" /></feature>
   <feature id="org.jboss.tools.common.mylyn.feature"><category name="AdditionalTools" /><category name="GeneralTools"/></feature>
 
   <feature id="org.jboss.tools.usage.feature"><category name="CoreTools" /><category name="GeneralTools"/></feature>
 
-  <!-- only in JBDS
-  <feature id="com.jboss.jbds.product.feature" patch="false"><category name="BringYourOwnEclipse" /><category name="CoreTools" /></feature>
+  <!-- only in devstudio
+  <feature id="com.jboss.devstudio.core.feature" patch="false">
+    <category name="BringYourOwnEclipse" />
+    <category name="CoreTools" />
+  </feature>
+  <feature id="com.jboss.devstudio.core.capabilities.feature"/>
   <feature id="org.eclipse.egit"/>
   <feature id="org.eclipse.jgit"/>
   <feature id="org.eclipse.m2e.feature"/>
@@ -405,8 +409,9 @@
   <feature id="org.jboss.tools.forge.ext.feature.source"/>
   <feature id="org.jboss.tools.forge.m2e.feature.source"/>
 
-  <!-- only in JBDS
-  <feature id="com.jboss.jbds.product.feature.source" patch="false"/>
+  <!-- only in devstudio
+  <feature id="com.jboss.devstudio.core.feature.source" patch="false"/>
+  <feature id="com.jboss.devstudio.core.capabilities.feature.source" patch="false"/>
   -->
 
   <!-- ########## -->
@@ -414,8 +419,7 @@
   <!-- ########## -->
 
  <!-- only in JBT -->
-  <category-def label="JBoss Application Server Adapters" name="org.eclipse.wst.server.core.serverAdapter">
-  </category-def>
+  <category-def label="JBoss Application Server Adapters" name="org.eclipse.wst.server.core.serverAdapter"/>
   <category-def name="CoreTools" label="* Abridged JBoss Tools">
     <description>Contains most of the JBoss Tools features. Excluded are those related to integration with 3rd party plugins. Selecting this category will give you all tools needed for Web and Seam Development.</description>
   </category-def>
@@ -423,7 +427,7 @@
     <description>Contains the rest of the JBoss Tools features, not included in Abridged JBoss Tools category. This category includes miscellaneous, new, experimental and incubating features. See individual feature descriptions for details.</description>
   </category-def>
 
-  <!-- only in JBDS
+  <!-- only in devstudio
   <category-def name="BringYourOwnEclipse" label="* JBoss Developer Studio 10 - Bring Your Own Eclipse">
     <description>Select this feature if you want to install all of the JBoss Developer Studio (Core Features) into your own Eclipse 4.6 (Neon).</description>
     </category-def>
@@ -454,7 +458,7 @@
   <category-def name="MavenTools" label="JBoss Maven Support">
     <description>Plugins related to Maven and m2eclipse support. Use these to enable use of Maven.</description>
   </category-def>
-  <category-def name="CloudTools" label="JBoss Cloud Development Tools">
-    <description>Tools for Cloud Development.</description>
+  <category-def name="CloudContainerTools" label="JBoss Cloud And Container Development Tools">
+    <description>Tools for Cloud and Container Development.</description>
   </category-def>
 </site>
