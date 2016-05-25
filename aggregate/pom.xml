@@ -90,6 +90,7 @@
         <deployDestination>tools@filemgmt.jboss.org:downloads_htdocs/jbosstools</deployDestination>
         <deployTargetFolder>${eclipseReleaseName}/snapshots/pulls/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}_PR${ghprbPullId}/</deployTargetFolder>
         <deployNumbuildstokeep>7</deployNumbuildstokeep>
+        <deployNumbuildstolink>2</deployNumbuildstolink>
         <deployThreshholdwhendelete>7</deployThreshholdwhendelete>
         <!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
         <maven.deploy.skip>true</maven.deploy.skip>
@@ -143,6 +144,8 @@
                     <arg>${deployTargetFolder}</arg>
                     <arg>-k</arg>
                     <arg>${deployNumbuildstokeep}</arg>
+                    <arg>-l</arg>
+                    <arg>${deployNumbuildstolink}</arg>
                     <arg>-a</arg>
                     <arg>${deployThreshholdwhendelete}</arg>
                   </arguments>
