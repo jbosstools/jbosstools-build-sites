@@ -33,7 +33,7 @@
     <snapshotLocation>local</snapshotLocation>
     <p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${snapshotLocation}-site/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
     <!-- used by central and earlyaccess poms only -->
-    <JBTCENTRALTARGET_VERSION>4.60.0.Alpha1-SNAPSHOT</JBTCENTRALTARGET_VERSION>
+    <JBTCENTRALTARGET_VERSION>4.60.0.Final-SNAPSHOT</JBTCENTRALTARGET_VERSION>
     <targetplatform.url>http://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${JBTCENTRALTARGET_VERSION}/REPO/</targetplatform.url>
   </properties>
 
