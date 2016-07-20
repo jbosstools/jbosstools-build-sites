@@ -160,7 +160,7 @@
 										<arg>${project.build.directory}/fullSite</arg>
 										<arg>-t</arg>
 										<!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
-										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
+										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${jbosstools_site_stream}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}</arg>
 									</arguments>
 								</configuration>
 							</execution>
@@ -283,7 +283,7 @@
 
 	<!-- 
 		mvn verify -Pmaximum \ 
-			-DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=CR1 \ 
+			-DBUILD_TIMESTAMP=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=CR1 \ 
 			-Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.site_4.4.neon
 	-->
 

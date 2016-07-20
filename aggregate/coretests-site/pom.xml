@@ -77,7 +77,7 @@
                     <arg>-s</arg>
                     <arg>${project.build.directory}/fullSite</arg>
                     <arg>-t</arg>
-                    <arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
+                    <arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}</arg>
                   </arguments>
                 </configuration>
               </execution>
@@ -199,7 +199,7 @@
 
   <!-- 
     mvn verify -Pmaximum \
-      -DBUILD_ID=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=CR1 \
+      -DBUILD_TIMESTAMP=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=CR1 \
       -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_4.2.luna
   -->
 

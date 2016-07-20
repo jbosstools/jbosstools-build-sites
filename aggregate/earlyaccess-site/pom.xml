@@ -136,7 +136,7 @@
 						<arg>-s</arg>
 						<arg>${project.build.directory}/fullSite</arg>
 						<arg>-t</arg>
-						<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
+						<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}</arg>
 						</arguments>
 					</configuration>
 					</execution>
@@ -169,7 +169,7 @@
 						<arg>-s</arg>
 						<arg>${project.build.directory}/fullSite</arg>
 						<arg>-t</arg>
-						<arg>${devstudioReleaseVersion}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_ID}-B${BUILD_NUMBER}</arg>
+						<arg>${devstudioReleaseVersion}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}</arg>
 						</arguments>
 					</configuration>
 					</execution>
