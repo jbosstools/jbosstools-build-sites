@@ -114,7 +114,7 @@
 								<jbosstools-arquillian>org.jboss.tools.arquillian.core</jbosstools-arquillian>
 								<jbosstools-browsersim>org.jboss.tools.browsersim.eclipse</jbosstools-browsersim>
 								<jbosstools-central>org.jboss.tools.central</jbosstools-central>
-								<jbosstools-forge>org.jboss.tools.forge.core</jbosstools-forge>
+								<jbosstools-forge>org.jboss.tools.forge.runtime</jbosstools-forge>
 								<jbosstools-freemarker>org.jboss.ide.eclipse.freemarker</jbosstools-freemarker>
 								<jbosstools-hibernate>org.hibernate.eclipse</jbosstools-hibernate>
 								<jbosstools-javaee>org.jboss.tools.jsf</jbosstools-javaee>
