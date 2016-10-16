@@ -96,7 +96,8 @@
 				<deployScriptDir>${project.build.directory}/releng-scripts</deployScriptDir>
 				<deployScript>${deployScriptDir}/publish/rsync.sh</deployScript>
 				<deploySourceFolder>${project.build.directory}/fullSite</deploySourceFolder>
-				<deployDestination>tools@filemgmt.jboss.org:downloads_htdocs/jbosstools</deployDestination>
+				<!-- use filemgmt.jboss.org IP instead of 10.5.105.197 because it's 3x faster -->
+				<deployDestination>tools@10.5.105.197:downloads_htdocs/jbosstools</deployDestination>
 				<deployTargetFolder>${eclipseReleaseName}/snapshots/pulls/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${jbosstools_site_stream}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}_PR${ghprbPullId}/</deployTargetFolder>
 				<deployNumbuildstokeep>7</deployNumbuildstokeep>
 				<deployNumbuildstolink>2</deployNumbuildstolink>
