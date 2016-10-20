@@ -13,6 +13,7 @@
 	<properties>
 		<update.site.name>${project.name}</update.site.name>
 		<snapshotLocation>core</snapshotLocation>
+		<skipCheckSHAs>true</skipCheckSHAs>
 	</properties>
 
 	<build>
