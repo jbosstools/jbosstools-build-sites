@@ -34,7 +34,6 @@
 		<p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${snapshotLocation}-site/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
 		<!-- used by central and earlyaccess poms only -->
 		<tpc.version>${TARGET_PLATFORM_VERSION_MAX}</tpc.version>
-		<TARGET_PLATFORM_CENTRAL_MAX>${TARGET_PLATFORM_VERSION_MAX}</TARGET_PLATFORM_CENTRAL_MAX>
 		<targetplatform.url>http://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${TARGET_PLATFORM_CENTRAL_MAX}/REPO/</targetplatform.url>
 	</properties>
 
