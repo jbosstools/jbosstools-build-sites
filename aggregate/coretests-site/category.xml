@@ -30,6 +30,7 @@
 <feature id="org.jboss.tools.jst.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.maven.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.openshift.express.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
+<feature id="org.jboss.tools.openshift.cdk.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.openshift.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.portlet.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.runtime.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
@@ -63,6 +64,7 @@
 <feature id="org.jboss.tools.jst.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.maven.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.openshift.express.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
+<feature id="org.jboss.tools.openshift.cdk.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.openshift.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.portlet.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.runtime.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
