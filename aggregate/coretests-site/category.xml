@@ -44,6 +44,32 @@
 <feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature"><category name="JBoss Tools - Core Tests"/></feature>
 <bundle id="org.jboss.tools.foundation.help.test"><category name="JBoss Tools - Core Tests"/></bundle>
 
+<bundle id="org.fusesource.ide.camel.editor.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.editor.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.service.core.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.service.core.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.tests.util"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.validation.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.validation.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.camel.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.camel.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.commons.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.diagram.view.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.ui.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.ui.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.projecttemplates.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.projecttemplates.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.project.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.server.karaf.core.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.server.tests"><category name="AllTests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.core.tests"><category name="AllTests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.core.tests.integration"><category name="AllTests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.editor.tests"><category name="AllTests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration"><category name="AllTests"/></bundle>
+
 <!-- Source Features -->
 <feature id="org.jboss.ide.eclipse.archives.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.foundation.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
@@ -75,5 +101,31 @@
 <feature id="org.jboss.tools.ws.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
 <bundle id="org.jboss.tools.foundation.help.test.source"><category name="JBoss Tools - Core Tests"/></bundle>
+
+<bundle id="org.fusesource.ide.camel.editor.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.editor.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.service.core.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.service.core.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.tests.util.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.validation.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.validation.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.camel.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.camel.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.commons.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.diagram.view.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.ui.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.ui.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.projecttemplates.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.projecttemplates.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.project.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.server.karaf.core.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.server.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.core.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.core.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.editor.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
 
 </site>

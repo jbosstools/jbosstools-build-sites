@@ -196,6 +196,11 @@
 			<layout>p2</layout>
 			<url>${jbosstools-freemarker-site}</url>
 		</repository>
+		<repository>
+			<id>jbosstools-fuse-site</id>
+			<layout>p2</layout>
+			<url>${jbosstools-fuse-site}</url>
+		</repository>
 	</repositories>
 
 	<!-- 
