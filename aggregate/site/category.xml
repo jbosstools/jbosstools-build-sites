@@ -140,11 +140,9 @@
     <category name="org.eclipse.wst.server.core.serverAdapter"/>
   </feature>
   <feature id="org.jboss.tools.openshift.express.feature">
-    <category name="CoreTools" />
     <category name="CloudContainerTools" />
   </feature>
   <feature id="org.jboss.tools.openshift.egit.integration.feature">
-    <category name="CoreTools" />
     <category name="CloudContainerTools" />
   </feature>
   <!-- openshift v3 -->
