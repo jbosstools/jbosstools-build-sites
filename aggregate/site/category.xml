@@ -143,6 +143,7 @@
     <category name="CloudContainerTools" />
   </feature>
   <feature id="org.jboss.tools.openshift.egit.integration.feature">
+    <category name="CoreTools" />
     <category name="CloudContainerTools" />
   </feature>
   <!-- openshift v3 -->
