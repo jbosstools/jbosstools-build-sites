@@ -48,7 +48,7 @@
 <bundle id="org.fusesource.ide.camel.editor.tests.integration"><category name="AllTests"/></bundle>
 <bundle id="org.fusesource.ide.camel.model.service.core.tests"><category name="AllTests"/></bundle>
 <bundle id="org.fusesource.ide.camel.model.service.core.tests.integration"><category name="AllTests"/></bundle>
-<bundle id="org.fusesource.ide.camel.model.tests"><category name="AllTests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.tests.integration"><category name="AllTests"/></bundle>
 <bundle id="org.fusesource.ide.camel.tests.util"><category name="AllTests"/></bundle>
 <bundle id="org.fusesource.ide.camel.validation.tests"><category name="AllTests"/></bundle>
 <bundle id="org.fusesource.ide.camel.validation.tests.integration"><category name="AllTests"/></bundle>
@@ -106,7 +106,7 @@
 <bundle id="org.fusesource.ide.camel.editor.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
 <bundle id="org.fusesource.ide.camel.model.service.core.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
 <bundle id="org.fusesource.ide.camel.model.service.core.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.model.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
 <bundle id="org.fusesource.ide.camel.tests.util.source"><category name="JBoss Tools - Core Tests"/></bundle>
 <bundle id="org.fusesource.ide.camel.validation.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
 <bundle id="org.fusesource.ide.camel.validation.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
