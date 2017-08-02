@@ -35,6 +35,7 @@
 		<!-- used by central and earlyaccess poms only -->
 		<tpc.version>${TARGET_PLATFORM_VERSION_MAX}</tpc.version>
 		<targetplatform.url>http://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${TARGET_PLATFORM_CENTRAL_MAX}/REPO/</targetplatform.url>
+		<skipDeployToJBossOrg>false</skipDeployToJBossOrg>
 	</properties>
 
 	<build>
