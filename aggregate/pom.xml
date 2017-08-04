@@ -36,6 +36,9 @@
 		<tpc.version>${TARGET_PLATFORM_VERSION_MAX}</tpc.version>
 		<targetplatform.url>http://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${TARGET_PLATFORM_CENTRAL_MAX}/REPO/</targetplatform.url>
 		<skipDeployToJBossOrg>false</skipDeployToJBossOrg>
+		<!-- override default URL in parent pom so that we don't end up with a circular dep on ourself -->
+		<jbosstools-tests-site>${jbosstools-target-site}</jbosstools-tests-site>
+		<enforceExcludePatternExtras>|jbosstools-tests-site</enforceExcludePatternExtras>
 	</properties>
 
 	<build>

@@ -13,9 +13,6 @@
 	<properties>
 		<update.site.name>${project.name}</update.site.name>
 		<snapshotLocation>coretests</snapshotLocation>
-		<!-- override default URL in parent pom so that we don't end up with a circular dep on ourself -->
-		<jbosstools-tests-site>${jbosstools-target-site}</jbosstools-tests-site>
-		<enforceExcludePatternExtras>|jbosstools-tests-site</enforceExcludePatternExtras>
 	</properties>
 	<build>
 		<plugins>
