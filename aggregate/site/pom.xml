@@ -164,6 +164,7 @@
 										<!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
 										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}</arg>
 									</arguments>
+									<skip>${skipDeployToJBossOrg}</skip>
 								</configuration>
 							</execution>
 							<execution>
@@ -180,6 +181,7 @@
 										<arg>-t</arg>
 										<arg>${eclipseReleaseName}/snapshots/updates/${snapshotLocation}/${stream_jbt}</arg>
 									</arguments>
+									<skip>${skipDeployToJBossOrg}</skip>
 								</configuration>
 							</execution>
 						</executions>
