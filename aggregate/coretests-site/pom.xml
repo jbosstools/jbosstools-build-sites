@@ -13,6 +13,8 @@
 	<properties>
 		<update.site.name>${project.name}</update.site.name>
 		<snapshotLocation>coretests</snapshotLocation>
+		<!-- override default URL in parent pom so that we don't end up with a circular dep on ourself -->
+		<jbosstools-tests-site>${jbosstools-target-site}</jbosstools-tests-site>
 	</properties>
 	<build>
 		<plugins>
@@ -28,9 +30,6 @@
 						</goals>
 						<configuration>
 							<associateSites>
-								<!-- JBIDE-21233 no longer needed since JBT co-publishes with its TP
-								<site>${jbosstools-target-site}</site> 
-								-->
 								<site>http://download.jboss.org/jbosstools/${eclipseReleaseName}/development/updates/</site>
 							</associateSites>
 							<symbols>
