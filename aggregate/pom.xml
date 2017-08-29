@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.jboss.tools</groupId>
@@ -29,17 +30,20 @@
 	<properties>
 		<jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${TARGET_PLATFORM_VERSION_MAX}/</jbosstools-target-site>
 		<jbosstools-site>http://download.jboss.org/jbosstools/${eclipseReleaseName}/snapshots/updates/core/${stream_jbt}/</jbosstools-site>
-		<!-- this value will be overridden by the child poms in this project: core, coretests, central, earlyaccess. -->
+		<!-- this value will be overridden by the child poms in this project: core, 
+			coretests, central, earlyaccess. -->
 		<snapshotLocation>local</snapshotLocation>
 		<p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${snapshotLocation}-site/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
 		<!-- used by central and earlyaccess poms only -->
 		<tpc.version>${TARGET_PLATFORM_VERSION_MAX}</tpc.version>
 		<targetplatform.url>http://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${TARGET_PLATFORM_CENTRAL_MAX}/REPO/</targetplatform.url>
 		<skipDeployToJBossOrg>false</skipDeployToJBossOrg>
-		<!-- override default URL in parent pom so that we don't end up with a circular dep on ourself -->
+		<!-- override default URL in parent pom so that we don't end up with a 
+			circular dep on ourself -->
 		<jbosstools-tests-site>${jbosstools-target-site}</jbosstools-tests-site>
 		<enforceExcludePatternExtras>|jbosstools-tests-site</enforceExcludePatternExtras>
 	</properties>
+
 
 	<build>
 		<plugins>
@@ -53,31 +57,42 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.jboss.tools.tycho-plugins</groupId>
-				<artifactId>repository-utils</artifactId>
+				<groupId>net.ju-n.maven.plugins</groupId>
+				<artifactId>checksum-maven-plugin</artifactId>
+				<version>1.2</version>
 				<executions>
 					<execution>
-						<id>generate-full-site</id>
-						<phase>package</phase>
+						<phase>install</phase>
 						<goals>
-							<goal>create-full-site</goal>
+							<goal>files</goal>
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>net.ju-n.maven.plugins</groupId>
-				<artifactId>checksum-maven-plugin</artifactId>
+				<configuration>
+					<quiet>true</quiet>
+					<csvSummary>false</csvSummary>
+					<algorithms>
+						<algorithm>SHA-256</algorithm>
+					</algorithms>
+					<fileSets>
+						<fileSet>
+							<directory>${project.build.directory}</directory>
+							<includes>
+								<include>repository.zip</include>
+							</includes>
+						</fileSet>
+					</fileSets>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
 	<profiles>
-		<!-- 
-				This profile is used to optionally enable a target platform site instead of (or in addition to) the default target platform. 
-				Use -Dno-target-platform if you want to disable the default target platform in favour of a specified target platform site
-					mvn clean install -Dno-target-platform \
-					-Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/
+		<!-- This profile is used to optionally enable a target platform site instead 
+			of (or in addition to) the default target platform. Use -Dno-target-platform 
+			if you want to disable the default target platform in favour of a specified 
+			target platform site mvn clean install -Dno-target-platform \ 
+				-Djbosstools-target-site=file:///path/to/jbosstools-target-platforms/jbosstools/multiple/target/jbosstools-multiple.target.repo/ 
 		-->
 		<profile>
 			<id>target-site</id>

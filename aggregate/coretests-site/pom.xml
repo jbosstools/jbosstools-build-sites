@@ -47,6 +47,33 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-generated-zip-to-repository.zip</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.jboss.tools</groupId>
+									<artifactId>${project.artifactId}</artifactId>
+									<version>${project.version}</version>
+									<type>zip</type>
+									<classifier></classifier>
+									<outputDirectory>${project.build.directory}</outputDirectory>
+									<destFileName>repository.zip</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -54,7 +81,8 @@
 		<profile>
 			<id>deploy-to-jboss.org</id>
 			<properties>
-				<!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
+				<!-- Skip publishing to Nexus, since we don't use it and it takes a lot 
+					of time -->
 				<maven.deploy.skip>true</maven.deploy.skip>
 				<skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
 			</properties>
@@ -73,9 +101,27 @@
 								<configuration>
 									<arguments>
 										<arg>-s</arg>
-										<arg>${project.build.directory}/fullSite</arg>
+										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
-										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}</arg>
+										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}/all/repo</arg>
+									</arguments>
+									<skip>${skipDeployToJBossOrg}</skip>
+								</configuration>
+							</execution>
+							<execution>
+								<id>deploy-snapshot-zip</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>deploy</phase>
+								<configuration>
+									<arguments>
+										<arg>-s</arg>
+										<arg>${project.build.directory}</arg>
+										<arg>-t</arg>
+										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.${snapshotLocation}-site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}/all</arg>
+										<arg>-i</arg>
+										<arg>repository.zip*</arg>
 									</arguments>
 									<skip>${skipDeployToJBossOrg}</skip>
 								</configuration>
@@ -104,7 +150,7 @@
 		</profile>
 	</profiles>
 
- <repositories>
+	<repositories>
 		<repository>
 			<id>jbosstools-base-site</id>
 			<layout>p2</layout>
@@ -185,11 +231,6 @@
 			<layout>p2</layout>
 			<url>${jbosstools-xulrunner-site}</url>
 		</repository>
-		<!-- JBIDE-16960 remove <repository>
-			<id>jbosstools-gwt-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-gwt-site}</url>
-		</repository> -->
 		<repository>
 			<id>jbosstools-freemarker-site</id>
 			<layout>p2</layout>
@@ -202,10 +243,7 @@
 		</repository>
 	</repositories>
 
-	<!-- 
-		mvn verify -Pmaximum \
-			-DBUILD_TIMESTAMP=2013-04-10_01-02-03 -DBUILD_NUMBER=314 -DBUILD_ALIAS=CR1 \
-			-Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_4.2.luna
-	-->
+	<!-- mvn verify -Pmaximum -DBUILD_TIMESTAMP=2013-04-10_01-02-03 -DBUILD_NUMBER=314 \
+		-DBUILD_ALIAS=CR1 -Dupdate.site.description="Stable Milestone" -DJOB_NAME=jbosstools-build-sites.aggregate.coretests-site_master -->
 
 </project>

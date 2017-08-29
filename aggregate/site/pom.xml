@@ -79,11 +79,6 @@
 							<goal>generate-repository-facade</goal>
 						</goals>
 						<configuration>
-							<!-- JBIDE-21233 since we now always co-publish the JBT site w/ its TP, we no longer need this assoc site anymore
-							<associateSites>
-								<site>${jbosstools-target-site}</site>
-							</associateSites>
-							-->
 							<symbols>
 								<update.site.name>${update.site.name}</update.site.name>
 								<update.site.description>${update.site.description}</update.site.description>
@@ -104,9 +99,9 @@
 						</goals>
 						<configuration>
 							<!-- <zipCacheFolder>${basedir}/cache</zipCacheFolder> -->
-							<!-- <outputFolder>${project.build.directory}/fullSite</outputFolder> -->
+							<outputFolder>${project.build.directory}</outputFolder>
 							<!-- <fallbackToChild>latest/all/repo</fallbackToChild> -->
-							<sourcesZip>${project.build.directory}/fullSite/all/jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src.zip</sourcesZip>
+							<sourcesZip>${project.build.directory}/jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src.zip</sourcesZip>
 							<sourcesZipRootFolder>jbosstools-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${BUILD_ALIAS}-src</sourcesZipRootFolder>
 							<sourceFetchMap>
 								<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
@@ -133,6 +128,33 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-generated-zip-to-repository.zip</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.jboss.tools</groupId>
+									<artifactId>${project.artifactId}</artifactId>
+									<version>${project.version}</version>
+									<type>zip</type>
+									<classifier></classifier>
+									<outputDirectory>${project.build.directory}</outputDirectory>
+									<destFileName>*.zip</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -140,7 +162,8 @@
 		<profile>
 			<id>deploy-to-jboss.org</id>
 			<properties>
-				<!-- Skip publishing to Nexus, since we don't use it and it takes a lot of time -->
+				<!-- Skip publishing to Nexus, since we don't use it and it takes a lot 
+					of time -->
 				<maven.deploy.skip>true</maven.deploy.skip>
 				<skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
 			</properties>
@@ -159,10 +182,48 @@
 								<configuration>
 									<arguments>
 										<arg>-s</arg>
-										<arg>${project.build.directory}/fullSite</arg>
+										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
 										<!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
-										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}</arg>
+										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}/all/repo</arg>
+									</arguments>
+									<skip>${skipDeployToJBossOrg}</skip>
+								</configuration>
+							</execution>
+							<execution>
+								<id>deploy-snapshot-zip</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>deploy</phase>
+								<configuration>
+									<arguments>
+										<arg>-s</arg>
+										<arg>${project.build.directory}</arg>
+										<arg>-t</arg>
+										<!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
+										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}/all</arg>
+										<arg>-i</arg>
+										<arg>repository.zip*</arg>
+									</arguments>
+									<skip>${skipDeployToJBossOrg}</skip>
+								</configuration>
+							</execution>
+							<execution>
+								<id>deploy-snapshot-src-zip</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>deploy</phase>
+								<configuration>
+									<arguments>
+										<arg>-s</arg>
+										<arg>${project.build.directory}</arg>
+										<arg>-t</arg>
+										<!-- note special case here: use aggregate.site instead of aggregate.${snapshotLocation}-site -->
+										<arg>${eclipseReleaseName}/snapshots/builds/jbosstools-build-sites.aggregate.site_${stream_jbt}/${BUILD_TIMESTAMP}-B${BUILD_NUMBER}/all</arg>
+										<arg>-i</arg>
+										<arg>*src.zip*</arg>
 									</arguments>
 									<skip>${skipDeployToJBossOrg}</skip>
 								</configuration>
