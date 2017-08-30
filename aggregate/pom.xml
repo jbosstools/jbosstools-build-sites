@@ -78,7 +78,7 @@
 						<fileSet>
 							<directory>${project.build.directory}</directory>
 							<includes>
-								<include>repository.zip</include>
+								<include>*.zip</include>
 							</includes>
 						</fileSet>
 					</fileSets>

@@ -148,7 +148,7 @@
 									<type>zip</type>
 									<classifier></classifier>
 									<outputDirectory>${project.build.directory}</outputDirectory>
-									<destFileName>*.zip</destFileName>
+									<destFileName>repository.zip</destFileName>
 								</artifactItem>
 							</artifactItems>
 						</configuration>
