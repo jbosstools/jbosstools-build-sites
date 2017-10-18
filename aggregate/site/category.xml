@@ -314,6 +314,10 @@
     <category name="FuseTools" />
   </feature>
 
+  <feature id="com.redhat.fabric8analytics.lsp.eclipse.feature">
+    <category name="WebTools" />
+  </feature>
+
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.central.feature"/>
   <feature id="org.jboss.tools.common.feature"/>
@@ -473,6 +477,8 @@
   <feature id="org.fusesource.ide.jmx.feature.source"/>
   <feature id="org.fusesource.ide.server.extensions.feature.source"/>
   <feature id="org.jboss.tools.fuse.transformation.feature.source"/>
+
+  <feature id="com.redhat.fabric8analytics.lsp.eclipse.feature.source"/>
 
   <bundle id="org.jboss.tools.discovery.core.source"/>
   <bundle id="org.jboss.tools.foundation.help.ui.source"/>
