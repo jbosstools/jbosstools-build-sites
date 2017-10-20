@@ -349,6 +349,11 @@
 			<layout>p2</layout>
 			<url>${jbosstools-fuse-site}</url>
 		</repository>
+		<repository>
+			<id>jbosstools-fabric8analytics-site</id>
+			<layout>p2</layout>
+			<url>${jbosstools-fabric8analytics-site}</url>
+		</repository>
 	</repositories>
 
 	<!-- 
