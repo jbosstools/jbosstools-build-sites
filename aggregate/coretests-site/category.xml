@@ -6,44 +6,45 @@
 	When updating this file, please be sure that it parses as valid XML before committing it.
 	To test, just run `mvn clean install` in this folder. 
 -->
-<category-def name="JBoss Tools - Core Tests" label="JBoss Tools - Core Tests">
+<category-def name="coretests" label="JBoss Tools - Core Tests">
 	<description>JBoss Tools - Core Tests
 	</description>
 </category-def>
 
 <!-- Main Features -->
-<feature id="org.jboss.ide.eclipse.archives.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.ide.eclipse.as.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.batch.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.cdi.seam.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.cdi.deltaspike.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.cdi.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.central.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.common.all.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.project.examples.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.forge.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.forge.ext.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.ide.eclipse.freemarker.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.hibernate.eclipse.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.jmx.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.jsf.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.jst.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.maven.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.openshift.cdk.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.openshift.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.openshift.io.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.portlet.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.runtime.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.seam.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.foundation.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.stacks.core.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.usage.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.vpe.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.ws.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.websockets.test.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature"><category name="JBoss Tools - Core Tests"/></feature>
-<bundle id="org.jboss.tools.foundation.help.test"><category name="JBoss Tools - Core Tests"/></bundle>
+<feature id="org.jboss.ide.eclipse.archives.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.ide.eclipse.as.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.batch.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.cdi.seam.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.cdi.deltaspike.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.cdi.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.central.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.common.all.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.project.examples.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.forge.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.forge.ext.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.ide.eclipse.freemarker.test.feature"><category name="coretests"/></feature>
+<feature id="org.hibernate.eclipse.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.jmx.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.jsf.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.jst.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.maven.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.openshift.cdk.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.openshift.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.openshift.integration.tests.feature"><category name="coretests" /></feature>
+<feature id="org.jboss.tools.openshift.io.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.portlet.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.runtime.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.seam.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.foundation.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.stacks.core.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.usage.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.vpe.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.ws.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.websockets.test.feature"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature"><category name="coretests"/></feature>
+<bundle id="org.jboss.tools.foundation.help.test"><category name="coretests"/></bundle>
 
 <bundle id="org.fusesource.ide.camel.editor.tests"><category name="AllTests"/></bundle>
 <bundle id="org.fusesource.ide.camel.editor.tests.integration"><category name="AllTests"/></bundle>
@@ -74,64 +75,65 @@
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration"><category name="AllTests"/></bundle>
 
 <!-- Source Features -->
-<feature id="org.jboss.ide.eclipse.archives.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.foundation.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.stacks.core.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.ide.eclipse.as.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.batch.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.cdi.seam.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.cdi.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.central.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.common.all.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.project.examples.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.forge.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.forge.ext.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.ide.eclipse.freemarker.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.hibernate.eclipse.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.jmx.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.jsf.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.jst.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.maven.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.openshift.cdk.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.openshift.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.openshift.io.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.portlet.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.runtime.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.seam.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.usage.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.vpe.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.ws.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.websockets.test.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature.source"><category name="JBoss Tools - Core Tests"/></feature>
-<bundle id="org.jboss.tools.foundation.help.test.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<feature id="org.jboss.ide.eclipse.archives.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.foundation.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.stacks.core.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.ide.eclipse.as.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.batch.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.cdi.seam.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.cdi.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.central.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.common.all.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.project.examples.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.forge.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.forge.ext.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.ide.eclipse.freemarker.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.hibernate.eclipse.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.jmx.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.jsf.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.jst.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.maven.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.openshift.cdk.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.openshift.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.openshift.integration.tests.feature.source"><category name="coretests" /></feature>
+<feature id="org.jboss.tools.openshift.io.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.portlet.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.runtime.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.seam.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.usage.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.vpe.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.ws.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.websockets.test.feature.source"><category name="coretests"/></feature>
+<feature id="org.jboss.tools.wtp.runtimes.tomcat.tests.feature.source"><category name="coretests"/></feature>
+<bundle id="org.jboss.tools.foundation.help.test.source"><category name="coretests"/></bundle>
 
-<bundle id="org.fusesource.ide.camel.editor.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.editor.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.model.service.core.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.model.service.core.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.model.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.tests.util.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.validation.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.camel.validation.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.jmx.camel.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.jmx.camel.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.jmx.commons.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.jmx.diagram.view.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.launcher.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.launcher.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.launcher.ui.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.launcher.ui.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.projecttemplates.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.projecttemplates.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.project.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.server.karaf.core.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.server.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.syndesis.extension.core.tests"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.fusesource.ide.syndesis.extension.ui.tests.integration"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.jboss.tools.fuse.transformation.core.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.jboss.tools.fuse.transformation.core.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.jboss.tools.fuse.transformation.editor.tests.source"><category name="JBoss Tools - Core Tests"/></bundle>
-<bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration.source"><category name="JBoss Tools - Core Tests"/></bundle>
+<bundle id="org.fusesource.ide.camel.editor.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.camel.editor.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.service.core.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.service.core.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.camel.model.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.camel.tests.util.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.camel.validation.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.camel.validation.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.camel.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.camel.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.commons.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.jmx.diagram.view.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.ui.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.launcher.ui.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.projecttemplates.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.projecttemplates.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.project.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.server.karaf.core.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.server.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.syndesis.extension.core.tests"><category name="coretests"/></bundle>
+<bundle id="org.fusesource.ide.syndesis.extension.ui.tests.integration"><category name="coretests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.core.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.core.tests.integration.source"><category name="coretests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.editor.tests.source"><category name="coretests"/></bundle>
+<bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration.source"><category name="coretests"/></bundle>
 
 </site>
