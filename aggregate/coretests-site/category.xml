@@ -23,7 +23,6 @@
 <feature id="org.jboss.tools.project.examples.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.forge.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.forge.ext.test.feature"><category name="coretests"/></feature>
-<feature id="org.jboss.ide.eclipse.freemarker.test.feature"><category name="coretests"/></feature>
 <feature id="org.hibernate.eclipse.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jmx.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jsf.test.feature"><category name="coretests"/></feature>
@@ -87,7 +86,6 @@
 <feature id="org.jboss.tools.project.examples.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.forge.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.forge.ext.test.feature.source"><category name="coretests"/></feature>
-<feature id="org.jboss.ide.eclipse.freemarker.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.hibernate.eclipse.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jmx.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jsf.test.feature.source"><category name="coretests"/></feature>
