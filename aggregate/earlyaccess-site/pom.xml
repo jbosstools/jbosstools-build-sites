@@ -9,7 +9,9 @@
 	</parent>
 	<artifactId>org.jboss.tools.site.central.earlyaccess</artifactId>
 	<name>JBoss Central - Early Access</name>
-	<packaging>eclipse-repository</packaging>
+	<!-- because this site is currently empty, this build will fail; so switch from eclipse-repo to pom packaging -->
+	<!-- <packaging>eclipse-repository</packaging> -->
+	<packaging>pom</packaging>
 	<properties>
 		<update.site.name>${project.name}</update.site.name>
 		<snapshotLocation>earlyaccess</snapshotLocation>
