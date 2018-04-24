@@ -73,9 +73,6 @@
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests"><category name="AllTests"/></bundle>
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration"><category name="AllTests"/></bundle>
 
-  <!-- JBIDE-25736 Portlet, Aerogear, Browsersim, Livereload are deprecated -->
-<feature id="org.jboss.tools.portlet.test.feature"><category name="coretests"/></feature>
-
 <!-- Source Features -->
 <feature id="org.jboss.ide.eclipse.archives.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.foundation.test.feature.source"><category name="coretests"/></feature>
@@ -136,8 +133,5 @@
 <bundle id="org.jboss.tools.fuse.transformation.core.tests.integration.source"><category name="coretests"/></bundle>
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests.source"><category name="coretests"/></bundle>
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration.source"><category name="coretests"/></bundle>
-
-  <!-- JBIDE-25736 Portlet, Aerogear, Browsersim, Livereload are deprecated -->
-<feature id="org.jboss.tools.portlet.test.feature.source"><category name="coretests"/></feature>
 
 </site>
