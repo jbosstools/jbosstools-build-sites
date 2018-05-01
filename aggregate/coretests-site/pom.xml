@@ -216,11 +216,6 @@
 			<layout>p2</layout>
 			<url>${jbosstools-fabric8analytics-site}</url>
 		</repository>
-		<repository>
-			<id>jbosstools-livereload-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-livereload-site}</url>
-		</repository>
 	</repositories>
 
 	<!-- mvn verify -Pmaximum -DBUILD_TIMESTAMP=2013-04-10_01-02-03 -DBUILD_NUMBER=314 \
