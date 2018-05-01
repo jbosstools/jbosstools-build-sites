@@ -5,7 +5,4 @@
   <feature id="org.jboss.tools.common.mylyn.feature"/>
   <feature id="org.jboss.tools.jst.angularjs.feature"/>
   <feature id="org.jboss.tools.forge.ext.feature"/>
-
-  <!-- JBIDE-25736 Portlet, Aerogear, Browsersim, Livereload are deprecated -->
-  <feature id="org.jboss.tools.cordovasim.feature"/>
 </site>
