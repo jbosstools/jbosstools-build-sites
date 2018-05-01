@@ -313,6 +313,11 @@
 			<layout>p2</layout>
 			<url>${jbosstools-fabric8analytics-site}</url>
 		</repository>
+		<repository>
+			<id>jbosstools-livereload-site</id>
+			<layout>p2</layout>
+			<url>${jbosstools-livereload-site}</url>
+		</repository>
 	</repositories>
 
 	<!-- 
