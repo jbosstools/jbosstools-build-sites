@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-<description>JBoss Tools 4.6 (Photon) - Core Tests</description>
+<description>JBoss Tools Updates - Core Tests</description>
 
 <!-- PLEASE NOTE!
 	When updating this file, please be sure that it parses as valid XML before committing it.
 	To test, just run `mvn clean install` in this folder. 
 -->
 <category-def name="coretests" label="JBoss Tools - Core Tests">
-	<description>JBoss Tools - Core Tests
+	<description>JBoss Tools Updates - Core Tests
 	</description>
 </category-def>
 
