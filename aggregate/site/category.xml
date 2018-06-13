@@ -377,8 +377,6 @@
   <feature id="org.jboss.tools.jst.angularjs.feature.source"/>
   <feature id="org.jboss.tools.vpe.feature.source"/>
   <feature id="org.jboss.tools.jsf.feature.source"/>
-  <feature id="org.jboss.tools.xulrunner.feature.source"/>
-  <feature id="org.mozilla.xulrunner.feature.source"/>
   <feature id="org.jboss.tools.seam.feature.source"/>
   <feature id="org.jboss.tools.batch.feature.source"/>
   <feature id="org.jboss.tools.cdi.feature.source"/>
