@@ -117,6 +117,7 @@
 								<jbosstools-webservices>org.jboss.tools.ws.ui</jbosstools-webservices>
 								<!-- instead of pulling from a plugin, pull source info from a URL containing the buildinfo.json file -->
 								<jbosstools-xulrunner>${jbosstools-xulrunner-site}/buildinfo.json</jbosstools-xulrunner>
+								<jbosstools-quarkus>${jbosstools-quarkus-site}/buildinfo.json</jbosstools-quarkus>
 							</sourceFetchMap>
 						</configuration>
 					</execution>
@@ -317,6 +318,11 @@
 			<id>jbosstools-fabric8analytics-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-fabric8analytics-site}</url>
+		</repository>
+		<repository>
+			<id>jbosstools-quarkus-site</id>
+			<layout>p2</layout>
+			<url>${jbosstools-quarkus-site}</url>
 		</repository>
 	</repositories>
 
