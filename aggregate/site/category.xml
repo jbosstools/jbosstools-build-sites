@@ -64,10 +64,6 @@
     <category name="WebTools" />
     <category name="MobileTools"/>
   </feature>
-  <feature id="org.eclipse.wst.jsdt.nodejs.feature">
-    <category name="WebTools" />
-    <category name="MobileTools"/>
-  </feature>
   <feature id="org.jboss.tools.jst.angularjs.feature" >
     <category name="CoreTools" />
     <category name="WebTools" />
