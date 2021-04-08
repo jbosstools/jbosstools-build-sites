@@ -284,6 +284,7 @@
   <feature id="org.jboss.tools.common.ui.feature"/>
   <feature id="org.jboss.tools.common.verification.feature"/>
   <feature id="org.jboss.tools.foundation.license.feature"/>
+  <feature id="org.jboss.tools.common.oauth.feature"/>
 
   <bundle id="org.jboss.tools.discovery.core"/>
   <bundle id="org.jboss.tools.foundation.help.ui"/>
