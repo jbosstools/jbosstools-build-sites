@@ -441,6 +441,8 @@
 
   <feature id="org.jboss.tools.livereload.feature.source"/>
   <feature id="org.jboss.tools.quarkus.feature.source"/>
+  <feature id="org.jboss.tools.cdi.microprofile.feature.source"/>
+  <feature id="org.jboss.tools.common.oauth.feature.source"/>
 
   <!-- ########## -->
   <!-- CATEGORIES -->
