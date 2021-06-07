@@ -275,6 +275,7 @@
   <feature id="org.jboss.tools.quarkus.feature">
     <category name="CoreTools" />
   </feature>
+  <bundle id="org.eclipse.lsp4mp.jdt.core"/>
 
   <!-- include but do not categorize -->
   <feature id="org.jboss.tools.central.feature"/>
