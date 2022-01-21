@@ -28,15 +28,15 @@
 		<!-- do not run from this folder; instead run from the site/ or other subfolder -->
 	</modules>
 	<properties>
-		<jbosstools-target-site>http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${TARGET_PLATFORM_VERSION_MAX}/</jbosstools-target-site>
-		<jbosstools-site>http://download.jboss.org/jbosstools/${eclipseReleaseName}/snapshots/updates/core/${stream_jbt}/</jbosstools-site>
+		<jbosstools-target-site>https://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/${TARGET_PLATFORM_VERSION_MAX}/</jbosstools-target-site>
+		<jbosstools-site>https://download.jboss.org/jbosstools/${eclipseReleaseName}/snapshots/updates/core/${stream_jbt}/</jbosstools-site>
 		<!-- this value will be overridden by the child poms in this project: core, 
 			coretests, central, earlyaccess. -->
 		<snapshotLocation>local</snapshotLocation>
-		<p2StatsUrl>http://download.jboss.org/jbosstools/usage/installs/${snapshotLocation}-site/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
+		<p2StatsUrl>https://download.jboss.org/jbosstools/usage/installs/${snapshotLocation}-site/${project.version}/${BUILD_ALIAS}/${buildQualifier}/</p2StatsUrl>
 		<!-- used by central and earlyaccess poms only -->
 		<tpc.version>${TARGET_PLATFORM_VERSION_MAX}</tpc.version>
-		<targetplatform.url>http://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${TARGET_PLATFORM_CENTRAL_MAX}/REPO/</targetplatform.url>
+		<targetplatform.url>https://download.jboss.org/jbosstools/targetplatforms/jbt${snapshotLocation}target/${TARGET_PLATFORM_CENTRAL_MAX}/REPO/</targetplatform.url>
 		<skipDeployToJBossOrg>false</skipDeployToJBossOrg>
 		<!-- override default URL in parent pom so that we don't end up with a 
 			circular dep on ourself -->
