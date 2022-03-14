@@ -74,7 +74,6 @@
 <bundle id="org.jboss.tools.fuse.transformation.core.tests.integration"><category name="coretests"/></bundle>
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests"><category name="coretests"/></bundle>
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration"><category name="coretests"/></bundle>
-<bundle id="org.fusesource.ide.wsdl2rest.ui.tests.integration"><category name="coretests"/></bundle>
 
 <!-- Source Features -->
 <feature id="org.jboss.ide.eclipse.archives.test.feature.source"><category name="coretests"/></feature>
@@ -138,6 +137,5 @@
 <bundle id="org.jboss.tools.fuse.transformation.core.tests.integration.source"><category name="coretests"/></bundle>
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests.source"><category name="coretests"/></bundle>
 <bundle id="org.jboss.tools.fuse.transformation.editor.tests.integration.source"><category name="coretests"/></bundle>
-<bundle id="org.fusesource.ide.wsdl2rest.ui.tests.integration.source"><category name="coretests"/></bundle>
 
 </site>
