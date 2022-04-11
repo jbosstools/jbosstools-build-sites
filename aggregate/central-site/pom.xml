@@ -135,6 +135,8 @@
 								<phase>deploy</phase>
 								<configuration>
 									<arguments>
+										<arg>-DESTINATION</arg>
+										<arg>tools@filemgmt-prod-sync.jboss.org:downloads_htdocs/jbosstools</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
@@ -151,6 +153,8 @@
 								<phase>deploy</phase>
 								<configuration>
 									<arguments>
+										<arg>-DESTINATION</arg>
+										<arg>tools@filemgmt-prod-sync.jboss.org:downloads_htdocs/jbosstools</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}</arg>
 										<arg>-t</arg>
@@ -169,6 +173,8 @@
 								<phase>deploy</phase>
 								<configuration>
 									<arguments>
+										<arg>-DESTINATION</arg>
+										<arg>tools@filemgmt-prod-sync.jboss.org:downloads_htdocs/jbosstools</arg>
 										<arg>--del</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
@@ -187,7 +193,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>devstudio@${filemgmtJbossOrg}:/www_htdocs/devstudio</arg>
+										<arg>devstudio@filemgmt-prod-sync.jboss.org:/www_htdocs/devstudio</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
@@ -205,7 +211,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>devstudio@${filemgmtJbossOrg}:/www_htdocs/devstudio</arg>
+										<arg>devstudio@filemgmt-prod-sync.jboss.org:/www_htdocs/devstudio</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}</arg>
 										<arg>-t</arg>
@@ -226,7 +232,7 @@
 									<arguments>
 										<arg>--del</arg>
 										<arg>-DESTINATION</arg>
-										<arg>devstudio@${filemgmtJbossOrg}:/www_htdocs/devstudio</arg>
+										<arg>devstudio@filemgmt-prod-sync.jboss.org:/www_htdocs/devstudio</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
