@@ -184,6 +184,7 @@
 									<skip>${skipDeployToJBossOrg}</skip>
 								</configuration>
 							</execution>
+							<!--
 							<execution>
 								<id>deploy-snapshot-build-devstudio</id>
 								<goals>
@@ -193,7 +194,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>devstudio@filemgmt-prod-sync.jboss.org:/www_htdocs/devstudio</arg>
+										<arg>devstudio@${filemgmtJbossOrg}:/www_htdocs/devstudio</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
@@ -211,7 +212,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>devstudio@filemgmt-prod-sync.jboss.org:/www_htdocs/devstudio</arg>
+										<arg>devstudio@${filemgmtJbossOrg}:/www_htdocs/devstudio</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}</arg>
 										<arg>-t</arg>
@@ -230,9 +231,9 @@
 								<phase>deploy</phase>
 								<configuration>
 									<arguments>
-										<arg>--del</arg>
+										<arg>&#45;&#45;del</arg>
 										<arg>-DESTINATION</arg>
-										<arg>devstudio@filemgmt-prod-sync.jboss.org:/www_htdocs/devstudio</arg>
+										<arg>devstudio@${filemgmtJbossOrg}:/www_htdocs/devstudio</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
@@ -241,6 +242,7 @@
 									<skip>${skipDeployToJBossOrg}</skip>
 								</configuration>
 							</execution>
+							-->
 						</executions>
 					</plugin>
 				</plugins>
