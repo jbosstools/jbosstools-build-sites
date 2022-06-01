@@ -328,7 +328,6 @@
 
   <!-- categorized in JBT; uncategorized in devstudio -->
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"><category name="CoreTools" /><category name="MavenTools" /></feature>
-  <feature id="org.jboss.tools.common.mylyn.feature"><category name="AdditionalTools" /><category name="GeneralTools"/></feature>
 
   <feature id="org.jboss.tools.usage.feature"><category name="CoreTools" /><category name="GeneralTools"/></feature>
   <feature id="org.jboss.tools.livereload.feature"/>
@@ -403,7 +402,6 @@
   <feature id="org.jboss.tools.usage.feature.source"/>
   <feature id="org.jboss.tools.common.jdt.feature.source"/>
   <feature id="org.jboss.tools.common.launcher.feature.source"/>
-  <feature id="org.jboss.tools.common.mylyn.feature.source"/>
   <feature id="org.jboss.tools.foundation.feature.source"/>
   <feature id="org.jboss.tools.foundation.security.linux.feature.source"/>
   <feature id="org.jboss.tools.stacks.core.feature.source"/>
