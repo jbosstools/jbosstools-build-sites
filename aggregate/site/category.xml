@@ -163,10 +163,6 @@
     <category name="CoreTools" />
     <category name="MavenTools" />
   </feature>
-  <feature id="org.jboss.tools.maven.apt.feature">
-    <category name="CoreTools" />
-    <category name="MavenTools" />
-  </feature>
   <feature id="org.jboss.tools.maven.cdi.feature">
     <category name="CoreTools" />
     <category name="MavenTools" />
