@@ -107,7 +107,6 @@
 								<!-- pick a plugin available in the project's update site from which we can deduce the Eclipse-SourceReference -->
 								<jbosstools-base>org.jboss.tools.common</jbosstools-base>
 								<jbosstools-central>org.jboss.tools.central</jbosstools-central>
-								<jbosstools-forge>org.jboss.tools.forge.runtime</jbosstools-forge>
 								<jbosstools-hibernate>org.hibernate.eclipse</jbosstools-hibernate>
 								<jbosstools-javaee>org.jboss.tools.jsf</jbosstools-javaee>
 								<jbosstools-jst>org.jboss.tools.jst.web</jbosstools-jst>
@@ -301,11 +300,6 @@
 			<id>jbosstools-vpe-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-vpe-site}</url>
-		</repository>
-		<repository>
-			<id>jbosstools-forge-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-forge-site}</url>
 		</repository>
 		<repository>
 			<id>jbosstools-central-site</id>

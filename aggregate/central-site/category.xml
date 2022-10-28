@@ -3,5 +3,4 @@
 <site>
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"/>
   <feature id="org.jboss.tools.jst.angularjs.feature"/>
-  <feature id="org.jboss.tools.forge.ext.feature"/>
 </site>
