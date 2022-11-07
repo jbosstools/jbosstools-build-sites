@@ -2,5 +2,4 @@
 <!-- this site contains the features of JBoss Tools which live in JBDS Central because they're not ready to be in JBDS update site itself -->
 <site>
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"/>
-  <feature id="org.jboss.tools.jst.angularjs.feature"/>
 </site>
