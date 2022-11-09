@@ -98,6 +98,11 @@
     <category name="WebTools" />
     <category name="GeneralTools" />
   </feature>
+  <feature id="org.jboss.tools.cdi.faces.feature">
+    <category name="CoreTools" />
+    <category name="WebTools" />
+    <category name="GeneralTools" />
+  </feature>
   <feature id="org.jboss.tools.jmx.feature">
     <category name="CoreTools" />
     <category name="GeneralTools" />
@@ -368,6 +373,7 @@
   <feature id="org.jboss.tools.seam.feature.source"/>
   <feature id="org.jboss.tools.batch.feature.source"/>
   <feature id="org.jboss.tools.cdi.feature.source"/>
+  <feature id="org.jboss.tools.cdi.faces.feature.source"/>
   <feature id="org.jboss.tools.cdi.seam.feature.source"/>
   <feature id="org.jboss.tools.cdi.deltaspike.feature.source"/>
   <feature id="org.jboss.tools.jmx.feature.source"/>
