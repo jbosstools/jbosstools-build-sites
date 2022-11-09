@@ -178,11 +178,6 @@
 			<url>${jbosstools-quarkus-site}</url>
 		</repository>
 		<repository>
-			<id>jbosstools-livereload-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-livereload-site}</url>
-		</repository>
-		<repository>
 			<id>jbosstools-jst-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-jst-site}</url>
