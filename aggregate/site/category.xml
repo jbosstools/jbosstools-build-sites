@@ -28,24 +28,9 @@
     <category name="WebTools" />
   </feature>
 
-  <!-- JBIDE-19045 include Tern -->
-  <bundle id="minimal-json"/>
-  <bundle id="minimatch.java" />
-  <feature id="tern-feature"/>
-  <feature id="tern-jsdt-feature"/>
-  <feature id="tern-server-nodejs-feature"/>
-  <feature id="tern.eclipse.ide.server.nodejs.embed"/>
-  <feature id="tern.eclipse.ide.tools.feature"/>
-
   <feature id="org.jboss.tools.jst.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
-  </feature>
-  <feature id="org.jboss.tools.jst.jsdt.feature">
-    <category name="CoreTools" />
-    <category name="GeneralTools" />
-    <category name="WebTools" />
-    <category name="MobileTools"/>
   </feature>
   <!-- JBDS-3899 JSDT and chromium.debug features -->
   <feature id="org.eclipse.wst.jsdt.chromium.debug.feature">
@@ -57,10 +42,6 @@
     <category name="CoreTools" />
     <category name="WebTools" />
     <category name="MobileTools"/>
-  </feature>
-  <feature id="org.jboss.tools.jst.angularjs.feature" >
-    <category name="CoreTools" />
-    <category name="WebTools" />
   </feature>
   <feature id="org.jboss.tools.vpe.feature">
     <category name="CoreTools" />
@@ -153,10 +134,6 @@
     <category name="WebTools" />
   </feature>
 
-  <feature id="org.jboss.tools.forge.feature">
-    <category name="CoreTools"/>
-    <category name="WebTools" />
-  </feature>
   <feature id="org.jboss.tools.project.examples.feature">
     <category name="CoreTools" />
     <category name="GeneralTools" />
@@ -303,14 +280,6 @@
     <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
-  <feature id="org.jboss.tools.forge.ext.feature">
-    <category name="CoreTools" />
-    <category name="WebTools"/>
-  </feature>
-  <feature id="org.jboss.tools.forge.m2e.feature">
-    <category name="CoreTools" />
-    <category name="MavenTools"/>
-  </feature>
   <feature id="org.jboss.tools.wtp.server.launchbar.feature">
     <category name="WebTools" />
   </feature>
@@ -331,7 +300,6 @@
   <feature id="org.jboss.tools.maven.jbosspackaging.feature"><category name="CoreTools" /><category name="MavenTools" /></feature>
 
   <feature id="org.jboss.tools.usage.feature"><category name="CoreTools" /><category name="GeneralTools"/></feature>
-  <feature id="org.jboss.tools.livereload.feature"/>
 
   <!-- only in devstudio
   <feature id="com.jboss.devstudio.core.feature" patch="false">
@@ -366,8 +334,6 @@
   <feature id="org.jboss.tools.richfaces.feature.source"/>
 
   <feature id="org.jboss.tools.jst.feature.source"/>
-  <feature id="org.jboss.tools.jst.jsdt.feature.source"/>
-  <feature id="org.jboss.tools.jst.angularjs.feature.source"/>
   <feature id="org.jboss.tools.vpe.feature.source"/>
   <feature id="org.jboss.tools.jsf.feature.source"/>
   <feature id="org.jboss.tools.seam.feature.source"/>
@@ -387,7 +353,6 @@
   <feature id="org.jboss.tools.ws.jaxrs.feature.source"/>
   <feature id="org.jboss.tools.ws.jaxws.feature.source"/>
   <feature id="org.jboss.tools.websockets.feature.source"/>
-  <feature id="org.jboss.tools.forge.feature.source"/>
   <feature id="org.jboss.tools.project.examples.feature.source"/>
   <feature id="org.jboss.tools.project.examples.seam.feature.source"/>
   <feature id="org.jboss.tools.maven.feature.source"/>
@@ -432,15 +397,12 @@
   <feature id="org.jboss.tools.central.themes.feature.source"/>
   <feature id="org.jboss.tools.community.central.feature.source"/>
   <feature id="org.jboss.tools.community.project.examples.feature.source"/>
-  <feature id="org.jboss.tools.forge.ext.feature.source"/>
-  <feature id="org.jboss.tools.forge.m2e.feature.source"/>
 
   <!-- only in devstudio
   <feature id="com.jboss.devstudio.core.feature.source" patch="false"/>
   <feature id="com.jboss.devstudio.core.capabilities.feature.source" patch="false"/>
   -->
 
-  <feature id="org.jboss.tools.livereload.feature.source"/>
   <feature id="org.jboss.tools.quarkus.feature.source"/>
   <feature id="org.jboss.tools.cdi.microprofile.feature.source"/>
   <feature id="org.jboss.tools.common.oauth.feature.source"/>

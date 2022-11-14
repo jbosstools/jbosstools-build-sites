@@ -178,11 +178,6 @@
 			<url>${jbosstools-quarkus-site}</url>
 		</repository>
 		<repository>
-			<id>jbosstools-livereload-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-livereload-site}</url>
-		</repository>
-		<repository>
 			<id>jbosstools-jst-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-jst-site}</url>
@@ -206,11 +201,6 @@
 			<id>jbosstools-vpe-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-vpe-site}</url>
-		</repository>
-		<repository>
-			<id>jbosstools-forge-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-forge-site}</url>
 		</repository>
 		<repository>
 			<id>jbosstools-central-site</id>
