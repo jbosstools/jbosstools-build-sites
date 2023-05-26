@@ -15,7 +15,6 @@
 <feature id="org.jboss.ide.eclipse.archives.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.batch.test.feature"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.cdi.seam.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.cdi.deltaspike.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.cdi.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.central.test.feature"><category name="coretests"/></feature>
@@ -24,7 +23,6 @@
 <feature id="org.jboss.tools.project.examples.test.feature"><category name="coretests"/></feature>
 <feature id="org.hibernate.eclipse.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jmx.test.feature"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.jsf.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jst.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.maven.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.openshift.cdk.test.feature"><category name="coretests"/></feature>
@@ -32,7 +30,6 @@
 <feature id="org.jboss.tools.openshift.integration.tests.feature"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.quarkus.test.feature"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.runtime.test.feature"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.seam.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.foundation.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.stacks.core.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.test.feature"><category name="coretests"/></feature>
@@ -79,7 +76,6 @@
 <feature id="org.jboss.tools.stacks.core.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.ide.eclipse.as.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.batch.test.feature.source"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.cdi.seam.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.cdi.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.central.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.common.all.test.feature.source"><category name="coretests"/></feature>
@@ -87,7 +83,6 @@
 <feature id="org.jboss.tools.project.examples.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.hibernate.eclipse.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jmx.test.feature.source"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.jsf.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.jst.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.maven.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.openshift.cdk.test.feature.source"><category name="coretests"/></feature>
@@ -95,7 +90,6 @@
 <feature id="org.jboss.tools.openshift.integration.tests.feature.source"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.quarkus.test.feature.source"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.runtime.test.feature.source"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.seam.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.usage.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.vpe.test.feature.source"><category name="coretests"/></feature>

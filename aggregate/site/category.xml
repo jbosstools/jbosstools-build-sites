@@ -7,11 +7,6 @@
     To test, just run `mvn clean install` in this folder.
   -->
 
-  <feature id="org.jboss.tools.richfaces.feature">
-    <category name="CoreTools" />
-    <category name="WebTools" />
-  </feature>
-
   <!-- JBDS-3898 JSON editor -->
   <feature id="org.eclipse.wst.json_core.feature">
     <category name="CoreTools" />
@@ -47,14 +42,6 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
-  <feature id="org.jboss.tools.jsf.feature">
-    <category name="CoreTools" />
-    <category name="WebTools" />
-  </feature>
-  <feature id="org.jboss.tools.seam.feature">
-    <!-- removed from devstudio & JBT CoreTools -->
-    <category name="WebTools" />
-  </feature>
   <feature id="org.jboss.tools.batch.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
@@ -62,10 +49,6 @@
   </feature>
   <feature id="org.jboss.tools.cdi.feature">
     <category name="CoreTools" />
-    <category name="WebTools" />
-    <category name="GeneralTools" />
-  </feature>
-  <feature id="org.jboss.tools.cdi.seam.feature">
     <category name="WebTools" />
     <category name="GeneralTools" />
   </feature>
@@ -138,9 +121,6 @@
     <category name="CoreTools" />
     <category name="GeneralTools" />
   </feature>
-  <feature id="org.jboss.tools.project.examples.seam.feature">
-    <category name="GeneralTools" />
-  </feature>
   <feature id="org.jboss.tools.maven.feature">
     <category name="CoreTools" />
     <category name="MavenTools" />
@@ -160,9 +140,6 @@
   <feature id="org.jboss.tools.maven.project.examples.feature">
     <category name="CoreTools" />
     <category name="MavenTools" />
-  </feature>
-  <feature id="org.jboss.tools.maven.seam.feature">
-    <category name="MavenTools"/>
   </feature>
   <feature id="org.jboss.tools.maven.sourcelookup.feature">
     <category name="CoreTools" />
@@ -197,9 +174,6 @@
 
   <feature id="org.jboss.tools.runtime.core.feature">
     <category name="CoreTools" />
-  </feature>
-  <feature id="org.jboss.tools.runtime.seam.detector.feature">
-    <category name="WebTools" />
   </feature>
   <feature id="org.jboss.tools.wtp.runtimes.tomcat.feature">
     <category name="CoreTools" />
@@ -331,16 +305,12 @@
   <!-- ####### -->
 
   <feature id="org.jboss.tools.central.feature.source"/>
-  <feature id="org.jboss.tools.richfaces.feature.source"/>
 
   <feature id="org.jboss.tools.jst.feature.source"/>
   <feature id="org.jboss.tools.vpe.feature.source"/>
-  <feature id="org.jboss.tools.jsf.feature.source"/>
-  <feature id="org.jboss.tools.seam.feature.source"/>
   <feature id="org.jboss.tools.batch.feature.source"/>
   <feature id="org.jboss.tools.cdi.feature.source"/>
   <feature id="org.jboss.tools.cdi.faces.feature.source"/>
-  <feature id="org.jboss.tools.cdi.seam.feature.source"/>
   <feature id="org.jboss.tools.cdi.deltaspike.feature.source"/>
   <feature id="org.jboss.tools.jmx.feature.source"/>
   <feature id="org.jboss.ide.eclipse.as.feature.source"/>
@@ -354,18 +324,15 @@
   <feature id="org.jboss.tools.ws.jaxws.feature.source"/>
   <feature id="org.jboss.tools.websockets.feature.source"/>
   <feature id="org.jboss.tools.project.examples.feature.source"/>
-  <feature id="org.jboss.tools.project.examples.seam.feature.source"/>
   <feature id="org.jboss.tools.maven.feature.source"/>
   <!-- JBIDE-13926, JBIDE-13928 Do not include source feature <feature id="org.jboss.tools.maven.apt.feature.source"/> -->
   <feature id="org.jboss.tools.maven.cdi.feature.source"/>
   <feature id="org.jboss.tools.maven.hibernate.feature.source"/>
   <feature id="org.jboss.tools.maven.jdt.feature.source"/>
   <feature id="org.jboss.tools.maven.project.examples.feature.source"/>
-  <feature id="org.jboss.tools.maven.seam.feature.source"/>
   <feature id="org.jboss.tools.maven.sourcelookup.feature.source"/>
   <feature id="org.jboss.tools.maven.springboot.feature.source"/>
   <feature id="org.jboss.tools.runtime.core.feature.source"/>
-  <feature id="org.jboss.tools.runtime.seam.detector.feature.source"/>
   <feature id="org.jboss.tools.usage.feature.source"/>
   <feature id="org.jboss.tools.common.jdt.feature.source"/>
   <feature id="org.jboss.tools.common.launcher.feature.source"/>
