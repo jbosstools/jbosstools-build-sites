@@ -423,7 +423,7 @@
     <description>Tools for Cloud and Container Development.</description>
   </category-def>
 
-  <category-def name="FuseTooling" label="Red Hat Fuse Tooling">
+  <category-def name="FuseTooling" label="Red Hat Fuse Tooling (Deprecated)">
     <description>Tools to allow you to create Apache Camel routes in a graphical editor, launch them locally and deploy them to runtimes like Apache Karaf, Fabric8 and Red Hat Fuse.</description>
   </category-def>
 
