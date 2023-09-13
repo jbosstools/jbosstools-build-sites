@@ -104,18 +104,6 @@
     <category name="DataTools" />
     <category name="GeneralTools" />
   </feature>
-  <feature id="org.jboss.tools.ws.jaxrs.feature">
-    <category name="CoreTools" />
-    <category name="WebTools" />
-  </feature>
-  <feature id="org.jboss.tools.ws.jaxws.feature">
-    <category name="CoreTools" />
-    <category name="WebTools" />
-  </feature>
-  <feature id="org.jboss.tools.websockets.feature">
-    <category name="CoreTools" />
-    <category name="WebTools" />
-  </feature>
 
   <feature id="org.jboss.tools.project.examples.feature">
     <category name="CoreTools" />
@@ -320,9 +308,6 @@
   <feature id="org.jboss.tools.openshift.egit.integration.feature.source"/>
   <feature id="org.jboss.ide.eclipse.archives.feature.source"/>
   <feature id="org.hibernate.eclipse.feature.source"/>
-  <feature id="org.jboss.tools.ws.jaxrs.feature.source"/>
-  <feature id="org.jboss.tools.ws.jaxws.feature.source"/>
-  <feature id="org.jboss.tools.websockets.feature.source"/>
   <feature id="org.jboss.tools.project.examples.feature.source"/>
   <feature id="org.jboss.tools.maven.feature.source"/>
   <!-- JBIDE-13926, JBIDE-13928 Do not include source feature <feature id="org.jboss.tools.maven.apt.feature.source"/> -->
