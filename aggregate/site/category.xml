@@ -42,11 +42,6 @@
     <category name="CoreTools" />
     <category name="WebTools" />
   </feature>
-  <feature id="org.jboss.tools.batch.feature">
-    <category name="CoreTools" />
-    <category name="WebTools" />
-    <category name="GeneralTools" />
-  </feature>
   <feature id="org.jboss.tools.cdi.feature">
     <category name="CoreTools" />
     <category name="WebTools" />
@@ -138,10 +133,6 @@
     <category name="MavenTools" />
   </feature>
   <feature id="org.jboss.tools.common.jdt.feature">
-    <category name="CoreTools" />
-    <category name="GeneralTools"/>
-  </feature>
-  <feature id="org.jboss.tools.common.launcher.feature">
     <category name="CoreTools" />
     <category name="GeneralTools"/>
   </feature>
@@ -320,7 +311,6 @@
   <feature id="org.jboss.tools.runtime.core.feature.source"/>
   <feature id="org.jboss.tools.usage.feature.source"/>
   <feature id="org.jboss.tools.common.jdt.feature.source"/>
-  <feature id="org.jboss.tools.common.launcher.feature.source"/>
   <feature id="org.jboss.tools.foundation.feature.source"/>
   <feature id="org.jboss.tools.foundation.security.linux.feature.source"/>
   <feature id="org.jboss.tools.stacks.core.feature.source"/>
