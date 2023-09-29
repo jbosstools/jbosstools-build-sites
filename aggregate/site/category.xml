@@ -287,7 +287,6 @@
 
   <feature id="org.jboss.tools.jst.feature.source"/>
   <feature id="org.jboss.tools.vpe.feature.source"/>
-  <feature id="org.jboss.tools.batch.feature.source"/>
   <feature id="org.jboss.tools.cdi.feature.source"/>
   <feature id="org.jboss.tools.cdi.faces.feature.source"/>
   <feature id="org.jboss.tools.cdi.deltaspike.feature.source"/>
