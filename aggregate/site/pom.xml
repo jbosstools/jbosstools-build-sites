@@ -113,7 +113,6 @@
 								<jbosstools-openshift>org.jboss.tools.openshift.egit.core</jbosstools-openshift>
 								<jbosstools-server>org.jboss.ide.eclipse.as.core</jbosstools-server>
 								<jbosstools-vpe>org.jboss.tools.vpe</jbosstools-vpe>
-								<jbosstools-webservices>org.jboss.tools.ws.ui</jbosstools-webservices>
 								<!-- instead of pulling from a plugin, pull source info from a URL containing the buildinfo.json file -->
 								<jbosstools-xulrunner>${jbosstools-xulrunner-site}/buildinfo.json</jbosstools-xulrunner>
 								<jbosstools-quarkus>${jbosstools-quarkus-site}/buildinfo.json</jbosstools-quarkus>
