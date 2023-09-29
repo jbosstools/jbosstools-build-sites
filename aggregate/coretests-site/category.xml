@@ -25,7 +25,6 @@
 <feature id="org.jboss.tools.maven.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.openshift.cdk.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.openshift.test.feature"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.openshift.integration.tests.feature"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.quarkus.test.feature"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.runtime.test.feature"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.foundation.test.feature"><category name="coretests"/></feature>
@@ -83,7 +82,6 @@
 <feature id="org.jboss.tools.maven.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.openshift.cdk.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.openshift.test.feature.source"><category name="coretests"/></feature>
-<feature id="org.jboss.tools.openshift.integration.tests.feature.source"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.quarkus.test.feature.source"><category name="coretests" /></feature>
 <feature id="org.jboss.tools.runtime.test.feature.source"><category name="coretests"/></feature>
 <feature id="org.jboss.tools.test.feature.source"><category name="coretests"/></feature>
