@@ -40,9 +40,6 @@
 							</additionalWebResources>
 							<p2StatsUrl>${p2StatsUrl}</p2StatsUrl>
 							<removeDefaultCategory>true</removeDefaultCategory>
-							<repositories>
-								<repo>${jbosstools-nightly-staging-composite}</repo>
-							</repositories>
 						</configuration>
 					</execution>
 				</executions>
@@ -191,11 +188,6 @@
 			<id>jbosstools-javaee-site</id>
 			<layout>p2</layout>
 			<url>${jbosstools-javaee-site}</url>
-		</repository>
-		<repository>
-			<id>jbosstools-webservices-site</id>
-			<layout>p2</layout>
-			<url>${jbosstools-webservices-site}</url>
 		</repository>
 		<repository>
 			<id>jbosstools-vpe-site</id>
