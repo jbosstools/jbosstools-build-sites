@@ -71,6 +71,7 @@
 			<plugin>
 				<groupId>org.jboss.tools.tycho-plugins</groupId>
 				<artifactId>repository-utils</artifactId>
+				<version>${jbossTychoPluginsVersion}</version>
 				<executions>
 					<execution>
 						<id>generate-facade</id>
@@ -175,7 +176,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>tools@filemgmt-prod-sync.jboss.org:downloads_htdocs/jbosstools</arg>
+										<arg>tools@filemgmt.jboss.org:downloads_htdocs/jbosstools</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
 										<arg>-t</arg>
@@ -194,7 +195,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>tools@filemgmt-prod-sync.jboss.org:downloads_htdocs/jbosstools</arg>
+										<arg>tools@filemgmt.jboss.org:downloads_htdocs/jbosstools</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}</arg>
 										<arg>-t</arg>
@@ -215,7 +216,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>tools@filemgmt-prod-sync.jboss.org:downloads_htdocs/jbosstools</arg>
+										<arg>tools@filemgmt.jboss.org:downloads_htdocs/jbosstools</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}</arg>
 										<arg>-t</arg>
@@ -236,7 +237,7 @@
 								<configuration>
 									<arguments>
 										<arg>-DESTINATION</arg>
-										<arg>tools@filemgmt-prod-sync.jboss.org:downloads_htdocs/jbosstools</arg>
+										<arg>tools@filemgmt.jboss.org:downloads_htdocs/jbosstools</arg>
 										<arg>--del</arg>
 										<arg>-s</arg>
 										<arg>${project.build.directory}/repository</arg>
