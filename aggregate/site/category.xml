@@ -71,6 +71,11 @@
     <category name="WebTools" />
     <category name="org.eclipse.wst.server.core.serverAdapter"/>
   </feature>
+  <feature id="org.jboss.tools.as.rsp.feature">
+    <category name="CoreTools" />
+    <category name="WebTools" />
+    <category name="org.eclipse.wst.server.core.serverAdapter"/>
+  </feature>
   <feature id="org.jboss.tools.openshift.egit.integration.feature">
     <category name="CoreTools" />
     <category name="CloudContainerTools" />
@@ -292,6 +297,7 @@
   <feature id="org.jboss.tools.cdi.deltaspike.feature.source"/>
   <feature id="org.jboss.tools.jmx.feature.source"/>
   <feature id="org.jboss.ide.eclipse.as.feature.source"/>
+  <feature id="org.jboss.tools.as.rsp.feature.source"/>
   <feature id="org.jboss.tools.openshift.feature.source"/>
   <feature id="org.jboss.tools.openshift.cdk.feature.source"/>
   <feature id="org.jboss.tools.openshift.js.feature.source"/>
